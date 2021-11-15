@@ -54,7 +54,7 @@ create(Long URL)<br>
 
 read(Short URL)<br>
 ● App Tier gets request<br>
-● Converts Short URL back to unique id
+● Converts Short URL back to unique id<br>
 ● Sent to Cache Tier<br>
 ● Cache Tier checks hashmap and returns if there is cache hit<br>
 ● Whenever there is a cache miss, hit the backend database. Whenever this happens, update the cache and pass the new entry to all the cache replicas. Each replica can update its cache by adding the new entry.
