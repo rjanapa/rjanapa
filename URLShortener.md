@@ -97,6 +97,9 @@ Storage<br>
 Size of (k,v) pairs: A<br>
 Number of lifetime (k,v) pairs: B<br>
 Number of (k,v) pairs generated per sec: C<br>
-Storage = 
+Storage = A * B  or<br><br>
+        = C * Number of seconds in say 2 years * B or<br>
+        = C * TTL (in seconds) * B<br>
+Cache = 20-30% of Storage
 
 
