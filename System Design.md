@@ -91,6 +91,6 @@ Storage Server = 5 - 10 millisecond<br>
 Step 4c<br>
 ○ Draw a generic distributed architecture per tier<br>
 ○ If app server tier and stateless, round robin requests <br>
-○ If cache or storage tier, Partition the data into shards or buckets to suit requirements of scale<br>
+○ If cache/storage tier, Partition the data into shards or buckets to suit requirements of scale<br>
 ○ Propose replication of shards<br>
-○ Propose CP or AP (algorithms for CAP theorem do not change from problem to problem)<br>
+○ Propose CP or AP (algorithms for CAP theorem)<br>
