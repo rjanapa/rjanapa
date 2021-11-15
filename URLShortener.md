@@ -111,6 +111,8 @@ Number of API handled by Z threads = (1000 * Z)/X operations/second<br>
 A Server operating at 30-40% capacity<br>
 Number of API handled by Z threads in one Server = (300 * Z)/X operations/second<br>
 
+IO Throughput<br>
+
 
 
 
