@@ -63,8 +63,7 @@ read(Short URL) -> read(k)<br>
 update(k,v)<br>
 delete(k)<br>
 
-How to organize data<br>
-HashMap<br>
+How data will be stored in storage and cache tiers: HashMap<br>
 
 create(Long URL)<br>
 ● Comes to App Tier<br>
