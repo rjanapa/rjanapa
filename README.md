@@ -12,33 +12,33 @@ You can click the Preview link to take a look at your changes.
 URL Shortener
 
 Step 1: 
-Functional Req<b>
-Given a long URL generate a short URL<b>
-Given a short URL return long URL<b>
-Generate custom URL<b>
-TTL of Generated URL<b>
+Functional Req<br>
+Given a long URL generate a short URL<br>
+Given a short URL return long URL<br>
+Generate custom URL<br>
+TTL of Generated URL<br>
 Analytics<b>
 
-Design Constraints<b>
-Number of URL generated per second<b>
-Number of URL retrieved per second<b>
-Size of Short URL. Assume 7 to start with.<b>
-Characters in Short URL 0..9,a..z,A..Z<b>
+Design Constraints<br>
+Number of URL generated per second<br>
+Number of URL retrieved per second<br>
+Size of Short URL. Assume 7 to start with.<br>
+Characters in Short URL 0..9,a..z,A..Z<br>
 
-Step 2: Define Microservices<b>
+Step 2: Define Microservices<br>
 
-Step 3: Draw Logical Architecture<b><b>
-Block Diagram for each Microservice<b>
-Data/Logic flow between them<b>
-Rules of Thumb: <b>
-1. If high volume of data needs to be pushed in near real time between two Microservices, use Pub-Sub. Pub-Sub is a Microservice of its own.<b>
-2. If data needs to be pulled from Server to Client, use REST API.<b>
-3. If data transfer is offline use Batch ETL (Extract Transform Load) Job.<b>
+Step 3: Draw Logical Architecture<br>
+Block Diagram for each Microservice<br>
+Data/Logic flow between them<br>
+Rules of Thumb: <br>
+1. If high volume of data needs to be pushed in near real time between two Microservices, use Pub-Sub. Pub-Sub is a Microservice of its own.<br>
+2. If data needs to be pulled from Server to Client, use REST API.<br>
+3. If data transfer is offline use Batch ETL (Extract Transform Load) Job.<br>
 
-Step 4: Deep dive into each Microservice at a time<b>
-Each Microservice consists of one or more tiers<b>
-App Server Tier - Application Logic<b>
-Cache Server Tier - For high througput data access and in-memory compute<b>
-Storage Server Tier - Data Persistence<b>
+Step 4: Deep dive into each Microservice at a time<br>
+Each Microservice consists of one or more tiers<br>
+App Server Tier - Application Logic<br>
+Cache Server Tier - For high througput data access and in-memory compute<br>
+Storage Server Tier - Data Persistence<br>
 
-<img src="https://github.com/rjanapa/rjanapa/blob/main/3-tier-arch-diagram.png" width="250"><b>
+<img src="https://github.com/rjanapa/rjanapa/blob/main/3-tier-arch-diagram.png" width="250"><br>
