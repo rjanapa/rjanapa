@@ -24,7 +24,7 @@ Data/Logic flow between them<br>
 
 <b>Step 4a</b><br>
 For each microservice <br>
-○ Identify Data Model (what data needs to be stored) to match the functional requirements<br>
+○ Identify Data Model <br>
 ○ Discuss how data will be stored in storage and cache tiers<br>
 ○ Propose APIs to match the functional requirements<br>
 ○ Propose workflow/algorithm for the the API in each tier<br>
