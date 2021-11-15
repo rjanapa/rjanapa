@@ -20,7 +20,7 @@ Design Constraints<br>
 Block Diagram for each Microservice<br>
 Data/Logic flow between them<br>
 
-<b>Step 4: Deep dive into each Microservice at a time<br>
+<b>Step 4: Deep dive into each Microservice at a time</b><br>
 
 <b>Step 4a</b><br>
 For each microservice <br>
