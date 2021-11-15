@@ -1,14 +1,14 @@
 <b>URL Shortener</b><br>
 
 <b>Step 1:</b><br> 
-Functional Requirements<br>
+<b>Functional Requirements</b><br>
 ● Given a long URL generate a short URL<br>
 ● Given a short URL return long URL<br>
 ● Generate custom URL<br>
 ● TTL of Generated URL<br>
 ● Analytics<br>
 
-Design Constraints<br>
+<b>Design Constraints</b><br>
 ● Number of URL generated per second<br>
 ● Number of URL retrieved per second<br>
 ● Size of Short URL. Assume 7 character long string.<br>
