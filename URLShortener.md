@@ -11,7 +11,7 @@ Functional Req<br>
 Design Constraints<br>
 ● Number of URL generated per second<br>
 ● Number of URL retrieved per second<br>
-● Size of Short URL. Assume 7 to start with.<br>
+● Size of Short URL. Assume 7 character long string.<br>
 ● Characters in Short URL 0..9,a..z,A..Z<br>
 
 <b>Step 2: Define Microservices</b><br>
