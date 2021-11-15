@@ -73,6 +73,10 @@ read(Short URL)<br>
 ● Cache Tier checks hashmap and returns if there is cache hit<br>
 ● Whenever there is a cache miss, hit the backend database. Whenever this happens, update the cache and pass the new entry to all the cache replicas. Each replica can update its cache by adding the new entry.
 
+Algorithm<br>
+● Convert unique id to 7 character long string<br>
+● 62 characters(0..9,a..z,A..Z), 7 positions = 62^7 = (2^6)^7 = 2^42 = (2^10)(2^10)(2^10)(2^10)(2^2) = 4 trillion<br>
+
 
  
 
