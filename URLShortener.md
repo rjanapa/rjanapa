@@ -43,6 +43,14 @@ Storage Server Tier - Data Persistence<br>
 
 <img src="https://github.com/rjanapa/rjanapa/blob/main/3-tier-arch-diagram.png" width="250"><br>
 
+Step 4a<br>
+For each microservice <br>
+○ Identify Data Model (what data needs to be stored) to match the functional requirements<br>
+○ Discuss how data will be stored in storage and cache tiers<br>
+○ Propose APIs to match the functional requirements<br>
+○ Propose workflow/algorithm for the the API in each tier<br>
+○ Propose flow across tiers within the microservice<br>
+
 Data Model<br>
 Short URL/Unique Id, Long URL, TTL, Creation Time<br>
 k: Short URL/unique id<br>
