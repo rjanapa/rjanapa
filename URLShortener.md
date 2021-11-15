@@ -119,6 +119,11 @@ Total # of servers = Y/Z<br>
 
 Availability 99.999%<br>
 
+Generic Tips<br>
+Number of writes per second: when human generates a workload: 1000s to 10s of 1000s/sec<br>
+Number of reads per second in a read heavy system: 100s of 1000s/sec<br>
+Number of writes per second: when system is generating: 1 million per second<br>
+
 Latency Numbers for Simple K-V workloads<br>
 Application Server = 500 microseconds - 1 millisecond<br>
 In-Memory Server = 1 - 3 millisecond<br>
