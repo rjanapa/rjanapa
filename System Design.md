@@ -94,3 +94,9 @@ Step 4c<br>
 ○ If cache/storage tier, Partition the data into shards or buckets to suit requirements of scale<br>
 ○ Propose replication of shards<br>
 ○ Propose CP or AP (algorithms for CAP theorem)<br>
+
+Two way mapping<br>
+○ Data/Logic -> buckets/partitions/shards Done by the engineer<br>
+○ Shards -> Server(s) Done by the cluster manager<br>
+○ Helps in reducing metadata bloat<br>
+
