@@ -59,15 +59,20 @@ How to organize data<br>
 HashMap<br>
 
 create(Long URL)<br>
-● Comes to App Server Tier<br>
+● Comes to App Tier<br>
 ● Send directly to Storage Tier<br>
-● Give an unique integer id to the long URL<br>
-● Store unique id:long URL in the storage tier<br>
-● Store unique id:long URL in cache tier<br>
-● Convert the unique id to a unique 7 character long string in the App Server Tier<br>
+● Generate unique id for long URL<br>
+● Store unique id:long URL in Storage Tier<br>
+● Store unique id:long URL in Cache Tier<br>
+● Convert the unique id to a unique 7 character long string in the App Tier<br>
 
-
-
+read(Short URL)<br>
+● App Tier gets request<br>
+● Converts Short URL back to unique id
+● Sent to Cache Tier<br>
+● Cache Tier checks hashmap and returns if there is cache hit<br>
+●  
+●  
 
 
 
