@@ -85,7 +85,7 @@ Algorithm<br>
 ● 62 characters(0..9,a..z,A..Z), 7 positions = 62^7 = (2^6)^7 = 2^42 = (2^10)(2^10)(2^10)(2^10)(2^2) = 4 trillion<br>
 
 Step 4b<br>
-For each microservice, Check whether each tier needs to scale<br><br>
+For each microservice, Check whether each tier needs to scale<br>
 ● Need to scale for storage (storage and cache tiers)<br>
 ● Need to scale for throughput (CPU/IO)<br>
 ● Need to scale for API parallelization<br>
@@ -93,5 +93,10 @@ For each microservice, Check whether each tier needs to scale<br><br>
 ● Availability and Geo-distribution<br>
 ● Solve algebraically first and then put numbers<br>
 
+Storage<br>
+Size of (k,v) pairs: A<br>
+Number of lifetime (k,v) pairs: B<br>
+Number of (k,v) pairs generated per sec: C<br>
+Storage = 
 
 
