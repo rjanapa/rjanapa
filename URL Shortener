@@ -59,4 +59,4 @@ App Server Tier - Application Logic
 Cache Server Tier - For high througput data access and in-memory compute
 Storage Server Tier - Data Persistence
 
-https://github.com/rjanapa/rjanapa/blob/main/3-Tier%20Arch%20Diagram.png
+![3-Tier Arch](https://github.com/rjanapa/rjanapa/blob/main/3-Tier%20Arch%20Diagram.png)
