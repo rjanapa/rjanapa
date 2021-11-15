@@ -2,7 +2,6 @@
 
 Step 1:<br> 
 Functional Req<br>
-
 Design Constraints<br>
 
 Step 2: Define Microservices<br>
@@ -10,7 +9,7 @@ Step 2: Define Microservices<br>
 Step 3: Draw Logical Architecture<br>
 Block Diagram for each Microservice<br>
 Data/Logic flow between them<br>
-Rules of Thumb: <br>
+Rules of Thumb:
 1. If high volume of data needs to be pushed in near real time between two Microservices, use Pub-Sub. Pub-Sub is a Microservice of its own.<br>
 2. If data needs to be pulled from Server to Client, use REST API.<br>
 3. If data transfer is offline use Batch ETL (Extract Transform Load) Job.<br>
