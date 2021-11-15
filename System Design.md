@@ -88,3 +88,10 @@ Latency Numbers for Simple K-V workloads<br>
 Application Server = 500 microseconds - 1 millisecond<br>
 In-Memory Server = 1 - 3 millisecond<br>
 Storage Server = 5 - 10 millisecond<br>
+
+Step 4c<br>
+○ Draw a generic distributed architecture per tier
+○ If app server tier and stateless, just round robin requests 
+○ If cache or storage tier, Partition the data into shards or buckets to suit requirements of scale
+○ Propose replication of shards
+○ Propose CP or AP (algorithms for CAP theorem do not change from problem to problem)
