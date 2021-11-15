@@ -91,7 +91,8 @@ For each microservice, Check whether each tier needs to scale
 ● Need to scale for API parallelization
 ● Need to remove hotspots
 ● Availability and Geo-distribution
- 
+● Solve algebraically first and then put numbers
+
 
 
 
