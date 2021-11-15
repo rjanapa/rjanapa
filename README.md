@@ -42,3 +42,26 @@ Cache Server Tier - For high througput data access and in-memory compute<br>
 Storage Server Tier - Data Persistence<br>
 
 <img src="https://github.com/rjanapa/rjanapa/blob/main/3-tier-arch-diagram.png" width="250"><br>
+
+Data Model<br>
+Short URL/Unique Id, Long URL, TTL, Creation Time<br>
+k: Short URL/Unique Id<br>
+v: Long URL, TTL, Creation Time<br>
+
+API<br> Similar to CRUD operations<br>
+create(Long URL) -> create(v)<br><br><br><br><br><br>
+read(Short URL) -> read(k)<br><br><br><br><br>
+update(k,v)<br><br><br><br>
+delete(k)<br><br><br>
+
+How to organize data<br><br>
+HashMap<br>
+
+
+
+
+
+
+
+
+
