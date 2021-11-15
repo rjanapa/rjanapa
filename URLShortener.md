@@ -45,7 +45,7 @@ Storage Server Tier - Data Persistence<br>
 
 Data Model<br>
 Short URL/Unique Id, Long URL, TTL, Creation Time<br>
-k: Short URL/Unique Id<br>
+k: Short URL/unique id<br>
 v: Long URL, TTL, Creation Time<br>
 
 API<br> 
@@ -58,8 +58,13 @@ delete(k)<br>
 How to organize data<br>
 HashMap<br>
 
-
-
+create(Long URL)<br>
+● Comes to App Server Tier<br>
+● Send directly to Storage Tier<br>
+● Give an unique integer id to the long URL<br>
+● Store unique id:long URL in the storage tier<br>
+● Store unique id:long URL in cache tier<br>
+● Convert the unique id to a unique 7 character long string in the App Server Tier<br>
 
 
 
