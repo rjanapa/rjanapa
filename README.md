@@ -9,9 +9,9 @@ rjanapa/rjanapa is a ✨ special ✨ repository because its `README.md` (this fi
 You can click the Preview link to take a look at your changes.
 --->
 
-URL Shortener
+<b>URL Shortener</b><br>
 
-Step 1: 
+Step 1:<br> 
 Functional Req<br>
 Given a long URL generate a short URL<br>
 Given a short URL return long URL<br>
