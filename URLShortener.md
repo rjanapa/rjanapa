@@ -93,11 +93,27 @@ For each microservice, Check whether each tier needs to scale<br>
 ● Availability and Geo-distribution<br>
 ● Solve algebraically first and then put numbers<br>
 
-Storage<br>
-Size of (k,v) pairs: A<br>
-Number of lifetime (k,v) pairs: B<br>
-Number of (k,v) pairs generated per sec: C<br>
+Storage Calculation<br>
+Size of (k,v) pairs = A<br>
+Number of lifetime (k,v) pairs = B<br>
+Number of (k,v) pairs generated per sec = C<br>
 Storage = (A * B)  or (C * Number of seconds in say 2 years * B) or (C * TTL (in seconds) * B)<br>
-Cache = 20-30% of Storage
+Cache = 20-30% of Storage<br>
+
+CPU Throughput<br>
+Number of API calls that App Tier need to handle = Y<br>
+Latency of API call = X millisecond = X/1000 seconds  =>> <!-- X . . X . . X .. X . . --><br>
+For a single thread nX = 1000 milliseconds<br>
+For a single thread n = 1000/X operations per second<br>
+Number of API handled by a single thread = 1000/X operations/second<br>
+Number of concurrent threads in a commodity server typically 100 ~ 200 = Z<br>
+Number of API handled by Z threads = (1000 * Z)/X operations/second<br>
+A Server operating at 30-40% capacity<br>
+Number of API handled by Z threads in one Server = (300 * Z)/X operations/second<br>
+
+
+
+
+
 
 
