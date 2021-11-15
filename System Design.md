@@ -90,8 +90,8 @@ In-Memory Server = 1 - 3 millisecond<br>
 Storage Server = 5 - 10 millisecond<br>
 
 Step 4c<br>
-○ Draw a generic distributed architecture per tier
-○ If app server tier and stateless, just round robin requests 
-○ If cache or storage tier, Partition the data into shards or buckets to suit requirements of scale
-○ Propose replication of shards
-○ Propose CP or AP (algorithms for CAP theorem do not change from problem to problem)
+○ Draw a generic distributed architecture per tier<br>
+○ If app server tier and stateless, round robin requests <br>
+○ If cache or storage tier, Partition the data into shards or buckets to suit requirements of scale<br>
+○ Propose replication of shards<br>
+○ Propose CP or AP (algorithms for CAP theorem do not change from problem to problem)<br>
