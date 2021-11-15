@@ -82,9 +82,12 @@ Cache = 20-30% of Storage<br>
 
 <b>IO Throughput</b><br>
 
-Availability 99.999%<br>
+<b>Availability 99.999%</b><br>
 
-URL Shortner is human generated writes and read heavy system
+URL Shortner is human generated writes and read heavy system<br>
+
+<b>Step 4c:</b> Draw a generic distributed architecture per tier<br>
+
 
 
 
