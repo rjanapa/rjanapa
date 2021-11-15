@@ -102,7 +102,7 @@ Cache = 20-30% of Storage<br>
 
 CPU Throughput<br>
 Number of API calls that App Tier need to handle = Y<br>
-Latency of API call = X millisecond = X/1000 seconds  =>> <!-- X . . X . . X .. X . . --><br>
+Latency of API call = X millisecond = X/1000 seconds  =>> X . . X . . X . . X .. X . . X<br>
 For a single thread nX = 1000 milliseconds<br>
 For a single thread n = 1000/X operations per second<br>
 Number of API handled by a single thread = 1000/X operations/second<br>
