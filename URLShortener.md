@@ -84,7 +84,13 @@ Algorithm<br>
 ● Convert unique id to 7 character long string<br>
 ● 62 characters(0..9,a..z,A..Z), 7 positions = 62^7 = (2^6)^7 = 2^42 = (2^10)(2^10)(2^10)(2^10)(2^2) = 4 trillion<br>
 
-
+Step 4b<br>
+For each microservice, Check whether each tier needs to scale
+● Need to scale for storage (storage and cache tiers)
+● Need to scale for throughput (CPU/IO)
+● Need to scale for API parallelization
+● Need to remove hotspots
+● Availability and Geo-distribution
  
 
 
