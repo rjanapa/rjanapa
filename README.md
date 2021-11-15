@@ -17,7 +17,7 @@ Given a long URL generate a short URL<br>
 Given a short URL return long URL<br>
 Generate custom URL<br>
 TTL of Generated URL<br>
-Analytics<b>
+Analytics<br>
 
 Design Constraints<br>
 Number of URL generated per second<br>
