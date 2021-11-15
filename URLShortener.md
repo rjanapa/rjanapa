@@ -1,28 +1,28 @@
 <b>URL Shortener</b><br>
 
-Step 1:<br> 
+<b>Step 1:</b><br> 
 Functional Req<br>
-Given a long URL generate a short URL<br>
-Given a short URL return long URL<br>
-Generate custom URL<br>
-TTL of Generated URL<br>
-Analytics<br>
+● Given a long URL generate a short URL<br>
+● Given a short URL return long URL<br>
+● Generate custom URL<br>
+● TTL of Generated URL<br>
+● Analytics<br>
 
 Design Constraints<br>
-Number of URL generated per second<br>
-Number of URL retrieved per second<br>
-Size of Short URL. Assume 7 to start with.<br>
-Characters in Short URL 0..9,a..z,A..Z<br>
+● Number of URL generated per second<br>
+● Number of URL retrieved per second<br>
+● Size of Short URL. Assume 7 to start with.<br>
+● Characters in Short URL 0..9,a..z,A..Z<br>
 
-Step 2: Define Microservices<br>
+<b>Step 2: Define Microservices</b><br>
 
-Step 3: Draw Logical Architecture<br>
+<b>Step 3: Draw Logical Architecture</b><br>
 Block Diagram for each Microservice<br>
 Data/Logic flow between them<br>
 
-Step 4: Deep dive into each Microservice at a time<br>
+<b>Step 4: Deep dive into each Microservice at a time<br>
 
-Step 4a<br>
+<b>Step 4a</b><br>
 For each microservice <br>
 ○ Identify Data Model (what data needs to be stored) to match the functional requirements<br>
 ○ Discuss how data will be stored in storage and cache tiers<br>
@@ -35,14 +35,14 @@ Short URL/Unique Id, Long URL, TTL, Creation Time<br>
 k: Short URL/unique id<br>
 v: Long URL, TTL, Creation Time<br>
 
+How data will be stored in storage and cache tiers: HashMap<br>
+
 API<br> 
 Similar to CRUD operations<br>
 create(Long URL) -> create(v)<br>
 read(Short URL) -> read(k)<br>
 update(k,v)<br>
 delete(k)<br>
-
-How data will be stored in storage and cache tiers: HashMap<br>
 
 create(Long URL)<br>
 ● Comes to App Tier<br>
@@ -63,7 +63,7 @@ Algorithm<br>
 ● Convert unique id to 7 character long string<br>
 ● 62 characters(0..9,a..z,A..Z), 7 positions = 62^7 = (2^6)^7 = 2^42 = (2^10)(2^10)(2^10)(2^10)(2^2) = 4 trillion<br>
 
-Step 4b<br>
+<b>Step 4b</b><br>
 For each microservice, Check whether each tier needs to scale<br>
 
 Storage Calculation<br>
