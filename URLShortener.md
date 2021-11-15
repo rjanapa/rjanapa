@@ -84,7 +84,7 @@ Number of API handled by Z threads = (1000 * Z)/X operations/second<br>
 A Server operating at 30-40% capacity<br>
 Number of API handled by Z threads in one Server = (300 * Z)/X operations/second<br>
 
-IO Throughput<br>
+<b>IO Throughput<b><br>
 A single server can provide IO throughput (Medium spinning disk) = 100 - 200 MB/second = Z<br>
 A single server can provide IO throughput (Medium Flash SSD) = 1 - 2 GB/second = Z<br>
 Total I/O required by your system = Y MB/second<br>
