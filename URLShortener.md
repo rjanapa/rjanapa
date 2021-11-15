@@ -117,6 +117,13 @@ A single server can provide IO throughput (Medium Flash SSD) = 1~2 GB/second = Z
 Total I/O required by your system = Y MB/second
 Total # of servers = Y/Z
 
+Availability 99.999%
+
+Latency Numbers for Simple K-V workloads
+Application Server = 500 microseconds - 1 millisecond
+In-Memory Server = 1 ~ 3 millisecond
+Storage Server = 5 ~ 10 millisecond
+
 
 
 
