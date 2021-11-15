@@ -48,13 +48,14 @@ Short URL/Unique Id, Long URL, TTL, Creation Time<br>
 k: Short URL/Unique Id<br>
 v: Long URL, TTL, Creation Time<br>
 
-API<br> Similar to CRUD operations<br>
-create(Long URL) -> create(v)<br><br><br><br><br><br>
-read(Short URL) -> read(k)<br><br><br><br><br>
-update(k,v)<br><br><br><br>
-delete(k)<br><br><br>
+API<br> 
+Similar to CRUD operations<br>
+create(Long URL) -> create(v)<br>
+read(Short URL) -> read(k)<br>
+update(k,v)<br>
+delete(k)<br>
 
-How to organize data<br><br>
+How to organize data<br>
 HashMap<br>
 
 
