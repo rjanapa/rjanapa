@@ -112,17 +112,17 @@ A Server operating at 30-40% capacity<br>
 Number of API handled by Z threads in one Server = (300 * Z)/X operations/second<br>
 
 IO Throughput<br>
-A single server can provide IO throughput (Medium spinning disk) = 100~200 MB/second = Z
-A single server can provide IO throughput (Medium Flash SSD) = 1~2 GB/second = Z
-Total I/O required by your system = Y MB/second
-Total # of servers = Y/Z
+A single server can provide IO throughput (Medium spinning disk) = 100 - 200 MB/second = Z<br>
+A single server can provide IO throughput (Medium Flash SSD) = 1 - 2 GB/second = Z<br>
+Total I/O required by your system = Y MB/second<br>
+Total # of servers = Y/Z<br>
 
-Availability 99.999%
+Availability 99.999%<br>
 
-Latency Numbers for Simple K-V workloads
-Application Server = 500 microseconds - 1 millisecond
-In-Memory Server = 1 ~ 3 millisecond
-Storage Server = 5 ~ 10 millisecond
+Latency Numbers for Simple K-V workloads<br>
+Application Server = 500 microseconds - 1 millisecond<br>
+In-Memory Server = 1 - 3 millisecond<br>
+Storage Server = 5 - 10 millisecond<br>
 
 
 
