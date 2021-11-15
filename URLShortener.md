@@ -1,14 +1,3 @@
-- 👋 Hi, I’m @rjanapa
-- 👀 I’m interested in Scalable System Design
-- 🌱 I’m currently learning Scalable System Design
-- 💞️ I’m looking to collaborate on ...
-- 📫 How to reach me rjanapa@gmail.com
-
-<!---
-rjanapa/rjanapa is a ✨ special ✨ repository because its `README.md` (this file) appears on your GitHub profile.
-You can click the Preview link to take a look at your changes.
---->
-
 <b>URL Shortener</b><br>
 
 Step 1:<br> 
@@ -30,18 +19,8 @@ Step 2: Define Microservices<br>
 Step 3: Draw Logical Architecture<br>
 Block Diagram for each Microservice<br>
 Data/Logic flow between them<br>
-Rules of Thumb: <br>
-1. If high volume of data needs to be pushed in near real time between two Microservices, use Pub-Sub. Pub-Sub is a Microservice of its own.<br>
-2. If data needs to be pulled from Server to Client, use REST API.<br>
-3. If data transfer is offline use Batch ETL (Extract Transform Load) Job.<br>
 
 Step 4: Deep dive into each Microservice at a time<br>
-Each Microservice consists of one or more tiers<br>
-App Server Tier - Application Logic<br>
-Cache Server Tier - For high througput data access and in-memory compute<br>
-Storage Server Tier - Data Persistence<br>
-
-<img src="https://github.com/rjanapa/rjanapa/blob/main/3-tier-arch-diagram.png" width="250"><br>
 
 Step 4a<br>
 For each microservice <br>
@@ -86,12 +65,6 @@ Algorithm<br>
 
 Step 4b<br>
 For each microservice, Check whether each tier needs to scale<br>
-● Need to scale for storage (storage and cache tiers)<br>
-● Need to scale for throughput (CPU/IO)<br>
-● Need to scale for API parallelization<br>
-● Need to remove hotspots<br>
-● Availability and Geo-distribution<br>
-● Solve algebraically first and then put numbers<br>
 
 Storage Calculation<br>
 Size of (k,v) pairs = A<br>
@@ -119,15 +92,12 @@ Total # of servers = Y/Z<br>
 
 Availability 99.999%<br>
 
-Generic Tips<br>
-Number of writes per second: when human generates a workload: 1000s to 10s of 1000s/sec<br>
-Number of reads per second in a read heavy system: 100s of 1000s/sec<br>
-Number of writes per second: when system is generating: 1 million per second<br>
-
 Latency Numbers for Simple K-V workloads<br>
 Application Server = 500 microseconds - 1 millisecond<br>
 In-Memory Server = 1 - 3 millisecond<br>
 Storage Server = 5 - 10 millisecond<br>
+
+URL Shortner is human generated writes and read heavy system
 
 
 
