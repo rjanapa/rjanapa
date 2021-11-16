@@ -6,7 +6,15 @@
 ● Given a short URL return long URL<br>
 ● Generate custom URL<br>
 ● TTL of Generated URL<br>
-● Analytics<br>
+
+<b>Non-Functional Requirements:</b><br>
+The system should be highly available. This is required because, if our service is down, all the URL redirections will start failing.<br>
+URL redirection should happen in real-time with minimal latency.<br>
+Shortened links should not be guessable (not predictable).<br>
+
+<b>Extended Requirements:</b><br>
+Analytics; e.g., how many times a redirection happened?<br>
+Our service should also be accessible through REST APIs by other services.<br>
 
 <b>Design Constraints</b><br>
 ● Number of URL generated per second<br>
@@ -15,6 +23,10 @@
 ● Characters in Short URL 0..9,a..z,A..Z<br>
 
 <b>Step 2: Define Microservices</b><br>
+CreateLongURLMicroservice
+ReadShortURLMicroservice
+UpdateURLMicroservice
+DeleteURLMicroservice
 
 <b>Step 3: Draw Logical Architecture</b><br>
 Block Diagram for each Microservice<br>
@@ -87,6 +99,13 @@ Cache = 20-30% of Storage<br>
 URL Shortner is human generated writes and read heavy system<br>
 
 <b>Step 4c:</b> Draw a generic distributed architecture per tier<br>
+
+<b>Sharding (for both cache and storage) </b><br>
+○ Horizontal sharding - partitioning by key<br>
+○ Can use either a hash function or a range function<br>
+○ [0 - 512 million] -> Shard 0 -> Server A, C, E (replication factor of 3)<br>
+○ [512 million - 1 billion] -> Shard 1 -> Servers B, D, A<br>
+○ 8000 shards<br>
 
 
 
