@@ -22,6 +22,12 @@ Our service should also be accessible through REST APIs by other services.<br>
 ● Size of Short URL. Assume 7 character long string.<br>
 ● Characters in Short URL 0..9,a..z,A..Z<br>
 
+Assuming, 500M new URL shortenings per month
+read/write ratio: 100:1 
+100 * 500M => 50B redirections per month
+New URLs shortenings per second or Queries Per Second (QPS) for  the system = 500 million / (30 days * 24 hours * 3600 seconds) = 200 URLs/s
+Considering 100:1 read/write ratio, URLs redirections per second = 100 * 200 URLs/s = 20K/s
+
 <b>Step 2: Define Microservices</b><br>
 CreateLongURLMicroservice<br>
 ReadShortURLMicroservice<br>
