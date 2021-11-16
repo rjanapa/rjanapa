@@ -114,4 +114,4 @@ Verical<br>
 
 Architechtural layout for every tier
 
-
+<img src="https://github.com/rjanapa/rjanapa/blob/main/Architectural-Layout-AppTier.png" width="250"><br>
