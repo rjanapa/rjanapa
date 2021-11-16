@@ -112,6 +112,9 @@ Verical<br>
 
 <img src="https://github.com/rjanapa/rjanapa/blob/main/Shard-Server.png" width="250"><br>
 
-Architectural layout App Tier
-
+Architectural layout App Tier<br>
 <img src="https://github.com/rjanapa/rjanapa/blob/main/Architectural-Layout-AppTier.png" width="250"><br>
+
+Architectural layout Cache Tier<br>
+<img src="https://github.com/rjanapa/rjanapa/blob/main/Arch-Layout-CacheTier.png" width="250"><br>
+
