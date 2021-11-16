@@ -106,5 +106,7 @@ Horizontal<br>
 Verical<br>
 ○ Partition by value using Hash function or Range function<br>
 
-
+<b>Shards -> Server(s)</b><br>
+Placement of buckets into servers
+● Use consistent hashing
 
