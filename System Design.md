@@ -118,3 +118,5 @@ Architectural layout App Tier<br>
 Architectural layout Cache Tier<br>
 <img src="https://github.com/rjanapa/rjanapa/blob/main/Arch-Layout-CacheTier.png" width="250"><br>
 
+Architectural layout Storage Tier<br>
+<img src="https://github.com/rjanapa/rjanapa/blob/main/Arch-Layout-StorageTier.png" width="250"><br>
