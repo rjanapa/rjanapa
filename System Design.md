@@ -1,4 +1,4 @@
-<b>System Design Generic Tips</b><br>
+<b>System Design</b><br>
 
 Step 1:<br> 
 Functional Req<br>
@@ -96,7 +96,16 @@ Step 4c<br>
 ○ Propose CP or AP (algorithms for CAP theorem)<br>
 
 Two way mapping<br>
-○ Data/Logic -> buckets/partitions/shards Done by the engineer<br>
+○ Data -> Shards Done by the engineer<br>
 ○ Shards -> Server(s) Done by the cluster manager<br>
 ○ Helps in reducing metadata bloat<br>
+
+Data -> Shards<br>
+Horizontal<br>
+○ Partitioning by Key using Hash function or Range function<br>
+  ● Hash(K) % number of shards = shard id<br>
+Verical<br>
+○ Partition by value using Hash function or Range function<br>
+  ● {k1 - k100} -> shard id<br> 
+
 
