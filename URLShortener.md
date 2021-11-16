@@ -23,7 +23,7 @@ Our service should also be accessible through REST APIs by other services.<br>
 ● Characters in Short URL 0..9,a..z,A..Z<br>
 
 <b>Step 2: Define Microservices</b><br>
-CreateLongURLMicroservice<br><br>
+CreateLongURLMicroservice<br>
 ReadShortURLMicroservice<br>
 UpdateURLMicroservice<br>
 DeleteURLMicroservice<br>
