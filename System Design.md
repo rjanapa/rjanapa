@@ -93,7 +93,7 @@ Storage Server = 5 - 10 millisecond<br>
 ○ Propose replication of shards<br>
 ○ Propose CP or AP (algorithms for CAP theorem)<br>
 
-Two way mapping<br>
+<b>Sharding </b> Two way mapping<br>
 ○ Data -> Shards Done by the engineer<br>
 ○ Shards -> Server(s) Done by the cluster manager<br>
 ○ Helps in reducing metadata bloat<br>
