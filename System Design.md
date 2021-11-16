@@ -110,3 +110,5 @@ Verical<br>
 ● Placement of buckets into servers<br>
 ● Use consistent hashing<br>
 
+<img src="https://github.com/rjanapa/rjanapa/blob/main/Shard-Server.png" width="250"><br>
+
