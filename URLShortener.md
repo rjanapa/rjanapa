@@ -27,7 +27,7 @@ Assuming, 500 million new URL shortenings per month<br>
 read/write ratio: 100:1 <br>
 100 * 500M => 50B redirections per month<br>
 New URLs shortenings per second or Queries Per Second (QPS) for  the system = 500 million / (30 days * 24 hours * 3600 seconds) = 200 URL/s
-Considering 100:1 read/write ratio, URLs redirections per second = 100 * 200 URLs/s = 20K/s <br>
+Considering 100:1 read/write ratio, URLs redirections per second = 100 * 200 URLs/s = 20,000 URL/s <br>
 
 <b>Storage Estimate</b><br>
 Assume store every URL shortening request for 5 years. <br>
@@ -40,6 +40,14 @@ Assume each store object = 500 bytes<br>
 1000 GB = 1 TB<br>
 
 <b>Bandwidth Estimate</b><br>
+For write request 200 URL/second = 200 x 500 bytes = 100,000 bytes / second = 100 KB/second
+For read request with 100:1 read:write ratio = 100 KB/second x 100 = 10,000 KB/second = 10 MB/second
+
+<b>Memory Estimate</b><br>
+Follow 80:20 rule, 20% of URL generate 80% of the traffic
+For Read Requests per second = 20,000 URL/second
+For Read Requests per day = 20,000 URL/second X 24 hours x 60 minutes x 60 seconds = 20,000 x 86,400 = 20,000 x 100,000 = 2000,000,000 = 2B requests/day
+Cache 20% of read requests per day = 2B x 500 bytes x 20% = 1000B bytes x 20% = 1000,000,000,000 bytes x 20% =  1 TB x 20% = 1000 GB x 0.2 = 200 GB
 
 <b>Step 2: Define Microservices</b><br>
 CreateLongURLMicroservice<br>
