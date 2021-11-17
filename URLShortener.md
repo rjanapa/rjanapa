@@ -30,14 +30,14 @@ New URLs shortenings per second or Queries Per Second (QPS) for  the system = 50
 Considering 100:1 read/write ratio, URLs redirections per second = 100 * 200 URLs/s = 20K/s <br>
 
 <b>Storage Estimate</b><br>
-Assume store every URL shortening request for 5 years. 
-For 500M new URLs every month, the total number of objects = 500 million x 5 x 12 = 30000 million = 30B
-Assume each store object = 500 bytes
-30B X 500 bytes = 15000B bytes = 15,000 x 1000,000,000 = 15 TB
-1000 bytes = 1 KB
-1000 KB = 1 MB
-1000 MB = 1 GB
-1000 GB = 1 TB
+Assume store every URL shortening request for 5 years. <br>
+For 500M new URLs every month, the total number of objects = 500 million x 5 x 12 = 30000 million = 30B<br>
+Assume each store object = 500 bytes<br>
+30B X 500 bytes = 15000B bytes = 15,000 x 1000,000,000 = 15 TB<br>
+1000 bytes = 1 KB<br>
+1000 KB = 1 MB<br>
+1000 MB = 1 GB<br>
+1000 GB = 1 TB<br>
 
 <b>Bandwidth Estimate</b><br>
 
