@@ -44,10 +44,10 @@ For write request 200 URL/second = 200 x 500 bytes = 100,000 bytes / second = 10
 For read request with 100:1 read:write ratio = 100 KB/second x 100 = 10,000 KB/second = 10 MB/second
 
 <b>Memory Estimate</b><br>
-Follow 80:20 rule, 20% of URL generate 80% of the traffic
-For Read Requests per second = 20,000 URL/second
-For Read Requests per day = 20,000 URL/second X 24 hours x 60 minutes x 60 seconds = 20,000 x 86,400 = 20,000 x 100,000 = 2000,000,000 = 2B requests/day
-Cache 20% of read requests per day = 2B x 500 bytes x 20% = 1000B bytes x 20% = 1000,000,000,000 bytes x 20% =  1 TB x 20% = 1000 GB x 0.2 = 200 GB
+Follow 80:20 rule, 20% of URL generate 80% of the traffic<br>
+For Read Requests per second = 20,000 URL/second<br>
+For Read Requests per day = 20,000 URL/second X 24 hours x 60 minutes x 60 seconds = 20,000 x 86,400 = 20,000 x 100,000 = 2000,000,000 = 2B requests/day<br>
+Cache 20% of read requests per day = 2B x 500 bytes x 20% = 1000B bytes x 20% = 1000,000,000,000 bytes x 20% =  1 TB x 20% = 1000 GB x 0.2 = 200 GB<br>
 
 <b>Step 2: Define Microservices</b><br>
 CreateLongURLMicroservice<br>
