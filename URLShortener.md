@@ -38,6 +38,10 @@ Assume each store object = 500 bytes<br>
 1000 MB = 1 GB<br>
 1000 GB = 1 TB<br>
 
+<b>What kind of database?</b><br> 
+Since storing billions of rows, and no need to use relationships between objects => NoSQL store like DynamoDB, Cassandra or Riak . <br>
+A NoSQL DB is easier to scale.<br>
+
 <b>Bandwidth Estimate</b><br>
 For write request 200 URL/second = 200 x 500 bytes = 100,000 bytes / second = 100 KB/second
 For read request with 100:1 read:write ratio = 100 KB/second x 100 = 10,000 KB/second = 10 MB/second
