@@ -73,8 +73,7 @@ Short URL/Unique Id, Long URL, TTL, Creation Time<br>
 k: Short URL/unique id<br>
 v: Long URL, TTL, Creation Time<br>
 
-<img src="https://github.com/rjanapa/rjanapa/blob/main/URLTable.png" width="250"><br>
-<img src="https://github.com/rjanapa/rjanapa/blob/main/UserTable.png" width="250"><br>
+<img src="https://github.com/rjanapa/rjanapa/blob/main/URLTable.png" width="250"> <img src="https://github.com/rjanapa/rjanapa/blob/main/UserTable.png" width="250"><br>
 
 <b>How data stored in storage and cache tiers:</b> HashMap<br>
 
