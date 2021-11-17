@@ -1,7 +1,6 @@
 <b>URL Shortener</b><br>
 
-<b>Step 1:</b><br> 
-<b>Functional Requirements</b><br>
+<b>Step 1: Functional Requirements</b><br>
 ● Given a long URL generate a short URL<br>
 ● Given a short URL return long URL<br>
 ● Generate custom URL<br>
@@ -73,6 +72,8 @@ For each microservice <br>
 Short URL/Unique Id, Long URL, TTL, Creation Time<br>
 k: Short URL/unique id<br>
 v: Long URL, TTL, Creation Time<br>
+
+
 
 <b>How data stored in storage and cache tiers:</b> HashMap<br>
 
