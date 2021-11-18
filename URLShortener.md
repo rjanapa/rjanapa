@@ -113,10 +113,9 @@ The encoding could be base36 ([a-z ,0-9]) or <br>
 base62 ([A-Z, a-z, 0-9]) and <br>
 add ‘+’ and ‘/’ to use Base64 encoding.<br>
 
-There are problems with the encoding scheme:<br>
-
-If multiple users enter the same URL, they can get the same shortened URL.<br>
-If parts of the URL are URL-encoded e.g., http://github.com/mypage.php?id=systemdesign, and http://github.com/mypage.php%3Fid%3Dsystemdesign are identical except for the URL encoding.<br>
+There are issues with the encoding:<br>
+● If multiple users enter the same URL, they can get the same shortened URL.<br>
+● If parts of the URL are URL-encoded e.g., http://github.com/mypage.php?id=systemdesign, and http://github.com/mypage.php%3Fid%3Dsystemdesign are identical except for the URL encoding.<br>
 Workaround for the issues: Append an increasing sequence number to each input URL to make it unique and then generate its hash. There is no need to store this sequence number in the databases, though. Possible problems with this approach ia an ever-increasing sequence number possibly resulting in overflow. Appending an increasing sequence number also impact the performance of the service. <br>
 
 Another solution could be to append the user id (which should be unique) to the input URL. However, if the user has not signed in, we would have to ask the user to choose a uniqueness key. Even after this, if we have a conflict, we have to keep generating a key until we get a unique one.
