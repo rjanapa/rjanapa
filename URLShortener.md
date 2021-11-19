@@ -203,6 +203,27 @@ To further increase the efficiency, we can replicate our caching servers to dist
 
 How can each cache replica be updated? Whenever there is a cache miss, our servers would be hitting a backend database. Whenever this happens, we can update the cache and pass the new entry to all the cache replicas. Each replica can update its cache by adding the new entry. If a replica already has that entry, it can simply ignore it.
 
+<img src="https://github.com/rjanapa/rjanapa/blob/main/RequestFlowAccessShortURL.png" width="500" length="500"> <br>
 
+<b>Load Balancer (LB)</b>
+Add a Load balancing layer at three places in the system:
+
+Between Clients and Application servers
+Between Application Servers and database servers
+Between Application Servers and Cache servers
+Initially, we could use a simple Round Robin approach that distributes incoming requests equally among backend servers. This LB is simple to implement and does not introduce any overhead. Another benefit of this approach is that if a server is dead, LB will take it out of the rotation and stop sending any traffic to it.
+
+A problem with Round Robin LB is that we do not consider the server load. As a result, if a server is overloaded or slow, the LB will not stop sending new requests to that server. To handle this, a more intelligent LB solution can be placed that periodically queries the backend server about its load and adjusts traffic based on that.
+
+<b>Purging or DB cleanup</b>
+Should entries stick around forever, or should they be purged? If a user-specified expiration time is reached, what should happen to the link?
+
+If we chose to continuously search for expired links to remove them, it would put a lot of pressure on our database. Instead, we can slowly remove expired links and do a lazy cleanup. Our service will ensure that only expired links will be deleted, although some expired links can live longer but will never be returned to users.
+
+Whenever a user tries to access an expired link, we can delete the link and return an error to the user.
+A separate Cleanup service can run periodically to remove expired links from our storage and cache. This service should be very lightweight and scheduled to run only when the user traffic is expected to be low.
+We can have a default expiration time for each link (e.g., two years).
+After removing an expired link, we can put the key back in the key-DB to be reused.
+Should we remove links that haven’t been visited in some length of time, say six months? This could be tricky. Since storage is getting cheap, we can decide to keep links forever.
 
 
