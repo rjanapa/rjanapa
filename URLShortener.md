@@ -138,7 +138,7 @@ KGS is a single point of failure. Have a standby replica of KGS. Whenever the pr
 
 App server can cache some keys from key-DB to speed things up. Although, if the App Server dies before consuming all the keys, one end up losing those keys. This is acceptable since there are 68B unique six-letter keys.<br>
   
-
+<img src="https://github.com/rjanapa/rjanapa/blob/main/HLDSystemDesignURLShortening.png" width="500" length="500"> <br>
 
 <b>read(Short URL)<b><br>
 ● App Tier gets request<br>
