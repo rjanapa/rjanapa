@@ -226,4 +226,16 @@ We can have a default expiration time for each link (e.g., two years).
 After removing an expired link, we can put the key back in the key-DB to be reused.
 Should we remove links that haven’t been visited in some length of time, say six months? This could be tricky. Since storage is getting cheap, we can decide to keep links forever.
 
+<img src="https://github.com/rjanapa/rjanapa/blob/main/DetailedComponentDesignURLShortener.png" width="500" length="500"> <br>
+
+Telemetry
+How many times a short URL has been used, what were user locations, etc.? Where to store these statistics? If it is part of a DB row that gets updated on each view 
+
+Some statistics worth tracking: country of the visitor, date and time of access, web page that referred the click, browser, or platform from where the page was accessed.
+
+Security and Permissions#
+Can users create private URLs or allow a particular set of users to access a URL?
+
+We can store the permission level (public/private) with each URL in the database. We can also create a separate table to store UserIDs that have permission to see a specific URL. If a user does not have permission and tries to access a URL, we can send an error (HTTP 401) back. Given that we are storing our data in a NoSQL wide-column database like Cassandra, the key for the table storing permissions would be the ‘Hash’ (or the KGS generated ‘key’). The columns will store the UserIDs of those users that have permission to see the URL.
+
 
