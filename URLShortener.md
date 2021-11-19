@@ -76,8 +76,7 @@ For each microservice <br>
 Short URL/Unique Id, Long URL, TTL, Creation Time<br>
 k: Short URL/unique id<br>
 v: Long URL, TTL, Creation Time<br>
-
-<img src="https://github.com/rjanapa/rjanapa/blob/main/URLTable.png" width="250"> <img src="https://github.com/rjanapa/rjanapa/blob/main/UserTable.png" width="250"><br>
+<img src="https://github.com/rjanapa/rjanapa/blob/main/URLTable.png" width="250" length="250"> <img src="https://github.com/rjanapa/rjanapa/blob/main/UserTable.png" width="250" length="250">
 
 <b>How data stored in storage and cache tiers:</b> HashMap<br>
 
@@ -96,12 +95,7 @@ create(Long URL)<br>
 ● Store unique id:long URL in Cache Tier<br>
 ● Convert the unique id to a unique 7 character long string in the App Tier<br>
 
-read(Short URL)<br>
-● App Tier gets request<br>
-● Converts Short URL back to unique id<br>
-● Sent to Cache Tier<br>
-● Cache Tier checks hashmap and returns if there is cache hit<br>
-● Whenever there is a cache miss, hit the backend database. Whenever this happens, update the cache and pass the new entry to all the cache replicas. Each replica can update its cache by adding the new entry.
+<b>a) Encode URL Microservice</b><br>
 
 <b>Algorithm</b><br>
 ● Convert unique id to 7 character long string<br>
@@ -115,12 +109,24 @@ add ‘+’ and ‘/’ to use Base64 encoding.<br>
 
 There are issues with the encoding:<br>
 ● If multiple users enter the same URL, they can get the same shortened URL.<br>
-● If parts of the URL are URL-encoded e.g., http://github.com/mypage.php?id=systemdesign, and http://github.com/mypage.php%3Fid%3Dsystemdesign are identical except for the URL encoding.<br><br>
+● If parts of the URL are URL-encoded e.g.,<br> http://github.com/mypage.php?id=systemdesign, and <br> http://github.com/mypage.php%3Fid%3Dsystemdesign <br> are identical except for the URL encoding.<br><br>
 Workaround for the issues: Append an increasing sequence number to each input URL to make it unique and then generate its hash. There is no need to store this sequence number in the databases, though. Possible problems with this approach ia an ever-increasing sequence number possibly resulting in overflow. Appending an increasing sequence number also impact the performance of the service. <br>
 
 Another solution could be to append the user id (which should be unique) to the input URL. However, if the user has not signed in, we would have to ask the user to choose a uniqueness key. Even after this, if we have a conflict, we have to keep generating a key until we get a unique one.<br>
 
-<img src="https://github.com/rjanapa/rjanapa/blob/main/URLShorteningRequestFlow.png" width="250"> <img src="https://github.com/rjanapa/rjanapa/blob/main/UserTable.png" width="250"><br>
+Request flow of shortening of a URL<br>
+<img src="https://github.com/rjanapa/rjanapa/blob/main/URLShorteningRequestFlow.png" width="500" length="500"> <br>
+
+<b>a) Offline Key Generation Microservice</b><br>
+
+
+
+read(Short URL)<br>
+● App Tier gets request<br>
+● Converts Short URL back to unique id<br>
+● Sent to Cache Tier<br>
+● Cache Tier checks hashmap and returns if there is cache hit<br>
+● Whenever there is a cache miss, hit the backend database. Whenever this happens, update the cache and pass the new entry to all the cache replicas. Each replica can update its cache by adding the new entry.
 
 <b>Step 4b</b>
 For each microservice, Check whether each tier needs to scale<br>
