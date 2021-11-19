@@ -53,8 +53,8 @@ For Read Requests per day = 20,000 URL/second X 24 hours x 60 minutes x 60 secon
 Cache 20% of read requests per day = 2B x 500 bytes x 20% = 1000B bytes x 20% = 1000,000,000,000 bytes x 20% =  1 TB x 20% = 1000 GB x 0.2 = 200 GB<br>
 
 <b>Step 2: Define Microservices</b><br>
-CreateLongURLMicroservice<br>
-ReadShortURLMicroservice<br>
+CreateURLMicroservice<br>
+ReadURLMicroservice<br>
 UpdateURLMicroservice<br>
 DeleteURLMicroservice<br>
 
@@ -99,7 +99,8 @@ create(Long URL)<br>
 
 <b>Algorithm</b><br>
 ● Convert unique id to 7 character long string<br>
-● 62 characters(0..9,a..z,A..Z), 7 positions = 62^7 ~ 64^7 = (2^6)^7 = 2^42 = (2^10)(2^10)(2^10)(2^10)(2^2) = 4 trillion<br>
+● 64 characters(0..9,a..z,A..Z)(+,-), 6 positions = 64^6 = (2^6)^6 = 2^36 = (2^10)(2^10)(2^10)(2^6) =  68,719,476,736 =~ 68 billion keys
+● 64 characters(0..9,a..z,A..Z)(+,-), 7 positions = 64^7 = (2^6)^7 = 2^42 = (2^10)(2^10)(2^10)(2^10)(2^2) = 4 trillion keys<br>
 
 compute a unique hash (e.g., MD5 or SHA256, etc.) of the given URL. <br>
 encode the hash for display. <br>
@@ -119,7 +120,23 @@ Request flow of shortening of a URL<br>
 
 <b>a) Offline Key Generation Microservice</b><br>
 
+A standalone Key Generation Service (KGS) generates random seven-letter strings beforehand and stores them in a database i.e. key-DB. To shorten a URL, take one of the already-generated keys and use it. This approach make things quite simple and fast. No need to encode the URL, and no duplications or collisions. KGS makes sure all the keys inserted into key-DB are unique<br>
 
+Concurrency can cause problems. As soon as a key is used, it should be marked in the database to ensure that it is not used again. If there are multiple servers reading keys concurrently, we might get a scenario where two or more servers try to read the same key from the database. <br>
+
+Servers can use KGS to read/mark keys in the database. KGS can use two tables to store keys: one for keys that are not used yet, and one for all the used keys. As soon as KGS gives keys to one of the servers, it can move them to the used keys table. KGS can always keep some keys in memory to quickly provide them whenever a server needs them.<br>
+
+For simplicity, as soon as KGS loads some keys in memory, it can move them to the used keys table. This ensures each server gets unique keys. If KGS dies before assigning all the loaded keys to some server, we will be wasting those keys–which could be acceptable, given the huge number of keys we have.<br>
+
+KGS also has to make sure not to give the same key to multiple servers. For that, it must synchronize (or get a lock on) the data structure holding the keys before removing keys from it and giving them to a server.<br>
+
+key-DB size: With base64 encoding, we can generate 68.7B unique six letters keys. If we need one byte to store one alpha-numeric character, we can store all these keys in:<br>
+
+1 byte x 6 (characters per key) * 68.7B = 68.7 * 1000,000,000 (unique keys) = 412 GB.
+
+KGS is a single point of failure. Have a standby replica of KGS. Whenever the primary server dies, the standby server can take over to generate and provide keys.<br>
+
+App server can cache some keys from key-DB to speed things up. Although, if the application server dies before consuming all the keys, one end up losing those keys. This is acceptable since there are 68B unique six-letter keys.<br>
 
 read(Short URL)<br>
 ● App Tier gets request<br>
