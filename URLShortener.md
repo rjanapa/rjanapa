@@ -87,7 +87,7 @@ read(Short URL) -> read(k)<br>
 update(k,v)<br>
 delete(k)<br>
 
-create(Long URL)<br>
+<b>create(Long URL)<b><br>
 ● Comes to App Tier<br>
 ● Send directly to Storage Tier<br>
 ● Generate unique id for long URL<br>
@@ -136,9 +136,11 @@ key-DB size: With base64 encoding, we can generate 68.7B unique six letters keys
 
 KGS is a single point of failure. Have a standby replica of KGS. Whenever the primary server dies, the standby server can take over to generate and provide keys.<br>
 
-App server can cache some keys from key-DB to speed things up. Although, if the application server dies before consuming all the keys, one end up losing those keys. This is acceptable since there are 68B unique six-letter keys.<br>
+App server can cache some keys from key-DB to speed things up. Although, if the App Server dies before consuming all the keys, one end up losing those keys. This is acceptable since there are 68B unique six-letter keys.<br>
+  
 
-read(Short URL)<br>
+
+<b>read(Short URL)<b><br>
 ● App Tier gets request<br>
 ● Converts Short URL back to unique id<br>
 ● Sent to Cache Tier<br>
