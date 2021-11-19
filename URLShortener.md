@@ -19,38 +19,7 @@ Our service should also be accessible through REST APIs by other services.<br>
 ● Number of URL generated per second<br>
 ● Number of URL retrieved per second<br>
 ● Size of Short URL. Assume 6 or 7 character long string.<br>
-● Characters in Short URL 0..9,a..z,A..Z<br>
-
-<b>Traffic Estimate</b><br>
-Assuming, 500 million new URL shortenings per month<br>
-read/write ratio: 100:1 <br>
-100 * 500M => 50B redirections per month<br>
-New URLs shortenings per second or Queries Per Second (QPS) for  the system = 500 million / (30 days * 24 hours * 3600 seconds) = 200 URL/s
-Considering 100:1 read/write ratio, URLs redirections per second = 100 * 200 URLs/s = 20,000 URL/s <br>
-
-<b>Storage Estimate</b><br>
-Assume store every URL shortening request for 5 years. <br>
-For 500M new URLs every month, the total number of objects = 500 million x 5 x 12 = 30000 million = 30B<br>
-Assume each store object = 500 bytes<br>
-30B X 500 bytes = 15000B bytes = 15,000 x 1000,000,000 = 15 TB<br>
-1000 bytes = 1 KB<br>
-1000 KB = 1 MB<br>
-1000 MB = 1 GB<br>
-1000 GB = 1 TB<br>
-
-<b>What kind of database?</b><br> 
-Since storing billions of rows, and no need to use relationships between objects => NoSQL store like DynamoDB, Cassandra or Riak . <br>
-A NoSQL DB is easier to scale.<br>
-
-<b>Bandwidth Estimate</b><br>
-For write request 200 URL/second = 200 x 500 bytes = 100,000 bytes / second = 100 KB/second
-For read request with 100:1 read:write ratio = 100 KB/second x 100 = 10,000 KB/second = 10 MB/second
-
-<b>Memory Estimate</b><br>
-Follow 80:20 rule, 20% of URL generate 80% of the traffic<br>
-For Read Requests per second = 20,000 URL/second<br>
-For Read Requests per day = 20,000 URL/second X 24 hours x 60 minutes x 60 seconds = 20,000 x 86,400 = 20,000 x 100,000 = 2000,000,000 = 2B requests/day<br>
-Cache 20% of read requests per day = 2B x 500 bytes x 20% = 1000B bytes x 20% = 1000,000,000,000 bytes x 20% =  1 TB x 20% = 1000 GB x 0.2 = 200 GB<br>
+● Characters in Short URL (0..9,a..z,A..Z,+,-)<br>
 
 <b>Step 2: Define Microservices</b><br>
 CreateURLMicroservice<br>
@@ -88,8 +57,8 @@ update(k,v)<br>
 delete(k)<br>
 
 create(Long URL)<br>
-● Comes to App Tier<br>
-● Send directly to Storage Tier<br>
+● Request comes to App Tier<br>
+● Send request directly to Storage Tier<br>
 ● Generate unique id for long URL<br>
 ● Store unique id:long URL in Storage Tier<br>
 ● Store unique id:long URL in Cache Tier<br>
@@ -98,18 +67,16 @@ create(Long URL)<br>
 <b>a) Encode URL Microservice</b><br>
 
 <b>Algorithm</b><br>
-● Convert unique id to 7 character long string<br>
-● 64 characters(0..9,a..z,A..Z)(+,-), 6 positions = 64^6 = (2^6)^6 = 2^36 = (2^10)(2^10)(2^10)(2^6) =  68,719,476,736 =~ 68 billion keys
-● 64 characters(0..9,a..z,A..Z)(+,-), 7 positions = 64^7 = (2^6)^7 = 2^42 = (2^10)(2^10)(2^10)(2^10)(2^2) = 4 trillion keys<br>
 
-compute a unique hash (e.g., MD5 or SHA256, etc.) of the given URL. <br>
-encode the hash for display. <br>
-The encoding could be base36 ([a-z ,0-9]) or <br>
-base62 ([A-Z, a-z, 0-9]) and <br>
-add ‘+’ and ‘/’ to use Base64 encoding.<br>
+● Compute a unique hash (e.g., MD5 or SHA256, etc.) of the given URL. <br>
+● Encode the hash for display. Convert unique id to 6 or 7 character long string<br>
+
+64 characters(0..9,a..z,A..Z)(+,-), 6 positions = 64^6 = (2^6)^6 = 2^36 = (2^10)(2^10)(2^10)(2^6) =  68,719,476,736 =~ 68 billion keys<br>
+64 characters(0..9,a..z,A..Z)(+,-), 7 positions = 64^7 = (2^6)^7 = 2^42 = (2^10)(2^10)(2^10)(2^10)(2^2) = 4 trillion keys<br>
+The encoding could be base36 ([a-z ,0-9]) or base62 ([A-Z, a-z, 0-9]) and add ‘+’ and ‘/’ to use Base64 encoding.<br>
 
 There are issues with the encoding:<br>
-● If multiple users enter the same URL, they can get the same shortened URL.<br>
+● If multiple users enter the same URL, they can get the same short URL.<br>
 ● If parts of the URL are URL-encoded e.g.,<br> http://github.com/mypage.php?id=systemdesign, and <br> http://github.com/mypage.php%3Fid%3Dsystemdesign <br> are identical except for the URL encoding.<br><br>
 Workaround for the issues: Append an increasing sequence number to each input URL to make it unique and then generate its hash. There is no need to store this sequence number in the databases, though. Possible problems with this approach ia an ever-increasing sequence number possibly resulting in overflow. Appending an increasing sequence number also impact the performance of the service. <br>
 
@@ -154,6 +121,37 @@ For each microservice, Check whether each tier needs to scale<br>
 ■ Need to scale for API parallelization<br>
 ■ Need to remove hotspots<br>
 ■ Availability and Geo-distribution<br>
+
+<b>Traffic Estimate</b><br>
+Assuming, 500 million new URL shortenings per month<br>
+read/write ratio: 100:1 <br>
+100 * 500M => 50B redirections per month<br>
+New URLs shortenings per second or Queries Per Second (QPS) for  the system = 500 million / (30 days * 24 hours * 3600 seconds) = 200 URL/s
+Considering 100:1 read/write ratio, URLs redirections per second = 100 * 200 URLs/s = 20,000 URL/s <br>
+
+<b>Storage Estimate</b><br>
+Assume store every URL shortening request for 5 years. <br>
+For 500M new URLs every month, the total number of objects = 500 million x 5 x 12 = 30000 million = 30B<br>
+Assume each store object = 500 bytes<br>
+30B X 500 bytes = 15000B bytes = 15,000 x 1000,000,000 = 15 TB<br>
+1000 bytes = 1 KB<br>
+1000 KB = 1 MB<br>
+1000 MB = 1 GB<br>
+1000 GB = 1 TB<br>
+
+<b>What kind of database?</b><br> 
+Since storing billions of rows, and no need to use relationships between objects => NoSQL store like DynamoDB, Cassandra or Riak . <br>
+A NoSQL DB is easier to scale.<br>
+
+<b>Bandwidth Estimate</b><br>
+For write request 200 URL/second = 200 x 500 bytes = 100,000 bytes / second = 100 KB/second
+For read request with 100:1 read:write ratio = 100 KB/second x 100 = 10,000 KB/second = 10 MB/second
+
+<b>Memory Estimate</b><br>
+Follow 80:20 rule, 20% of URL generate 80% of the traffic<br>
+For Read Requests per second = 20,000 URL/second<br>
+For Read Requests per day = 20,000 URL/second X 24 hours x 60 minutes x 60 seconds = 20,000 x 86,400 = 20,000 x 100,000 = 2000,000,000 = 2B requests/day<br>
+Cache 20% of read requests per day = 2B x 500 bytes x 20% = 1000B bytes x 20% = 1000,000,000,000 bytes x 20% =  1 TB x 20% = 1000 GB x 0.2 = 200 GB<br>
 
 <b>Storage Calculation</b><br>
 Size of (k,v) pairs = A<br>
