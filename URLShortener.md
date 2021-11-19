@@ -87,7 +87,7 @@ read(Short URL) -> read(k)<br>
 update(k,v)<br>
 delete(k)<br>
 
-<b>create(Long URL)<b><br>
+create(Long URL)<br>
 ● Comes to App Tier<br>
 ● Send directly to Storage Tier<br>
 ● Generate unique id for long URL<br>
@@ -140,7 +140,7 @@ App server can cache some keys from key-DB to speed things up. Although, if the 
   
 <img src="https://github.com/rjanapa/rjanapa/blob/main/HLDSystemDesignURLShortening.png" width="500" length="500"> <br>
 
-<b>read(Short URL)<b><br>
+read(Short URL)<br>
 ● App Tier gets request<br>
 ● Converts Short URL back to unique id<br>
 ● Sent to Cache Tier<br>
@@ -179,6 +179,18 @@ URL Shortner is human generated writes and read heavy system<br>
 ○ [512 million - 1 billion] -> Shard 1 -> Servers B, D, A<br>
 ○ 8000 shards<br>
 
+<b>Data Partitioning and Replication#</b><br>
+To scale out DB, we need to partition it so that it can store information about billions of URLs. Therefore, we need to develop a partitioning scheme that would divide and store our data into different DB servers.
+
+a. Range Based Partitioning: We can store URLs in separate partitions based on the hash key’s first letter. Hence we save all the URLs starting with the letter ‘A’ (and ‘a’) in one partition, save those that start with the letter ‘B’ in another partition, and so on. This approach is called range-based partitioning. We can even combine certain less frequently occurring letters into one database partition. Thus, we should develop a static partitioning scheme to always store/find a URL in a predictable manner.
+
+The main problem with this approach is that it can lead to unbalanced DB servers. For example, we decide to put all URLs starting with the letter ‘E’ into a DB partition, but later we realize that we have too many URLs that start with the letter ‘E.’
+
+b. Hash-Based Partitioning: In this scheme, we take a hash of the object we are storing. We then calculate which partition to use based upon the hash. In our case, we can take the hash of the ‘key’ or the short link to determine the partition in which we store the data object.
+
+Our hashing function will randomly distribute URLs into different partitions (e.g., our hashing function can always map any ‘key’ to a number between [1…256]). This number would represent the partition in which we store our object.
+
+This approach can still lead to overloaded partitions, which can be solved using Consistent Hashing.
 
 
 
