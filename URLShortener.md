@@ -72,7 +72,7 @@ create(Long URL)<br>
 ● Encode the hash for display. Convert unique id to 6 or 7 character long string<br>
 
 64 characters(0..9,a..z,A..Z)(+,-), 6 positions = 64^6 = (2^6)^6 = 2^36 = (2^10)(2^10)(2^10)(2^6) =  68,719,476,736 =~ 68 billion keys<br>
-64 characters(0..9,a..z,A..Z)(+,-), 7 positions = 64^7 = (2^6)^7 = 2^42 = (2^10)(2^10)(2^10)(2^10)(2^2) = 4 trillion keys<br>
+64 characters(0..9,a..z,A..Z)(+,-), 7 positions = 64*64*64*64*64*64*64 = 64^7 = (2^6)^7 = 2^42 = (2^10)(2^10)(2^10)(2^10)(2^2) = 1000 * 1000 * 1000 * 1000 * 2^2 = 4 trillion keys<br>
 The encoding could be base36 ([a-z ,0-9]) or base62 ([A-Z, a-z, 0-9]) and add ‘+’ and ‘/’ to use Base64 encoding.<br>
 
 There are issues with the encoding:<br>
