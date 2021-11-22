@@ -81,10 +81,14 @@ A standalone Key Generation Service (KGS) that generates random six letters stri
 
 <img src="https://github.com/rjanapa/rjanapa/blob/main/CreatePasteMicroservice.png" width="500" length="500">
 
+<b>ReadPasteMs </b> <br>
+
 Handle a paste read request
 Upon receiving a read paste request, the application service layer contacts the datastore. The datastore searches for the key, and if it is found, it returns the paste’s contents. Otherwise, an error code is returned.
 
-<b>Step 4: Deep dive into each Microservice</b>
+<img src="https://github.com/rjanapa/rjanapa/blob/main/ReadPasteMs.png" width="500" length="500">
+
+<b>Step 4: Deep dive into each Microservice</b> 
 
 <b>Step 4a: For each Microservice – Data Model, How data is stored in Storage and Cache Tier, API, Workflow/Algorithm for API, Flow across Tiers</b>
 
