@@ -77,7 +77,13 @@ Upon receiving a write-request, application server will generate a six-letter ra
 
 A standalone Key Generation Service (KGS) that generates random six letters strings beforehand and stores them in a database (let’s call it key-DB). Whenever we want to store a new paste, we will just take one of the already generated keys and use it. This approach will make things quite simple and fast since we will not be worrying about duplications or collisions. KGS will make sure all the keys inserted in key-DB are unique. KGS can use two tables to store keys, one for keys that are not used yet and one for all the used keys. As soon as KGS gives some keys to an application server, it can move these to the used keys table. KGS can always keep some keys in memory so that whenever a server needs them, it can quickly provide them. As soon as KGS loads some keys in memory, it can move them to the used keys table; this way we can make sure each server gets unique keys. If KGS dies before using all the keys loaded in memory, we will be wasting those keys. We can ignore these keys given that we have a huge number of them.
 
-API<br>
+<b>Database Model</b>
+
+<img src="https://github.com/rjanapa/rjanapa/blob/main/Paste.png" width="500" length="500">
+
+<img src="https://github.com/rjanapa/rjanapa/blob/main/UserTable.png" width="500" length="500">
+
+<b>API</b><br>
 createPaste(api_dev_key, paste_data, custom_url=None user_name=None, paste_name=None, expire_date=None)
 
 Parameters:
