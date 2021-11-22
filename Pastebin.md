@@ -81,7 +81,7 @@ A standalone Key Generation Service (KGS) that generates random six letters stri
 
 <img src="https://github.com/rjanapa/rjanapa/blob/main/Paste.png" width="500" length="500">
 
-<img src="https://github.com/rjanapa/rjanapa/blob/main/User.png" width="500" length="500">
+<img src="https://github.com/rjanapa/rjanapa/blob/main/User.PNG" width="500" length="500">
 
 <b>API</b><br>
 createPaste(api_dev_key, paste_data, custom_url=None user_name=None, paste_name=None, expire_date=None)
