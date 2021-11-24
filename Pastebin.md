@@ -1,20 +1,22 @@
+<b>Pastebin</b><br>
+
 Pastebin enable users to store plain text over the web and generates unique URL to access the uploaded content over the internet.
 
-<b>Step 1: Functional Requirements, Non-Functional Requirements, Extended Requirements, Design Considerations</b>
+<b>Step 1: Functional Requirements (FR), Non-Functional Requirements (NFR), Extended Requirements, Design Considerations</b>
 
 <b>Functional Requirements</b>
-Users should be able to upload or paste text and get a unique URL to access it
-Data and links expire after a certain timeperiod and users should be able to specify expiration time
-Users should optionally be able to pick a custom alias for their paste
+Users should be able to upload or paste text and get a unique URL to access it.<br>
+Data and links expire after a certain timeperiod and users should be able to specify expiration time.<br>
+Users should optionally be able to pick a custom alias for their paste.<br>
 
 <b>Non-Functional Requirements</b>
-The system should be highly reliable. The uploaded content should not be lost.
-The system should be highly availalable. 
+The system should be highly reliable. The uploaded content should not be lost. Ensure FR Users should be able to upload or paste text and get a unique URL to access it.<br>
+The system should be highly availalable. Ensure FR access the uploaded content over the internet. <br>
 The users should be able to access the content in real-time with minimum latency
 paste links should not be predictable
 
-<b>Extended Requirements</b>
-Analytics - how many times a paste is accessed
+<b>Extended Requirements</b><br>
+Analytics - how many times a paste is accessed <br>
 The URL should be accessible via REST API
 
 <b>Design Considerations</b>
