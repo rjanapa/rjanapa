@@ -8,7 +8,20 @@ Design a simpler version of Instagram for this design problem, where a user can 
 
 The ‘News Feed’ for each user will consist of top photos of all the people the user follows<br>
 
-Step 1: Functional Requirements, Non-Functional Requirements, Extended Requirements, Design Constraints
+<b>Step 1: Functional Requirements, Non-Functional Requirements, Extended Requirements, Design Constraints</b><br>
+
+<b>Functional Requirements</b><br>
+
+Users should be able to upload/download/view photos.<br>
+Users can perform searches based on photo/video titles.<br>
+Users can follow other users.<br>
+The system should generate and display a user’s News Feed consisting of top photos from all the people the user follows.<br>
+
+<b>Non-functional Requirements</b><br>
+
+Our service needs to be highly available.
+The acceptable latency of the system is 200ms for News Feed generation.
+The system should be highly reliable; any uploaded photo or video should never be lost.
 
 Step 2: Define Microservice
 
