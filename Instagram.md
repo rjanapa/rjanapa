@@ -19,11 +19,24 @@ The system should generate and display a user’s News Feed consisting of top ph
 
 <b>Non-functional Requirements</b><br>
 
-Our service needs to be highly available.
-The acceptable latency of the system is 200ms for News Feed generation.
-The system should be highly reliable; any uploaded photo or video should never be lost.
+Our service needs to be highly available.<br>
+The acceptable latency of the system is 200ms for News Feed generation.<br>
+The system should be highly reliable; any uploaded photo or video should never be lost.<br>
 
-Step 2: Define Microservice
+<b>Design Considerations</b><br>
+
+The system would be read-heavy, so system should retrieve photos quickly.
+Users can upload as many photos as they like; therefore, efficient management of storage is a crucial factor.<br>
+Low latency is expected while viewing photos.<br>
+Data should be 100% reliable. If a user uploads a photo, the system should guarantee that it will never be lost.<br>
+
+<b>Step 2: Define Microservice</b><br>
+
+Upload Image Microservice
+
+View Image Microservice -> Download Image Microservice
+
+Search Image Microservice -> Download Image Microservice
 
 Step 3: Draw Logical Architecture: Block diagram for each Microservice, Data/Logic flow between them.
 
