@@ -38,12 +38,26 @@ View Image Microservice -> Download Image Microservice
 
 Search Image Microservice -> Download Image Microservice
 
-Step 3: Draw Logical Architecture: Block diagram for each Microservice, Data/Logic flow between them.
+<b>Step 3: Draw Logical Architecture: Block diagram for each Microservice, Data/Logic flow between them.</b><br>
 
-Step 4: Deep dive into each Microservice
+<b>High Level System Design Diagram</b><br>
+
+<img src="https://github.com/rjanapa/rjanapa/blob/main/Instagram-high-level-systemdesign.png" width="500" length="500">
+
+Photo uploads can be slow as they have to go to the disk, whereas reads will be faster, especially if they are being served from cache.
+
+Uploading users can consume all the available connections, as uploading is a slow process. This means that ‘reads’ cannot be served if the system gets busy with all the ‘write’ requests. Web servers have a connection limit before designing our system. Assume that a web server have a maximum of 500 connections at any time, then it can’t have more than 500 concurrent uploads or reads. To handle this bottleneck, split reads and writes into separate services and have dedicated servers for reads and writes to ensure uploads don’t hog the system.
+
+Separating photos’ read and write requests allow to scale and optimize each of these operations independently.
+
+<b>Step 4: Deep dive into each Microservice</b><br>
 
 Step 4a: For each Microservice – Data Model, How data is stored in Storage and Cache Tier, API, Workflow/Algorithm for API, Flow across Tiers
 
 Step 4b: For each Microservice – check whether each tier needs to scale for storage, cache, throughput (CPU/IO), API parallelization, remove hotspots, Availability and Geo-Distribution
 
 Step 4c: Draw a generic distributed architecture per tier
+
+<b>Upload Image Microservice</b><br>
+
+
