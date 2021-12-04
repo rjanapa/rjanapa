@@ -30,3 +30,7 @@ Table of Contents
 [System Design](https://github.com/rjanapa/rjanapa/blob/main/SystemDesign.md)
 
 [URL Shortener](https://github.com/rjanapa/rjanapa/blob/main/URLShortener.md)
+
+[Pastebin](https://github.com/rjanapa/rjanapa/blob/main/URLShortener.md))
+
+[Instagram](https://github.com/rjanapa/rjanapa/blob/main/Instagram.md)
