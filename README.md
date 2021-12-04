@@ -24,3 +24,5 @@ Step 4a: For each Microservice – Data Model, How data is stored in Storage and
 Step 4b: For each Microservice – check whether each tier needs to scale for storage, cache, throughput (CPU/IO), API parallelization, remove hotspots, Availability and Geo-Distribution
 
 Step 4c: Draw a generic distributed architecture per tier
+
+Click [here](quora.com/profile/Ashish-Kulkarni-100) to go to my Quora profile. 
