@@ -60,4 +60,13 @@ Step 4c: Draw a generic distributed architecture per tier
 
 <b>Upload Image Microservice</b><br>
 
+<b>Data Model, How data is stored in Storage and Cache Tier</b><br>
+Store data about users, their uploaded photos, and the people they follow. 
+The Photo table will store all data related to a photo; 
+Design index on (PhotoID, CreationDate) since need to fetch recent photos first
+
+
+
+ 
+
 
