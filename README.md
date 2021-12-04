@@ -25,4 +25,6 @@ Step 4b: For each Microservice – check whether each tier needs to scale for st
 
 Step 4c: Draw a generic distributed architecture per tier
 
-Click [here](quora.com/profile/Ashish-Kulkarni-100) to go to my Quora profile. 
+System Design Problems
+
+[URL Shortener](https://github.com/rjanapa/rjanapa/blob/main/URLShortener.md). 
