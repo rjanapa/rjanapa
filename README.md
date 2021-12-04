@@ -31,6 +31,6 @@ Step 4c: Draw a generic distributed architecture per tier
 
 [URL Shortener](https://github.com/rjanapa/rjanapa/blob/main/URLShortener.md)
 
-[Pastebin](https://github.com/rjanapa/rjanapa/blob/main/URLShortener.md))
+[Pastebin](https://github.com/rjanapa/rjanapa/blob/main/URLShortener.md)
 
 [Instagram](https://github.com/rjanapa/rjanapa/blob/main/Instagram.md)
