@@ -79,4 +79,26 @@ Also need a table ‘UserFollow’ to store the list of people a user follows. <
 
 For both the tables, Use a wide-column datastore like Cassandra. For the ‘UserPhoto’ table, the ‘key’ would be ‘UserID’, and the ‘value’ would be the list of ‘PhotoIDs’ the user owns, stored in different columns. Have a similar scheme for the ‘UserFollow’ table.
 
+<b>Data Size Estimation</b><br>
 
+Photo: Each row in Photo’s table = 284 bytes: <br>
+
+PhotoID (4 bytes) + UserID (4 bytes) + PhotoPath (256 bytes) + PhotoLatitude (4 bytes) + PhotoLongitude(4 bytes) + UserLatitude (4 bytes) + UserLongitude (4 bytes) + CreationDate (4 bytes) = 284 bytes<br>
+If 2M new photos get uploaded every day, we will need 0.5GB of storage for one day:<br>
+2M * 284 bytes ~= 2,000,000 x 284 bytes = 500 MB = 0.5GB per day<br>
+For 10 years we will need 1.88TB of storage i.e 0.5 GB X 400 (~365) x 10  = 2000 GB =~ 2 TB<br>
+
+User: Assume each “int” and “dateTime” is four bytes, each row in the User’s table = 68 bytes <br>
+
+UserID (4 bytes) + Name (20 bytes) + Email (32 bytes) + DateOfBirth (4 bytes) + CreationDate (4 bytes) + LastLogin (4 bytes) = 68 bytes<br>
+Suppose 500 million users, we will need 50GB of total storage.<br>
+
+500 million * 68 ~= 500 x 1,000,000 x 100 = 50,000,000,000 =~ 50GB<br>
+
+UserFollow: Each row in the UserFollow table will consist of 8 bytes. If we have 500 million users and on average each user follows 500 users. We would need 2.5TB of storage for the UserFollow table:<br>
+
+500 million users * 500 followers * 8 bytes ~= 2500,000,000,000 =~ 2500GB = 2.5TB<br>
+
+Total space required for all tables for 10 years will be 5TB:<br>
+
+50GB + 2TB + 2.5TB ~= 5TB<br>
