@@ -61,12 +61,26 @@ Step 4c: Draw a generic distributed architecture per tier
 <b>Upload Image Microservice</b><br>
 
 <b>Data Model, How data is stored in Storage and Cache Tier</b><br>
-Store data about users, their uploaded photos, and the people they follow. 
-The Photo table will store all data related to a photo; 
-Design index on (PhotoID, CreationDate) since need to fetch recent photos first
+Store data about users, their uploaded photos, and the people they follow. <br>
+The Photo table store all data related to a photo. <br>
+Index on (PhotoID, CreationDate) since need to fetch recent photos first.<br>
 
+<img src="https://github.com/rjanapa/rjanapa/blob/main/Instagram-Photo-Table.png" width="500" length="500">
 
+<img src="https://github.com/rjanapa/rjanapa/blob/main/Instagram-User-Table.png" width="500" length="500"> 
 
- 
+<img src="https://github.com/rjanapa/rjanapa/blob/main/Instagram-PhotoFollow-Table.png" width="500" length="500">
+
+A straightforward approach for storing the above schema would be to use an RDBMS like MySQL since we require joins. But relational databases come with their challenges, especially when we need to scale them. <br>
+
+Store photos in a distributed file storage like HDFS or S3.<br>
+
+Store the above schema in a distributed key-value store to enjoy the benefits offered by NoSQL. All the metadata related to photos go to a table where the ‘key’ would be the ‘PhotoID’ and the ‘value’ would be an object containing PhotoLocation, UserLocation, CreationTimestamp, etc.
+
+If we go with a NoSQL database, need an additional table  ‘UserPhoto’ to store the relationships between users and photos to know who owns which photo.  <br>
+
+Also need to store the list of people a user follows. Let’s call it ‘UserFollow’. <br>
+
+For both of these tables, Use a wide-column datastore like Cassandra. For the ‘UserPhoto’ table, the ‘key’ would be ‘UserID’, and the ‘value’ would be the list of ‘PhotoIDs’ the user owns, stored in different columns. Have a similar scheme for the ‘UserFollow’ table.
 
 
