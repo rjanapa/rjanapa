@@ -65,11 +65,7 @@ Store data about users, their uploaded photos, and the people they follow. <br>
 The Photo table store all data related to a photo. <br>
 Index on (PhotoID, CreationDate) since need to fetch recent photos first.<br>
 
-<img src="https://github.com/rjanapa/rjanapa/blob/main/Instagram-Photo-Table.png" width="500" length="500">
-
-<img src="https://github.com/rjanapa/rjanapa/blob/main/Instagram-User-Table.png" width="500" length="500"> 
-
-<img src="https://github.com/rjanapa/rjanapa/blob/main/Instagram-PhotoFollow-Table.png" width="500" length="500">
+<img src="https://github.com/rjanapa/rjanapa/blob/main/Instagram-DB-Tables.png" width="500" length="500">
 
 A straightforward approach for storing the above schema would be to use an RDBMS like MySQL since we require joins. But relational databases come with their challenges, especially when we need to scale them. <br>
 
