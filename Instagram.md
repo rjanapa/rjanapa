@@ -42,7 +42,7 @@ Search Image Microservice -> Download Image Microservice
 
 <b>High Level System Design Diagram</b><br>
 
-<img src="https://github.com/rjanapa/rjanapa/blob/main/Instagram-high-level-systemdesign.png" width="500" length="500">
+<img src="https://github.com/rjanapa/rjanapa/blob/main/Instagram-high-level-diagram.png" width="500" length="500">
 
 Photo uploads can be slow as they have to go to the disk, whereas reads will be faster, especially if they are being served from cache.
 
