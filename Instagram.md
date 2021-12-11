@@ -41,7 +41,7 @@ Search Image Microservice -> Download Image Microservice
 
 <b>High Level System Design Diagram</b><br>
 
-<img src="https://github.com/rjanapa/rjanapa/blob/main/Instagram-high-level-component-diagram.png" width="500" length="500">
+<img src="https://github.com/rjanapa/rjanapa/blob/main/Instagram-high-level-diagram.png" width="500" length="500">
 
 <b>Component Design</b><br>
 
