@@ -79,7 +79,7 @@ Index on (PhotoID, CreationDate) since need to fetch recent photos first.<br>
 
 A straightforward approach for storing the above schema would be to use an RDBMS like MySQL since we require joins. But RDBMS come with their challenges, especially when one needs to scale them. <br>
 
-Store photos in a distributed file storage like HDFS or S3.<br>
+Store photos in a distributed file storage like HDFS (Hadoop Distributed File System) or S3.<br>
 
 Store the above schema in a distributed key-value store to enjoy the benefits offered by NoSQL. All the metadata related to photos go to a table where the ‘key’ is‘PhotoID’ and the ‘value’ is an object containing (PhotoLocation, UserLocation, CreationTimestamp, etc).
 
