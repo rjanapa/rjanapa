@@ -35,4 +35,4 @@ Step 4c: Draw a generic distributed architecture per tier
 
 [Instagram](https://github.com/rjanapa/rjanapa/blob/main/Instagram.md)
 
-[API Gateway](https://github.com/rjanapa/rjanapa/edit/main/APIGateway.md)
+[API Gateway](https://github.com/rjanapa/rjanapa/blob/main/APIGateway.md)
