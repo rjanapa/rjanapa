@@ -37,4 +37,6 @@ Step 4c: Draw a generic distributed architecture per tier
 
 [API Gateway](https://github.com/rjanapa/rjanapa/blob/main/APIGateway.md)
 
-[Ecommerce-Internationalization](https://github.com/rjanapa/rjanapa/blob/main/Ecommerce-Internationalization.md)
+[Ecommerce Internationalization](https://github.com/rjanapa/rjanapa/blob/main/Ecommerce-Internationalization.md)
+
+[Session Management](https://github.com/rjanapa/rjanapa/blob/main/SessionManagement.md)
