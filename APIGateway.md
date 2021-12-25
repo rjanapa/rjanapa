@@ -6,22 +6,22 @@ There are two R&D Labs supporting two seperate API services. Create a Web based 
 
 Approach:
 
-Requirements Gathering
-Technical Feasibility Study - Engage with Arch/Engg in Team A / Team B to understand impact to expose 
-Road Map Planning - Product Iterations vs Timeline
-High Level Solution Design
-Funding/Resourcing Requirement
-Risk Planning - Teams committments, release schedules, resource availability, a product that has never been done before - what are the possible areas of failure and what are the mitigation plans
-Present the high level plan to Senior Leadership for thumbsup
-Budget / Resource Approval
-Low Level System Design Workshop
- Hire Squad to build Mobile App/Web App
-PI Planning, Product Backlog, Sprint Planning, Spring Backlog - Engage Engineering in Team A , Team B to build, Hire squad to build common set of services to access susbsytems - API A and API B, Mobile App and Web App.
-End to End Testing
-Plan Go-Live
-Post Production Support
-User Training
-Plan next iteration
+Requirements Gathering <br>
+Technical Feasibility Study - Engage with Arch/Engg in Team A / Team B to understand impact to expose <br>
+Road Map Planning - Product Iterations vs Timeline<br>
+High Level Solution Design<br>
+Funding/Resourcing Requirement<br>
+Risk Planning - Teams committments, release schedules, resource availability, a product that has never been done before - what are the possible areas of failure and what are the mitigation plans<br>
+Present the high level plan to Senior Leadership for thumbsup<br>
+Budget / Resource Approval<br>
+Low Level System Design Workshop<br>
+Hire Squad to build Mobile App/Web App<br>
+PI Planning, Product Backlog, Sprint Planning, Spring Backlog - Engage Engineering in Team A , Team B to build, Hire squad to build common set of services to access susbsytems - API A and API B, Mobile App and Web App.<br>
+End to End Testing<br>
+Plan Go-Live<br>
+Post Production Support<br>
+User Training<br>
+Plan next iteration<br>
 
 Considerations:
 
