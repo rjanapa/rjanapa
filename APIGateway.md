@@ -2,7 +2,7 @@ Case Study:
 
 There are two R&D Labs supporting two seperate API services. Create a Web based service that would interact with two API services, The API could be interfacing with two different h/w systems. This could be common set of services that would interface with two seperate API services,  There could be a Mobile App and a Web App interfacing with common set of interfaces. Create a project plan that would convey your thought process.  
 
-<img src="https://github.com/rjanapa/rjanapa/blob/main/Build-Common-Services.png" width="500" length="500">
+<img src="https://github.com/rjanapa/rjanapa/blob/main/DesignAPIGateway.png" width="500" length="500">
 
 Approach:
 
