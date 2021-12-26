@@ -6,13 +6,14 @@ There are two R&D Labs supporting two seperate API services. Create a Web based 
 
 Approach:
 
-Engagement: Engage with partenering team. Engage with Arch/Engg in Team A / Team B to understand impact to expose <br>
+Engagement: Engage with partenering team. Engage with Arch/Engg/Product Team in Team A/Team B to understand modification if any to expose API<br>
 Requirements Gathering: Flush out Business and Technical Requirements  <br>
 High Level System Design<br>
-Business and Technical Feasibility Study - <br>
-Road Map Planning - Product Iterations vs Timeline<br>
+Document Business and Technical Feasibility Study<br>
+Road Map Planning - Product Iterations vs Timeline (e.g. MVP) <br>
 High Level Solution Design<br>
-Funding/Resourcing Requirement<br>
+Funding Requirement<br>
+Resourcing Requirement<br>
 Risk Planning - Teams committments, release schedules, resource availability, a product that has never been done before - what are the possible areas of failure and what are the mitigation plans<br>
 Present the high level plan to Senior Leadership for thumbsup<br>
 Budget / Resource Approval<br>
