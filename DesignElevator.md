@@ -21,6 +21,17 @@ System: The passenger interacts with the system of our elevator design. The “s
 
 <img src="https://github.com/rjanapa/rjanapa/blob/main/ElevatorUseCases.png" width="500" length="500"> <br>
 
+Summoning The Elevator<br>
+The very basic use case is summoning the elevator, or the request for an elevator. This request is made by the passenger when they press the up or down button outside the elevator on one of the floors. The request will schedule the movement of the elevator to reach the floor that the passenger is on.<br><br>
+Opening/Closing the Elevator Door<br>
+Both the passenger and the system (in case of an emergency) can request the opening or closing of the door when the elevator is on a floor.<br><br>
+Moving Direction of the Elevator<br>
+A passenger can summon the elevator. But the direction of movement will be decided by the system, based on a suitable algorithm. The algorithm can be aimed at, let’s say minimizing the wait time for passengers, or efficiently utilizing resources.<br><br>
+Indicate Elevator Position and Direction<br>
+The display is present both, inside the elevator and on the floors. It indicates the position of the elevator and the direction it is moving in. The system controls the display.<br><br>
+Emergency Triggers<br>
+There’s an emergency button inside the elevator that the passenger can press in case of an emergency. Depending on the requirements, the emergency button can trigger an alarm, make an emergency call, stop on the nearest floor, and so on.<br><br>
+
 <b>Step 2: Define Microservice</b>
 
 <b>Step 3: Draw Logical Architecture: Block diagram for each Microservice, Data/Logic flow between them.</b>
