@@ -15,9 +15,11 @@
 Optimizations
 We can optimize the system such that the user has to wait the least amount of time in travelling from one floor to the other. 
 
-Actors Involved In The Elevator Design System:<br>
+Actors involved in the Elevator System:<br>
 Passenger: The passenger is the user of the elevator system who wishes to move from one floor to another.<br>
 System: The passenger interacts with the system of our elevator design. The “system” is the second actor. It’s the program that offers the service to transport the passengers between floors.<br>
+
+<img src="https://github.com/rjanapa/rjanapa/blob/main/ElevatorUseCases.png" width="500" length="500"> <br>
 
 <b>Step 2: Define Microservice</b>
 
