@@ -40,3 +40,5 @@ Step 4c: Draw a generic distributed architecture per tier
 [Ecommerce Internationalization](https://github.com/rjanapa/rjanapa/blob/main/Ecommerce-Internationalization.md)
 
 [Session Management](https://github.com/rjanapa/rjanapa/blob/main/SessionManagement.md)
+
+[Elevator](https://github.com/rjanapa/rjanapa/blob/main/DesignElevator.md)
