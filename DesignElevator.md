@@ -136,8 +136,7 @@ public class Scheduler {
 
 <b>Class Diagram</b><br>
 
-
-
+<img src="https://github.com/rjanapa/rjanapa/blob/main/ElevatorClassDiagram.png" width="500" length="500"> <br>
 
 <b>Step 2: Define Microservice</b>
 
