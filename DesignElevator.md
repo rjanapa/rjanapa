@@ -32,6 +32,113 @@ The display is present both, inside the elevator and on the floors. It indicates
 Emergency Triggers<br>
 There’s an emergency button inside the elevator that the passenger can press in case of an emergency. Depending on the requirements, the emergency button can trigger an alarm, make an emergency call, stop on the nearest floor, and so on.<br><br>
 
+<b>Define Classes</b><br>
+
+<pre>
+public enum Direction {
+    UP, DOWN
+}
+</pre>
+
+ExternalControl<br>
+ExternalControl class caters the request that’s made on the floors when the passenger presses the up or down button that’s present outside the elevator.<br>
+
+<pre>
+public class ExternalControl {
+     private Direction direction;
+     private int source;
+}<br>
+</pre>
+
+InternalControl<br>
+InternalControl is the class that governs the request made inside the elevator. There’s a control panel inside the elevator on which the passenger can select the floor to which they want to go, let’s call it “Destination”.<br>
+
+<pre>
+public class InternalControl {
+     private int destination;
+}
+</pre>
+
+Control<br>
+Since there are two types of controls, InternalControl and ExternalControl, let’s encapsulate it in a class called Control. Control class will have two fields which are objects of ExternalControl and InternalControl classes. This class has a method called request which is used by the ExternalControl class to summon the elevator and the InternalControl class to direct the system to take the passenger to the destination floor.<br>
+
+<pre>
+public class Control {
+     private InternalControl internalControl;
+     private ExternalControl externalControl;
+     void request(int floor, Direction direction);
+}
+</pre>
+
+State<br>
+The elevator can have three states — stationary, moving, out of order. We can define the State as an enum.<br>
+
+<pre>
+public enum State {
+     STATIONARY, MOVING, OUTOFORDER
+}
+</pre>
+
+Elevator<br>
+Elevator class will have four fields: ID, State, Floor and Direction. Floor is a field of data type integer that tells which floor the elevator is currently on. Direction is an enum we defined earlier that will tell which direction the elevator is moving in, up or down.<br>
+
+<pre>
+public class Elevator {
+     private int ID;
+     private int currentFloor;
+     private State state;
+     private Direction direction;
+}
+</pre>
+
+Display<br>
+Display is another class that shows the floor that the elevator is on, and the direction it is moving in.<br>
+
+<pre>
+public class Display {
+     private int currentFloor;
+     private Direction direction;
+}
+</pre>
+
+Floor<br>
+The Floor class has an ID and an array for the elevator doors that are present on that floor. There can also be a function that returns the number of doors on the floor<br>
+
+<pre>
+public class Floor {
+     private int id;
+     private int door[];
+     int NumberofDoors();
+}
+</pre>
+
+Building<br>
+Since it’s a multi-storey building, we’ll have a building class that will encapsulate an array of Floors and Elevators in the building. It can also have functions to retrieve the number of floors and elevators in the building.<br>
+
+<pre>
+public class Building {
+     private Floor floor[];
+     private Elevator elevator[];
+     int numberOfFloors();
+     int numberOfElevators();
+}
+</pre>
+
+Scheduler<br>
+The scheduler class is responsible for deciding which request to serve and which floor to send the elevator to. This class maintains a queue of requests. It has a dispatch function which passes the floor number to the elevator based on scheduling algorithms.<br>
+
+<pre>
+public class Scheduler {
+     private requests[];
+     dispatch(int elevator Id, int floor);
+}
+</pre>
+
+<b>Class Diagram</b><br>
+
+
+
+
 <b>Step 2: Define Microservice</b>
 
 <b>Step 3: Draw Logical Architecture: Block diagram for each Microservice, Data/Logic flow between them.</b>
