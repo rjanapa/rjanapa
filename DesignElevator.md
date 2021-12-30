@@ -10,12 +10,12 @@
 4). The elevator will have two types of controls:<br>
 4.1. External control, which is available on the floors for summoning the elevator by pressing the up or down button, depending on which direction the user wants to go in.<br>
 4.2. Internal control, which allows the user to choose the floor that they want to go to.<br>
-5). An algorithm to decide which direction the elevator should move in, if more than one passenger summons the elevator.
+5). An algorithm to decide which direction the elevator should move in, if more than one passenger summons the elevator.<br>
 
-Optimizations
-We can optimize the system such that the user has to wait the least amount of time in travelling from one floor to the other. 
+Optimizations<br>
+We can optimize the system such that the user has to wait the least amount of time in travelling from one floor to the other. <br>
 
-Actors involved in the Elevator System:<br>
+Actors:<br>
 Passenger: The passenger is the user of the elevator system who wishes to move from one floor to another.<br>
 System: The passenger interacts with the system of our elevator design. The “system” is the second actor. It’s the program that offers the service to transport the passengers between floors.<br>
 
