@@ -47,7 +47,7 @@ ExternalControl class caters the request that’s made on the floors when the pa
 public class ExternalControl {
      private Direction direction;
      private int source;
-}<br>
+}
 </pre>
 
 InternalControl<br>
