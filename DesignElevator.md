@@ -153,7 +153,7 @@ Advantages and Drawbacks Of FCFS Algorithm<br>
 Though the FCFS algorithm is simple to implement and makes sure all requests get a fair chance, clearly there are flaws. There may be cases where large wait times are involved for passengers. Furthermore, it also involves unnecessary movement of the elevator, resulting in wastage of resources.<br>
 
 <b>Shortest Seek Time First (SSTF)</b><br>
-This algorithm aims at serving the requests with the shortest seek time first. This approach can be implemented by generating a heap from the passengers’ requests, based on the distance between the source floor and the elevator’s current floor. The topmost request is picked from the heap and served first. The minheap will change continuously as the position of the elevator changes.<br>
+This algorithm aims at serving the requests with the shortest seek time first. This approach can be implemented by generating a Minheap from the passengers’ requests, based on the distance between the source floor and the elevator’s current floor. The topmost request is picked from the heap and served first. The minheap will change continuously as the position of the elevator changes.<br>
 
 Alternatively, an array can be generated for the requests, as shown in the diagram above. For each request, the system pre-calculates the distance of the request from the elevator and then serves the one with the minimum distance.<br>
 
