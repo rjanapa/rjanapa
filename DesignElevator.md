@@ -1,4 +1,4 @@
-<b>System Design - Elevator</b><br>
+<b>Elevator System Design</b><br>
 
 <b>Step 1: Functional Requirements, Non-Functional Requirements, Extended Requirements, Design Constraints</b>
 
