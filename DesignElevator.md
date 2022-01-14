@@ -19,7 +19,7 @@ Actors:<br>
 Passenger: The passenger is the user of the elevator system who wishes to move from one floor to another.<br>
 System: The passenger interacts with the system of our elevator design. The “system” is the second actor. It’s the program that offers the service to transport the passengers between floors.<br>
 
-<img src="https://github.com/rjanapa/rjanapa/blob/main/ElevatorUseCases.png" width="500" length="500"> <br>
+<img src="https://github.com/rjanapa/rjanapa/blob/main/ElevatorUseCase.png" width="500" length="500"> <br>
 
 Summoning The Elevator<br>
 The very basic use case is summoning the elevator, or the request for an elevator. This request is made by the passenger when they press the up or down button outside the elevator on one of the floors. The request will schedule the movement of the elevator to reach the floor that the passenger is on.<br><br>
