@@ -43,7 +43,7 @@ The system should support snapshotting of the data, so that users can go back to
 7. For small changes, clients can intelligently upload the diffs instead of the whole chunk.
 
 <b>Capacity Estimation and Constraints</b><br>
-Assume that total users = 100M, and daily active users (DAU) = 10M.<br>
+Assume total users = 100M, and daily active users (DAU) = 10M.<br>
 Assume on average each user connects from three different devices.<br>
 On average if a user has 100 files/photos, we will have 1 billion total files.<br>
 Assume that average file size is 100KB, this would give us ten petabytes of total storage.<br>
