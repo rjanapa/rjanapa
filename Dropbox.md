@@ -32,5 +32,20 @@ Here are the top-level requirements for our system:<br>
 
 The system should support snapshotting of the data, so that users can go back to any version of the files.
 
+<b>Some Design Considerations</b><br>
 
+1. We should expect huge read and write volumes.
+2. Read to write ratio is expected to be nearly the same.
+3. Internally, files can be stored in small parts or chunks (say 4MB); this can provide a lot of benefits i.e. all failed operations shall only be retried for smaller parts of a file. If a user fails to upload a file, then only the failing chunk will be retried.
+4. We can reduce the amount of data exchange by transferring updated chunks only.
+5. By removing duplicate chunks, we can save storage space and bandwidth usage.
+6. Keeping a local copy of the metadata (file name, size, etc.) with the client can save us a lot of round trips to the server.
+7. For small changes, clients can intelligently upload the diffs instead of the whole chunk.
 
+<b>Capacity Estimation and Constraints</b><br>
+Assume that total users = 100M, and daily active users (DAU) = 10M.<br>
+Assume on average each user connects from three different devices.<br>
+On average if a user has 100 files/photos, we will have 1 billion total files.<br>
+Assume that average file size is 100KB, this would give us ten petabytes of total storage.<br>
+1B * 100KB => 100TB<br>
+Assume that we will have one million active connections per minute.<br>
