@@ -15,6 +15,11 @@
 Optimizations<br>
 We can optimize the system such that the user has to wait the least amount of time in travelling from one floor to the other. <br>
 
+Design Considerations
+1. Define maximum weight for the combined weight of users in the elevator
+2. Define minimum weight for the combined weight of users in the elevator on the ground floor before the elevator door closes and moves upward
+3. Define a timeout parameter before the elevator wait for the users on a floor
+
 Actors:<br>
 Passenger: The passenger is the user of the elevator system who wishes to move from one floor to another.<br>
 System: The passenger interacts with the system of our elevator design. The “system” is the second actor. It’s the program that offers the service to transport the passengers between floors.<br>
