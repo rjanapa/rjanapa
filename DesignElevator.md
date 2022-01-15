@@ -136,7 +136,7 @@ public class Scheduler {
 
 <b>Class Diagram</b><br>
 
-<img src="https://github.com/rjanapa/rjanapa/blob/main/ElevatorClassDiagram.png" width="500" length="500"> <br>
+<img src="https://github.com/rjanapa/rjanapa/blob/main/Elevator_Class_Diagram.png" width="500" length="500"> <br>
 
 <b>Elevator Scheduling Algorithm</b><br>
 Passengers standing outside the elevator door press the button (up/down) to summon the elevator. The elevator system schedules to reach the passenger using an algorithm. There are two inputs for the algorithm that the elevator will use. <br>
