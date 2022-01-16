@@ -1,5 +1,9 @@
 <b>Dropbox</b><br>
 
+<b>System Design</b><br>
+
+<b>Step 1: Functional Requirements, Non-Functional Requirements, Extended Requirements, Design Constraints</b><br>
+
 <b>File hosting service</b><br>
 Cloud file storage enables users to store their data on remote servers. <br>
 The servers are maintained by cloud storage providers and made available to users over a network typically through the Internet. <br>
@@ -49,3 +53,27 @@ On average if a user has 100 files/photos, we will have 1 billion total files.<b
 Assume that average file size is 100KB, this would give us ten petabytes of total storage.<br>
 1B * 100KB => 100TB<br>
 Assume that we will have one million active connections per minute.<br>
+
+<b>High Level Design</b><br>
+
+The user will specify a folder as the workspace on their device. Any file/photo/folder placed in this folder will be uploaded to the cloud, and whenever a file is modified or deleted, it will be reflected in the same way in the cloud storage. The user can specify similar workspaces on all their devices and any modification done on one device will be propagated to all other devices to have the same view of the workspace everywhere.
+
+At a high level, we need to store files and their metadata information like File Name, File Size, Directory, etc., and who this file is shared with. 
+
+<b>Block Servers</b>: Servers that help the clients to upload/download files to Cloud Storage
+
+<b>Metadata Servers</b>: Servers that facilitate updating metadata about files and users. Metadata servers will keep metadata of files updated in a SQL or NoSQL database
+
+<b>Synchronization Servers</b>: Mechanism to notify all clients whenever an update happens so they can synchronize their files. Synchronization servers handle the workflow of notifying all clients about different changes for synchronization.
+
+Step 2: Define Microservice
+
+Step 3: Draw Logical Architecture: Block diagram for each Microservice, Data/Logic flow between them.
+
+Step 4: Deep dive into each Microservice
+
+Step 4a: For each Microservice – Data Model, How data is stored in Storage and Cache Tier, API, Workflow/Algorithm for API, Flow across Tiers
+
+Step 4b: For each Microservice – check whether each tier needs to scale for storage, cache, throughput (CPU/IO), API parallelization, remove hotspots, Availability and Geo-Distribution
+
+Step 4c: Draw a generic distributed architecture per tier
