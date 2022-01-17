@@ -66,6 +66,45 @@ At a high level, we need to store files and their metadata information like File
 
 <b>Synchronization Servers</b>: Mechanism to notify all clients whenever an update happens so they can synchronize their files. Synchronization servers handle the workflow of notifying all clients about different changes for synchronization.
 
+<b>Component Design</b><br>
+
+The major components of the system are:
+
+a. <b>Client</b><br>
+
+The Client Application monitors the workspace folder on the user’s machine and syncs all files/folders in it with the remote Cloud Storage. The client application will work with the storage servers to upload, download, and modify actual files to backend Cloud Storage. The client also interacts with the remote Synchronization Service to handle any file metadata updates, e.g., change in the file name, size, modification date, etc.
+
+Some of the essential operations for the client:
+
+1) Upload and download files.
+2) Detect file changes in the workspace folder.
+3) Handle conflict due to offline or concurrent updates.
+
+How is file transfer handled efficiently. Each file is broken into smaller chunks so that only those chunks that are modified are transfered and not the whole file. Suppose divide each file into fixed sizes of 4MB chunks. One can statically calculate optimal chunk size based on 
+
+1) Storage devices used in the cloud to optimize space utilization and input/output operations per second (IOPS) 
+2) Network bandwidth 
+3) Average file size in the storage etc. 
+In metadata, keep a record of each file and the chunks that constitute it.
+
+Do one keep a copy of metadata with Clients? 
+Keeping a local copy of metadata enables offline updates but also saves a lot of round trips to update remote metadata.
+
+How can clients efficiently listen to changes happening with other clients? 
+One solution could be clients periodically check with the server if there are any changes. The problem with this approach is that delay in reflecting changes locally as clients will be checking for changes periodically compared to a server notifying whenever there is some change. If the client frequently checks the server for changes, it will not only be wasting bandwidth, as the server has to return an empty response most of the time, but will also be keeping the server busy. Pulling information in this manner is not scalable.
+
+A solution to the above problem could be to use HTTP long polling. With long polling, the client requests information from the server with the expectation that the server may not respond immediately. If the server has no new data for the client when the poll is received, instead of sending an empty response, the server holds the request open and waits for response information to become available. Once it does have new information, the server immediately sends an HTTP/S response to the client, completing the open HTTP/S Request. Upon receipt of the server response, the client can immediately issue another server request for future updates.
+
+Based on the above considerations, one can divide our client into four parts:
+
+1) <b>Internal Metadata Database:</b> Keep track of all the files, chunks, their versions, and their location in the file system.
+
+2) <b>Chunker:</b> Split the files into smaller pieces called chunks. Also responsible for reconstructing a file from its chunks. The chunking algorithm will detect the parts of the files that have been modified by the user and only transfer those parts to the Cloud Storage; this will save bandwidth and synchronization time.
+
+3) <b>Watcher:</b> Monitor the local workspace folders and notify the Indexer (discussed below) of any action performed by the users, e.g. when users create, delete, or update files or folders. Watcher also listens to any changes happening on other clients that are broadcasted by Synchronization service.
+
+4) <b>Indexer:</b> will process the events received from the Watcher and update the internal metadata database with information about the chunks of the modified files. Once the chunks are successfully submitted/downloaded to the Cloud Storage, the Indexer will communicate with the remote Synchronization Service to broadcast changes to other clients and update the remote metadata database.
+
 Step 2: Define Microservice
 
 Step 3: Draw Logical Architecture: Block diagram for each Microservice, Data/Logic flow between them.
