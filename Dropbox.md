@@ -131,6 +131,8 @@ The Message Queuing Service will implement two types of queues in our system. Th
 <b>e. Cloud/Block Storage</b>
 Cloud/Block Storage stores chunks of files uploaded by the users. Clients directly interact with the storage to send and receive objects from it. Separation of the metadata from storage enables us to use any storage either in the cloud or in-house.
 
+<img src="https://github.com/rjanapa/rjanapa/blob/main/DropboxHighLevelDesign.png" width="500" length="500">
+
 Step 2: Define Microservice
 
 Step 3: Draw Logical Architecture: Block diagram for each Microservice, Data/Logic flow between them.
