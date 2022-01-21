@@ -4,16 +4,14 @@
 
 <b>Step 1: Functional Requirements, Non-Functional Requirements, Extended Requirements, Design Constraints</b><br>
 
-<b>File hosting service</b><br>
-Cloud file storage enables users to store their data on remote servers. <br>
+<b>File Hosting Service</b><br>
+
+Cloud file storage enables users to store their data on remote servers.<br>
+
 The servers are maintained by cloud storage providers and made available to users over a network typically through the Internet. <br>
 Users pay for their cloud data storage on a monthly basis.<br>
 
-<b>Why Cloud Storage?</b><br>
-
-The shift from using personal computers to using multiple devices with different platforms and operating systems such as smartphones and tablets each with portable access from various geographical locations at any time, is accountable for the huge popularity of cloud storage services. 
-
-Following are some of the top benefits of such services:
+Top Benefits:
 
 Availability: The motto of cloud storage services is to have data availability anywhere, anytime. Users can access their files/photos from any device whenever and wherever they like.
 
@@ -21,9 +19,7 @@ Reliability and Durability: It offers 100% reliability and durability of data. C
 
 Scalability: Users will never have to worry about running out of storage space. With cloud storage one get unlimited storage as long as one is ready to pay for it.
 
-<b>Requirements and Goals of the System</b><br>
-
-Here are the top-level requirements for our system:<br>
+<b>System Requirements</b><br>
 
 1. Users should be able to upload and download their files/photos from any device.<br>
 2. Users should be able to share files or folders with other users.<br>
@@ -38,8 +34,8 @@ The system should support snapshotting of the data, so that users can go back to
 
 <b>Some Design Considerations</b><br>
 
-1. We should expect huge read and write volumes.
-2. Read to write ratio is expected to be nearly the same.
+1. High read and write volumes.
+2. Read to write ratio is nearly same.
 3. Internally, files can be stored in small parts or chunks (say 4MB); this can provide a lot of benefits i.e. all failed operations shall only be retried for smaller parts of a file. If a user fails to upload a file, then only the failing chunk will be retried.
 4. We can reduce the amount of data exchange by transferring updated chunks only.
 5. By removing duplicate chunks, we can save storage space and bandwidth usage.
