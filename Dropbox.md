@@ -44,10 +44,10 @@ The system should support snapshotting of the data, so that users can go back to
 
 <b>Capacity Estimation and Constraints</b><br>
 Assume total users = 100M, and daily active users (DAU) = 10M.<br>
-Assume on average each user connects from three different devices.<br>
-On average if a user has 100 files/photos, we will have 1 billion total files.<br>
-Assume that average file size is 100KB, this would give us ten petabytes of total storage.<br>
-1B * 100KB => 100TB<br>
+Assume on average each user connects from two devices.<br>
+On average if a user has 10 files/photos, we will have 1 billion total files.<br>
+Assume that average file size is 100KB, this would give us 100 GB of total storage.<br>
+1B * 100KB => 100 GB<br>
 Assume that we will have one million active connections per minute.<br>
 
 <b>High Level Design</b><br>
