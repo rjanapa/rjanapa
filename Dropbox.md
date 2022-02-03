@@ -77,12 +77,7 @@ Some of the essential operations for the client:
 2) Detect file changes in the workspace folder.
 3) Handle conflict due to offline or concurrent updates.
 
-How is file transfer handled efficiently. Each file is broken into smaller chunks so that only those chunks that are modified are transfered and not the whole file. Suppose divide each file into fixed sizes of 4MB chunks. One can statically calculate optimal chunk size based on 
-
-1) Storage devices used in the cloud to optimize space utilization and input/output operations per second (IOPS) 
-2) Network bandwidth 
-3) Average file size in the storage etc. 
-In metadata, keep a record of each file and the chunks that constitute it.
+How is file transfer handled efficiently. Each file is broken into smaller chunks so that only those chunks that are modified are transfered and not the whole file. Suppose divide each file into fixed sizes of 4MB chunks. 
 
 Do one keep a copy of metadata with Clients? 
 Keeping a local copy of metadata enables offline updates but also saves a lot of round trips to update remote metadata.
