@@ -4,7 +4,7 @@ There are two R&D Labs supporting two seperate API services. Create a Web based 
 
 <img src="https://github.com/rjanapa/rjanapa/blob/main/DesignAPIGateway.png" width="500" length="500">
 
-<b>Approach:
+<b>Approach:</b> 
 
 Intake Process
 1. Engage with partenering team. Engage with Arch/Engg/Product Team in Team A/Team B to understand modification if any to expose API<br>
