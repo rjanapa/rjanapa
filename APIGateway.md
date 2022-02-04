@@ -6,9 +6,9 @@ There are two R&D Labs supporting two seperate API services. Create a Web based 
 
 <b>Approach:</b> 
 
-Intake Process
-1. Engage with partenering team. Engage with Arch/Engg/Product Team in Team A/Team B to understand modification if any to expose API<br>
-2. Requirements Gathering: Flush out Business and Technical Requirements  <br>
+0. Intake Process
+1. Engagement with partenering team - Engage with Arch/Engg/Product Team in Team A/Team B to understand modification if any to expose API<br>
+2. Discovery and Assessment - Requirements Gathering: Flush out Business and Technical Requirements  <br>
 3. High Level System Design<br>
 4. Business and Technical Feasibility Study<br>
 5. Road Map Planning - Product Iterations, Timeline, MVP etc <br>
@@ -19,15 +19,14 @@ Intake Process
 12. Present the high level plan to Senior Leadership for thumbsup<br>
 13. Budgetary ($) Approval by Finance
 14. Resource Approval<br>
-15. Low Level System Design Workshops between engineering/architecture<br>
-16. Hire Squad<br>
+15. Kickoff, Low Level System Design Workshops between engineering/architecture<br>
+16. Hire Engg Squad<br>
 17. PI Planning, Product Backlog, Sprint Planning, Spring Backlog, Demo/Retro Planning etc. Engage Engineering in Team A , Team B to build, Hire squad to build API Gateway to access susbsytems - API A and API B, Mobile App and Web App.<br>
 18. End to End Testing<br>
 19. Cutover Planning
-20. Schedule Go-Live<br>
-21. Post Production Support<br>
-22. User Training<br>
-23. Plan next iteration<br>
+20. Go-Live<br>
+21. Post Production Support, User-Training etc.<br>
+22. Plan next release<br>
 
 <b>Risks and Mitigation plans</b> 
 
