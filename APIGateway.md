@@ -31,4 +31,10 @@ Plan next iteration<br>
 
 What are the possible risks and what are the mitigation plans? 
 
-A end to end system design has to take into account overall performance issues, performance of the system depends on both the systems performing optimaly to meet SLAs. Close colloboration and communication key to succcess for the delivery of end to end solution. Defect resolution could be a challenge especially when a transaction involves two seperate system. There is a risk with the overall product failing due to underlying systems extendability and maintainability to allow for growing product requirments 
+A end to end system design has to take into account overall performance issues, performance of the system depends on both the systems performing optimaly to meet SLAs. 
+
+Close colloboration and communication key to succcess for the delivery of end to end solution. 
+
+Defect troubleshooting and resolution could be a challenge especially when a transaction involves two seperate system. 
+
+There is a risk with the overall product failing due to underlying systems extendability and maintainability to allow for growing product requirments 
