@@ -30,7 +30,7 @@ There are two R&D Labs supporting two seperate API services. Create a Web based 
 
 <b>Risks and Mitigation plans</b> 
 
-A end to end system design has to take into account overall performance issues, performance of the system depends on both the systems performing optimaly to meet SLAs. 
+A end to end system design has to take into account overall performance issues, performance of the e2e system depends on both the systems performing optimaly to meet SLAs. 
 
 Close colloboration and communication key to succcess for the delivery of end to end solution. 
 
