@@ -6,13 +6,15 @@
 
 <b>File Hosting Service</b><br>
 
+<b>Functional Requirements:</b><br>
+
 Cloud file storage enables users to store their data on remote servers.<br>
 
 The servers are maintained by cloud storage providers and made available to users over a network typically through the Internet. <br>
 
 Users pay for their cloud data storage on a monthly basis.<br>
 
-<b>Top Benefits:</b>
+<b>Non-Functional Requirements:</b>
 
 <b>Availability:</b> Data availability anywhere, anytime. Users can access their files/photos from any device whenever and wherever they like.
 
