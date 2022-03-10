@@ -31,6 +31,18 @@ Users pay for their cloud data storage on a monthly basis.<br>
 5. ACID-ity is required. Atomicity, Consistency, Isolation and Durability of all file operations should be guaranteed.<br> https://database.guide/what-is-acid-in-databases/ <br>
 6. Our system should support offline editing. Users should be able to add/delete/modify files while offline, and as soon as they come online, all their changes should be synced to the remote servers and other online devices.<br>
 
+Atomicity
+Atomicity means that you guarantee that either all of the transaction succeeds or none of it does. You don’t get part of it succeeding and part of it not. If one part of the transaction fails, the whole transaction fails. With atomicity, it’s either “all or nothing”.
+
+Consistency
+This ensures that you guarantee that all data will be consistent. All data will be valid according to all defined rules, including any constraints, cascades, and triggers that have been applied on the database.
+
+Isolation
+Guarantees that all transactions will occur in isolation. No transaction will be affected by any other transaction. So a transaction cannot read data from any other transaction that has not yet completed.
+
+Durability
+Durability means that, once a transaction is committed, it will remain in the system – even if there’s a system crash immediately following the transaction. Any changes from the transaction must be stored permanently. If the system tells the user that the transaction has succeeded, the transaction must have, in fact, succeeded.
+
 <b>Extended Requirements</b><br>
 
 The system should support snapshotting of the data, so that users can go back to any version of the files.
