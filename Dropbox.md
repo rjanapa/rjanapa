@@ -51,8 +51,8 @@ The system should support snapshotting of the data, so that users can go back to
 
 1. High read and write volumes.
 2. Read to write ratio is nearly same.
-3. Internally, files can be stored in small parts or chunks (say 4MB).
-   This can provide a lot of benefits i.e. all failed operations shall only be retried for smaller parts of a file. 
+3. Internally, files can be stored in small parts or chunks (say 4MB).<br>
+   This can provide a lot of benefits i.e. all failed operations shall only be retried for smaller parts of a file.<br> 
    If a user fails to upload a file, then only the failing chunk will be retried.
 5. We can reduce the amount of data exchange by transferring updated chunks only.
 6. By removing duplicate chunks, we can save storage space and bandwidth usage.
