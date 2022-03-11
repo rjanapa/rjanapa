@@ -69,6 +69,8 @@ Assume that we will have one million active connections per minute.<br>
 
 <b>High Level Design</b><br>
 
+<img src="https://github.com/rjanapa/rjanapa/blob/main/DropboxHighLevelDesign.png" width="500" length="500">
+
 The user will specify a folder as the workspace on their device. Any file/photo/folder placed in this folder will be uploaded to the cloud, and whenever a file is modified or deleted, it will be reflected in the same way in the cloud storage. The user can specify similar workspaces on all their devices and any modification done on one device will be propagated to all other devices to have the same view of the workspace everywhere.
 
 At a high level, we need to store files and their metadata information like File Name, File Size, Directory, etc., and who this file is shared with. 
@@ -138,8 +140,6 @@ The Message Queuing Service will implement two types of queues in our system. Th
 
 <b>e. Cloud/Block Storage</b>
 Cloud/Block Storage stores chunks of files uploaded by the users. Clients directly interact with the storage to send and receive objects from it. Separation of the metadata from storage enables us to use any storage either in the cloud or in-house.
-
-<img src="https://github.com/rjanapa/rjanapa/blob/main/DropboxHighLevelDesign.png" width="500" length="500">
 
 <b>File Processing Workflow</b>
 The sequence below shows the interaction between the components of the application in a scenario when Client A updates a file that is shared with Client B and C, so they should receive the update too. If the other clients are not online at the time of the update, the Message Queuing Service keeps the update notifications in separate response queues for them until they come online later.
