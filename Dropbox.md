@@ -69,6 +69,8 @@ Assume that we will have one million active connections per minute.<br>
 
 <b>High Level Design</b><br>
 
+<img src="https://github.com/rjanapa/rjanapa/blob/main/Dropbox-HLD.png" width="500" length="500">
+
 <img src="https://github.com/rjanapa/rjanapa/blob/main/DropboxHighLevelDesign.png" width="500" length="500">
 
 The user will specify a folder as the workspace on their device. Any file/photo/folder placed in this folder will be uploaded to the cloud, and whenever a file is modified or deleted, it will be reflected in the same way in the cloud storage. The user can specify similar workspaces on all their devices and any modification done on one device will be propagated to all other devices to have the same view of the workspace everywhere.
