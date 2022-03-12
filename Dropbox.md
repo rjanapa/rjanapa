@@ -71,7 +71,7 @@ Assume that we will have one million active connections per minute.<br>
 
 <b>Metadata Servers</b>: Servers that facilitate updating metadata about files and users. Metadata servers will keep metadata of files updated in a SQL or NoSQL database
 
-<b>Synchronization Servers</b>: Mechanism to notify all clients whenever an update happens so they can synchronize their files. Synchronization servers handle the workflow of notifying all clients about different changes for synchronization.
+<b>Synchronization Servers</b>: Synchronization mechanism to notify all clients whenever an update happens so they can synchronize their files. Synchronization servers handle the workflow of notifying all clients about different changes for synchronization.
 
 <b>Component Design</b><br>
 
@@ -79,7 +79,7 @@ The major components of the system are:
 
 <b>a. Client</b><br>
 
-The Client Application monitors the workspace folder on the user’s machine and syncs all files/folders in it with the remote Cloud Storage. The client application will work with the storage servers to upload, download, and modify actual files to backend Cloud Storage. The client also interacts with the remote Synchronization Service to handle any file metadata updates, e.g., change in the file name, size, modification date, etc.
+The client application monitors the workspace folder on the user’s machine and syncs all files/folders in it with the remote Cloud Storage. The client application work with the storage servers to upload, download, and modify actual files to backend cloud storage. The client also interacts with the remote Synchronization Service to handle any file metadata updates, e.g., change in the file name, size, modification date, etc.
 
 Some of the essential operations for the client:
 
