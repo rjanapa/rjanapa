@@ -61,7 +61,7 @@ Assume that we will have one million active connections per minute.<br>
 <img src="https://github.com/rjanapa/rjanapa/blob/main/Dropbox-HLD.png" width="500" length="500">
 
 <b>Architecture Design</b><br>
-<img src="https://github.com/rjanapa/rjanapa/blob/main/DropboxArchDesign.png" width="500" length="500">
+<img src="https://github.com/rjanapa/rjanapa/blob/main/DropboxArchitecture.png" width="500" length="500">
 
 <b>Workspace</b>: The user specify a folder as the workspace on their device. Any file/photo/folder placed in this folder will be uploaded to the cloud, and whenever a file is modified or deleted, it will be reflected in the same way in the cloud storage. 
 
