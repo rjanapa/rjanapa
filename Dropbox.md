@@ -57,8 +57,16 @@ Assume that we will have one million active connections per minute.<br>
 <b>High Level Design</b><br>
 <img src="https://github.com/rjanapa/rjanapa/blob/main/Dropbox-HLD.png" width="500" length="500">
 
-<b>Architecture Design</b><br>
+<b>Architecture Diagram</b><br>
 <img src="https://github.com/rjanapa/rjanapa/blob/main/DropboxArchitecture.png" width="500" length="500">
+
+<b>File Processing Workflow</b>
+The sequence below shows the interaction between the components of the application in a scenario when Client A updates a file that is shared with Client B and C, so they should receive the update too. If the other clients are not online at the time of the update, the Message Queuing Service keeps the update notifications in separate response queues for them until they come online later.
+
+1) Client A uploads chunks to cloud storage.
+2) Client A updates metadata and commits changes.
+3) Client A gets confirmation and notifications are sent to Clients B and C about the changes.
+4) Client B and C receive metadata changes and download updated chunks.
 
 <b>Component Design</b><br>
 
@@ -115,24 +123,16 @@ Joining two tables in two separate databases can cause performance and consisten
 
 3. Hash-Based Partitioning: We take a hash of the object that we are storing and based on this hash we figure out the DB partition to which this object should go. In our case, we can take the hash of the ‘FileID’ of the file object we are storing to determine the partition the file will be stored. The hashing function will randomly distribute objects into different partitions, e.g., hashing function can always map any ID to a number between [1…256], and this number would be the partition we will store our object.
 
-<b>6. Synchronization Service:</b> Synchronization mechanism to notify all clients whenever an update happens so they can synchronize their files. Synchronization Servers handle the workflow of notifying all clients about different changes for synchronization. <ins>The Synchronization Service is the component that processes file updates made by a client and applies these changes to other subscribed clients.</ins> It also synchronizes clients’ local databases with the information stored in the Metadata DB. The Synchronization Service is the most important part of the system architecture due to its critical role in managing the metadata and synchronizing users’ files. Desktop clients communicate with the Synchronization Service to either obtain updates from the Cloud Storage or send files and updates to the Cloud Storage and, potentially, other users. If a client was offline for a period, it polls the system for new updates as soon as they come online. When the Synchronization Service receives an update request, it checks with the Metadata DB for consistency and then proceeds with the update. Subsequently, a notification is sent to all subscribed users or devices to report the file update.
+<b>6. Synchronization Service:</b> Synchronization mechanism to notify all clients whenever an update happens so they can synchronize their files. Synchronization Servers handle the workflow of notifying all clients about different changes for synchronization. <ins>The Synchronization Service is the component that processes file updates made by a client and applies these changes to other subscribed clients. It also synchronizes clients’ local databases with the information stored in the Metadata DB. The Synchronization Service is the most important part of the system architecture due to its critical role in managing the metadata and synchronizing users’ files.</ins> Desktop clients communicate with the Synchronization Service to either obtain updates from the Cloud Storage or send files and updates to the Cloud Storage and, potentially, other users. If a client was offline for a period, it polls the system for new updates as soon as they come online. When the Synchronization Service receives an update request, it checks with the Metadata DB for consistency and then proceeds with the update. Subsequently, a notification is sent to all subscribed users or devices to report the file update.
 
 The Synchronization Service should be designed to transmit less data between clients and the Cloud Block Storage to achieve a better response time. To meet this design goal, the Synchronization Service can employ a differencing algorithm to reduce the amount of data that needs to be synchronized. Instead of transmitting entire files from clients to the server or vice versa, one can just transmit the difference between two versions of a file. Therefore, only the part of the file that has been changed is transmitted. This also decreases bandwidth consumption and cloud data storage for the end-user. One will be dividing files into 4MB chunks and will be transferring modified chunks only. Server and clients can calculate a hash (e.g., SHA-256) to see whether to update the local copy of a chunk or not. On the server, if one already have a chunk with a similar hash (even from another user), one don’t need to create another copy; one can use the same chunk.  
 
 To be able to provide an efficient and scalable synchronization protocol, one can consider using a communication middleware between clients and the Synchronization Service. The messaging middleware should provide scalable message queuing and change notifications to support a high number of clients using pull or push strategies. This way, multiple Synchronization Service instances can receive requests from a global request Queue, and the communication middleware will be able to balance its load.
 
 <b>7. Message Queuing Service</b>
-An important part of our architecture is a messaging middleware that should be able to handle a substantial number of requests. <ins>A scalable Message Queuing Service that supports asynchronous message-based communication between clients and the Synchronization Service best fits the requirements of our application.</ins> The Message Queuing Service supports asynchronous and loosely coupled message-based communication between distributed components of the system. The Message Queuing Service should be able to efficiently store any number of messages in a highly available, reliable, and scalable queue.
+An important part of our architecture is a messaging middleware that should be able to handle a substantial number of requests. <ins>A scalable Message Queuing Service that supports asynchronous message-based communication between clients and the Synchronization Service best fits the requirements of our application. The Message Queuing Service supports asynchronous and loosely coupled message-based communication between distributed components of the system. The Message Queuing Service should be able to efficiently store any number of messages in a highly available, reliable, and scalable queue.</ins> 
 
 The Message Queuing Service will implement two types of queues in our system. The Request Queue is a global queue and all clients will share it. Clients’ requests to update the Metadata Database will be sent to the Request Queue first; from there, the Synchronization Service will take it to update metadata. The Response Queues that correspond to individual subscribed clients are responsible for delivering the update messages to each client. Since a message will be deleted from the queue once received by a client, we need to create separate Response Queues for each subscribed client to share update messages.
-
-<b>File Processing Workflow</b>
-The sequence below shows the interaction between the components of the application in a scenario when Client A updates a file that is shared with Client B and C, so they should receive the update too. If the other clients are not online at the time of the update, the Message Queuing Service keeps the update notifications in separate response queues for them until they come online later.
-
-1) Client A uploads chunks to cloud storage.
-2) Client A updates metadata and commits changes.
-3) Client A gets confirmation and notifications are sent to Clients B and C about the changes.
-4) Client B and C receive metadata changes and download updated chunks.
 
 <b>Data Deduplication</b>
 Data deduplication is a technique used for eliminating duplicate copies of data to improve storage utilization. It can also be applied to network data transfers to reduce the number of bytes that must be sent. For each new incoming chunk, we can calculate a hash of it and compare that hash with all the hashes of the existing chunks to see if we already have the same chunk present in our storage.
