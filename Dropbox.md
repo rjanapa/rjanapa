@@ -37,13 +37,6 @@ The system should support snapshotting of the data, so that users can go back to
 
 1. High read and write volumes.
 2. Read to write ratio is nearly same.
-3. Internally, files can be stored in small parts or chunks (say 4MB).<br>
-   This provides a lot of benefits i.e. all failed operations shall only be retried for smaller parts of a file.<br> 
-   If a user fails to upload a file, then only the failing chunk will be retried.
-5. We can reduce the amount of data exchange by transferring updated chunks only.
-6. By removing duplicate chunks, we can save storage space and bandwidth usage.
-7. Keeping a local copy of the metadata (file name, size, etc.) with the client can save us a lot of round trips to the server.
-8. For small changes, clients can intelligently upload the diffs instead of the whole chunk.
 
 <b>Capacity Estimation and Constraints</b><br>
 Assume total users = 100M, and daily active users (DAU) = 10M.<br>
@@ -78,9 +71,10 @@ One can divide client app into following parts:
 
 <b>Workspace</b>: The user specify a folder as the workspace on their device. Any file/photo/folder placed in this folder will be uploaded to the cloud, and whenever a file is modified or deleted, it will be reflected in the same way in the cloud storage. The client application monitors the workspace folder on the user’s machine and syncs all files/folders in it with the remote Cloud Storage. The client application work with the storage servers to upload, download, and modify actual files to backend cloud storage. The client also interacts with the remote Synchronization Service to handle any file metadata updates, e.g., change in the file name, size, modification date, etc.
 
-<b>Chunker:</b> Split the files into smaller pieces called chunks. Also responsible for reconstructing a file from its chunks. The chunking algorithm will detect the parts of the files that have been modified by the user and only transfer those parts to the Cloud Storage; this will save bandwidth and synchronization time. That is how file transfer is handled efficiently. Each file is broken into smaller chunks so that only those chunks that are modified are transfered and not the whole file. Suppose divide each file into fixed sizes of 4MB chunks. 
+<b>Chunker:</b> Split the files into smaller pieces called chunks. Also responsible for reconstructing a file from its chunks. The chunking algorithm will detect the parts of the files that have been modified by the user and only transfer those parts to the Cloud Storage; this will save bandwidth and synchronization time. That is how file transfer is handled efficiently. Each file is broken into smaller chunks so that only those chunks that are modified are transfered and not the whole file. Internally, files can be stored in small parts or chunks (say 4MB). his provides a lot of benefits i.e. all failed operations shall only be retried for smaller parts of a file. If a user fails to upload a file, then only the failing chunk will be retried. We can reduce the amount of data exchange by transferring updated chunks only. By removing duplicate chunks, we can save storage space and bandwidth usage. For small changes, clients can intelligently upload the diffs instead of the whole chunk.
 
-<b>Internal Metadata Database:</b> Keep track of all the files, chunks, their versions and location in the file system. Keeping a local copy of metadata enables offline updates but also saves a lot of round trips to update remote metadata.
+<b>Internal Metadata Database:</b> Keep track of all the files, chunks, their versions and location in the file system. Keeping a local copy of the metadata (file name, size, etc.) with the client save  a lot of round trips to the server.
+
 
 <b>Watcher:</b> Monitor the local workspace folders and notify the Indexer of any action performed by the users, e.g. when users create, delete, or update files or folders. Watcher also listens to any changes happening on other clients that are broadcasted by Synchronization service.
 
