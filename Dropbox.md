@@ -74,28 +74,19 @@ The major components of the system are:
 
 <b>1. Client</b><br>
 
-One can divide our client into following parts:
+One can divide client app into following parts:
 
 <b>Workspace</b>: The user specify a folder as the workspace on their device. Any file/photo/folder placed in this folder will be uploaded to the cloud, and whenever a file is modified or deleted, it will be reflected in the same way in the cloud storage. The client application monitors the workspace folder on the user’s machine and syncs all files/folders in it with the remote Cloud Storage. The client application work with the storage servers to upload, download, and modify actual files to backend cloud storage. The client also interacts with the remote Synchronization Service to handle any file metadata updates, e.g., change in the file name, size, modification date, etc.
 
-<b>Internal Metadata Database:</b> Keep track of all the files, chunks, their versions and location in the file system.
+<b>Chunker:</b> Split the files into smaller pieces called chunks. Also responsible for reconstructing a file from its chunks. The chunking algorithm will detect the parts of the files that have been modified by the user and only transfer those parts to the Cloud Storage; this will save bandwidth and synchronization time. That is how file transfer is handled efficiently. Each file is broken into smaller chunks so that only those chunks that are modified are transfered and not the whole file. Suppose divide each file into fixed sizes of 4MB chunks. 
 
-<b>Chunker:</b> Split the files into smaller pieces called chunks. Also responsible for reconstructing a file from its chunks. The chunking algorithm will detect the parts of the files that have been modified by the user and only transfer those parts to the Cloud Storage; this will save bandwidth and synchronization time.
+<b>Internal Metadata Database:</b> Keep track of all the files, chunks, their versions and location in the file system. Keeping a local copy of metadata enables offline updates but also saves a lot of round trips to update remote metadata.
 
 <b>Watcher:</b> Monitor the local workspace folders and notify the Indexer of any action performed by the users, e.g. when users create, delete, or update files or folders. Watcher also listens to any changes happening on other clients that are broadcasted by Synchronization service.
 
 <b>Indexer:</b> will process the events received from the Watcher and update the internal metadata database with information about the chunks of the modified files. Once the chunks are successfully submitted/downloaded to the Cloud Storage, the Indexer will communicate with the remote Synchronization Service to broadcast changes to other clients and update the remote metadata database.
 
-Some of the essential operations for the client:
-
-a) Upload and download files.
-b) Detect file changes in the workspace folder.
-c) Handle conflict due to offline or concurrent updates.
-
-How is file transfer handled efficiently. Each file is broken into smaller chunks so that only those chunks that are modified are transfered and not the whole file. Suppose divide each file into fixed sizes of 4MB chunks. 
-
-Do one keep a copy of metadata with Clients? 
-Keeping a local copy of metadata enables offline updates but also saves a lot of round trips to update remote metadata.
+Some of the essential operations for the client: a) Upload and download files. b) Detect file changes in the workspace folder. c) Handle conflict due to offline or concurrent updates.
 
 How can clients efficiently listen to changes happening with other clients? 
 One solution could be clients periodically check with the server if there are any changes. The problem with this approach is that delay in reflecting changes locally as clients will be checking for changes periodically compared to a server notifying whenever there is some change. If the client frequently checks the server for changes, it will not only be wasting bandwidth, as the server has to return an empty response most of the time, but will also be keeping the server busy. Pulling information in this manner is not scalable.
