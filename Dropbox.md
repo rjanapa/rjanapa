@@ -57,9 +57,6 @@ Assume that we will have one million active connections per minute.<br>
 <b>High Level Design</b><br>
 <img src="https://github.com/rjanapa/rjanapa/blob/main/Dropbox-HLD.png" width="500" length="500">
 
-<b>Architecture Diagram</b><br>
-<img src="https://github.com/rjanapa/rjanapa/blob/main/DropboxArchitecture.png" width="500" length="500">
-
 <b>File Processing Workflow</b>
 The sequence below shows the interaction between the components of the application in a scenario when Client A updates a file that is shared with Client B and C, so they should receive the update too. If the other clients are not online at the time of the update, the Message Queuing Service keeps the update notifications in separate response queues for them until they come online later.
 
@@ -67,6 +64,9 @@ The sequence below shows the interaction between the components of the applicati
 2) Client A updates metadata and commits changes.
 3) Client A gets confirmation and notifications are sent to Clients B and C about the changes.
 4) Client B and C receive metadata changes and download updated chunks.
+
+<b>Architecture Diagram</b><br>
+<img src="https://github.com/rjanapa/rjanapa/blob/main/DropboxArchitecture.png" width="500" length="500">
 
 <b>Component Design</b><br>
 
@@ -82,7 +82,7 @@ One can divide our client into following parts:
 
 <b>Chunker:</b> Split the files into smaller pieces called chunks. Also responsible for reconstructing a file from its chunks. The chunking algorithm will detect the parts of the files that have been modified by the user and only transfer those parts to the Cloud Storage; this will save bandwidth and synchronization time.
 
-<b>Watcher:</b> Monitor the local workspace folders and notify the Indexer (discussed below) of any action performed by the users, e.g. when users create, delete, or update files or folders. Watcher also listens to any changes happening on other clients that are broadcasted by Synchronization service.
+<b>Watcher:</b> Monitor the local workspace folders and notify the Indexer of any action performed by the users, e.g. when users create, delete, or update files or folders. Watcher also listens to any changes happening on other clients that are broadcasted by Synchronization service.
 
 <b>Indexer:</b> will process the events received from the Watcher and update the internal metadata database with information about the chunks of the modified files. Once the chunks are successfully submitted/downloaded to the Cloud Storage, the Indexer will communicate with the remote Synchronization Service to broadcast changes to other clients and update the remote metadata database.
 
