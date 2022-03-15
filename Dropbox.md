@@ -25,7 +25,7 @@ Users pay for their cloud data storage on a monthly basis.<br>
 
 <b>Availability:</b> Data availability anywhere, anytime. Users can access their files/photos from any device whenever and wherever they like.
 
-<b>Reliability and Durability:</b> It offers 100% reliability and durability of data. Cloud storage ensures that users never lose their data by storing multiple copies of the data on different geographically located servers.
+<b>Reliability and Durability:</b> It offers 100% reliability and durability of data. Cloud storage ensures that users never lose their data by storing multiple copies of the data on different geographically distributed servers.
 
 <b>Scalability:</b> Users don't have to worry about running out of storage space. With cloud storage one get unlimited storage as long as one is ready to pay for it.
 
@@ -66,7 +66,7 @@ The sequence below shows the interaction between the components of the applicati
 4) Client B and C receive metadata changes and download updated chunks.
 
 <b>Architecture Diagram</b><br>
-<img src="https://github.com/rjanapa/rjanapa/blob/main/DropboxArchitecture.png" width="500" length="500">
+<img src="https://github.com/rjanapa/rjanapa/blob/main/DropboxDesign.png" width="500" length="500">
 
 <b>Component Design</b><br>
 
