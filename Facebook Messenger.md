@@ -31,7 +31,7 @@ Assume 500 million daily active users, and on average, each user sends 40 messag
 20 billion messages * 100 bytes => 2 TB/day<br><br>
 To store five years of chat history, we would need 3.6 petabytes of storage.<br>
 
-2 TB * 365 days * 5 years ~= 3.6 PB<br>
+2 TB * 365 days * 5 years ~= 3.6 PB<br><br>
 Besides chat messages, we also need to store users’ information, messages’ metadata (ID, Timestamp, etc.). Not to mention, the above calculation doesn’t take data compression and replication into consideration.
 
 <b>Bandwidth Estimation:</b> If our service is getting 2TB of data every day, this will give us 25MB of incoming data for each second.
