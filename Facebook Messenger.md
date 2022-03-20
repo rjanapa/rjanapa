@@ -28,15 +28,21 @@ Assume 500 million daily active users, and on average, each user sends 40 messag
 
 <b>Storage Estimation:</b> Assume that, on average, a message is 100 bytes. So to store all the messages for one day, we would need 2TB of storage.
 
-20 billion messages * 100 bytes => 2 TB/day<br><br>
-To store five years of chat history, we would need 3.6 petabytes of storage.<br>
+<b>20 billion messages * 100 bytes => 2000 GB/day => 2 TB/day</b><br>
+<b>To store five years of chat history, we would need 3.6 petabytes of storage.</b><br>
+2 TB * 365 days * 5 years ~= 4000 TB ~= 3.6 PB<br>
 
-2 TB * 365 days * 5 years ~= 3.6 PB<br><br>
+1 million bytes = 1 MB<br>
+1000 MB or 1 billion bytes = 1 GB<br>
+1000 GB = 1 TB<br>
+1000 TB = 1 PB
+
 Besides chat messages, we also need to store users’ information, messages’ metadata (ID, Timestamp, etc.). Not to mention, the above calculation doesn’t take data compression and replication into consideration.
 
 <b>Bandwidth Estimation:</b> If our service is getting 2TB of data every day, this will give us 25MB of incoming data for each second.
 
 2 TB / 86400 sec ~= 25 MB/s<br>
+
 Since each incoming message needs to go out to another user, we will need the same amount of bandwidth 25MB/s for both upload and download.
 
 Step 2: Define Microservice
