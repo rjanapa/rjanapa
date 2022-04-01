@@ -22,6 +22,20 @@ Consistency can take a hit in the interest of availability; if a user doesn’t 
 
 Step 2: Define Microservice
 
+<b>System APIs</b><br>
+
+tweet(api_dev_key, tweet_data, tweet_location, user_location, media_ids)
+
+Parameters:<br>
+api_dev_key (string): The API developer key of a registered account. This will be used to, among other things, throttle users based on their allocated quota.<br>
+tweet_data (string): The text of the tweet, typically up to 140 characters.<br>
+tweet_location (string): Optional location (longitude, latitude) this Tweet refers to.<br>
+user_location (string): Optional location (longitude, latitude) of the user adding the tweet.<br>
+media_ids (number[]): Optional list of media_ids to be associated with the Tweet. (all the media photo, video, etc. need to be uploaded separately).<br>
+
+Returns: (string)
+A successful post will return the URL to access that tweet. Otherwise, an appropriate HTTP error is returned.
+
 Step 3: Draw Logical Architecture: Block diagram for each Microservice, Data/Logic flow between them.
 
 Step 4: Deep dive into each Microservice
