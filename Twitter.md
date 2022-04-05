@@ -38,6 +38,8 @@ A successful post will return the URL to access that tweet. Otherwise, an approp
 
 Step 3: Draw Logical Architecture: Block diagram for each Microservice, Data/Logic flow between them.
 
+<img src="https://github.com/rjanapa/rjanapa/blob/main/TwitterHLD.png" width="500" length="500">
+
 Step 4: Deep dive into each Microservice
 
 Step 4a: For each Microservice – Data Model, How data is stored in Storage and Cache Tier, API, Workflow/Algorithm for API, Flow across Tiers
