@@ -25,7 +25,7 @@ Step 4b: For each Microservice – check whether each tier needs to scale for st
 
 Step 4c: Draw a generic distributed architecture per tier
 
-<b>Table of Contents</b></br>
+Table of Contents</br>
 
 [System Design](https://github.com/rjanapa/rjanapa/blob/main/SystemDesign.md)
 
