@@ -1,6 +1,6 @@
 - 👋 Hi, I’m @rjanapa
 - 👀 I’m interested in Scalable System Design
-- 🌱 I’m currently learning Scalable System Design
+- 🌱 I’m currently learning Scalable System Design, Technical Product Management
 - 💞️ I’m looking to collaborate on ...
 - 📫 How to reach me rjanapa@gmail.com
 
@@ -46,3 +46,5 @@ Step 4c: Draw a generic distributed architecture per tier
 [Dropbox](https://github.com/rjanapa/rjanapa/blob/main/Dropbox.md)
 
 [Facebook Messenger](https://github.com/rjanapa/rjanapa/blob/main/Facebook%20Messenger.md)
+
+<b>Technical Product Management</b></br>
