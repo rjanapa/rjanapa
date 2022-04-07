@@ -36,11 +36,25 @@ media_ids (number[]): Optional list of media_ids to be associated with the Tweet
 Returns: (string)
 A successful post will return the URL to access that tweet. Otherwise, an appropriate HTTP error is returned.
 
-<img src="https://github.com/rjanapa/rjanapa/blob/main/TwitterDBTables.png" width="500" length="500">
-
 Step 3: Draw Logical Architecture: Block diagram for each Microservice, Data/Logic flow between them.
 
 <img src="https://github.com/rjanapa/rjanapa/blob/main/TwitterHLD.png" width="500" length="500">
+
+<img src="https://github.com/rjanapa/rjanapa/blob/main/TwitterDBTables.png" width="500" length="500">
+
+<b>Data Sharding</b><br>
+
+<b>Sharding based on UserID:</b> Storing all the data of a user on one server. While storing, pass the UserID to our hash function that will map the user to a database server where store all of the user’s tweets, favorites, follows, etc. While querying for tweets/follows/favorites of a user, ask the hash function where can one find the data of a user and then read it from there. This approach has issue: What if a user becomes hot? There could be a lot of queries on the server holding the user. This high load will affect the performance of our service.
+
+<b>Sharding based on TweetID:</b> The hash function will map each TweetID to a random server where we will store that Tweet. To search for tweets, we have to query all servers, and each server will return a set of tweets. A centralized server will aggregate these results to return them to the user. Let’s look into timeline generation example; here are the steps the system perform to generate a user’s timeline:
+
+The application (app) server find all the people the user follows.
+App server send the query to all database servers to find tweets from these people.
+Each database server find the tweets for each user, sort them by recency and return the top tweets.
+App server merge all the results and sort them again to return the top results to the user.
+This approach solves the problem of hot users, but, in contrast to sharding by UserID, one have to query all database partitions to find tweets of a user, which can result in higher latencies.
+
+We can further improve our performance by introducing cache to store hot tweets in front of the database servers.
 
 Step 4: Deep dive into each Microservice
 
