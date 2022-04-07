@@ -36,6 +36,8 @@ media_ids (number[]): Optional list of media_ids to be associated with the Tweet
 Returns: (string)
 A successful post will return the URL to access that tweet. Otherwise, an appropriate HTTP error is returned.
 
+<img src="https://github.com/rjanapa/rjanapa/blob/main/TwitterHLD.png" width="500" length="500">
+
 Step 3: Draw Logical Architecture: Block diagram for each Microservice, Data/Logic flow between them.
 
 <img src="https://github.com/rjanapa/rjanapa/blob/main/TwitterHLD.png" width="500" length="500">
