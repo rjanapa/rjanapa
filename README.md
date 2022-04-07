@@ -47,4 +47,6 @@ Table of Contents</br>
 
 [Facebook Messenger](https://github.com/rjanapa/rjanapa/blob/main/Facebook%20Messenger.md)
 
+[Twitter](https://github.com/rjanapa/rjanapa/blob/main/Twitter.md)
+
 <b>Technical Product Management</b></br>
