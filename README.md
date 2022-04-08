@@ -1,5 +1,5 @@
 - 👋 Hi, I’m @rjanapa
-- 👀 I’m interested in Scalable System Design
+- 👀 I’m interested in <b>Scalable System Design, Technical Product Management</b>
 - 🌱 I’m currently learning <b>Scalable System Design, Technical Product Management</b>
 - 💞️ I’m looking to collaborate on ...
 - 📫 How to reach me rjanapa@gmail.com
@@ -49,4 +49,44 @@ Table of Contents</br>
 
 [Twitter](https://github.com/rjanapa/rjanapa/blob/main/Twitter.md)
 
-<b>Technical Product Management - In Progress . . .</b></br>
+<b>Technical Product Management </b></br>
+
+<b>Meeting Manager</b></br>
+
+My capstone project is office productivity tool called Intelligent Meeting Manager that makes it easy to organize meetings with template to define meeting agenda, co-host, invitees, capture meeting minutes, record accompanying documentation, well defined outcomes and schedule follow up meetings. It will leverage plugins provided by popular collaborative tools such as Zoom, Teams, Slack, Box, Confluence etc. The user home page presents a dashboard of meetings where the employee is either an organizer or invitee and makes it easy for one to search meeting records.  
+
+The tool will have analytics feature to report on # of meetings held in an organization, how many of those result in successful outcome, # of invitees, # of hours spent in meetings by employee by day, week, month, year etc. It can be rolled up to report on # of meeting hours for the entire organization. The tool will have Machine Learning component that will predict on attendees availability based on the role (participant, contributor, for information etc.) to predict on required attendees availability leading to higher chances of invitee attending the meeting. 
+
+Meeting Manager is an office productivity tool that is one stop solution that can be used by employees of an organization to effectively manage office meetings with well-defined outcomes and next steps.
+
+Jobs to be done: https://miro.com/app/board/uXjVOBTZ9Xk=/
+
+Blue ocean strategy: https://miro.com/app/board/uXjVOBQwvgw=/
+
+Porter's five forces: https://miro.com/app/board/uXjVOBQ9bHo=/
+
+Buyer Persona: https://miro.com/app/board/uXjVOAmRzOg=/
+
+Empathy Map: https://miro.com/app/board/uXjVOAljepQ=/
+
+Mapping Value Proposition to Jobs To Be Done (JTBD): https://miro.com/app/board/uXjVOAlcTAQ=/
+
+Value Proposition Canvas: https://miro.com/app/board/uXjVOAktQAI=/
+
+User Interview(to be done): https://miro.com/app/board/uXjVOApAESQ=/
+
+Business Model and Metrics: https://miro.com/app/board/uXjVOAlFso0=/
+
+Your Product Story: https://miro.com/app/board/uXjVOA7GEvw=/
+
+Targeting Criteria: https://miro.com/app/board/uXjVOA72lqY=/
+
+Marketing Segmentation: https://miro.com/app/board/uXjVOA7qHAA=/
+
+Product Metrics Strategy: https://miro.com/app/board/uXjVOARu2ek=/
+
+AARRR: https://miro.com/app/board/uXjVOAR2coQ=/
+
+Scamper -> https://miro.com/app/board/uXjVO_7bYw8=/
+
+Business Model Canvas -> https://miro.com/app/board/uXjVO_67swU=/
