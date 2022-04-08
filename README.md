@@ -59,34 +59,40 @@ The tool will have analytics feature to report on # of meetings held in an organ
 
 Meeting Manager is an office productivity tool that is one stop solution that can be used by employees of an organization to effectively manage office meetings with well-defined outcomes and next steps.
 
+1.
 Jobs to be done: https://miro.com/app/board/uXjVOBTZ9Xk=/
 
 Blue ocean strategy: https://miro.com/app/board/uXjVOBQwvgw=/
 
 Porter's five forces: https://miro.com/app/board/uXjVOBQ9bHo=/
 
+2.
 Buyer Persona: https://miro.com/app/board/uXjVOAmRzOg=/
 
 Empathy Map: https://miro.com/app/board/uXjVOAljepQ=/
 
+3.1
 Mapping Value Proposition to Jobs To Be Done (JTBD): https://miro.com/app/board/uXjVOAlcTAQ=/
 
 Value Proposition Canvas: https://miro.com/app/board/uXjVOAktQAI=/
 
 User Interview(to be done): https://miro.com/app/board/uXjVOApAESQ=/
 
-Business Model and Metrics: https://miro.com/app/board/uXjVOAlFso0=/
-
+3.2
 Your Product Story: https://miro.com/app/board/uXjVOA7GEvw=/
 
 Targeting Criteria: https://miro.com/app/board/uXjVOA72lqY=/
 
 Marketing Segmentation: https://miro.com/app/board/uXjVOA7qHAA=/
 
+4.
+Business Model and Metrics: https://miro.com/app/board/uXjVOAlFso0=/
+
 Product Metrics Strategy: https://miro.com/app/board/uXjVOARu2ek=/
 
 AARRR: https://miro.com/app/board/uXjVOAR2coQ=/
 
+5.
 Scamper -> https://miro.com/app/board/uXjVO_7bYw8=/
 
 Business Model Canvas -> https://miro.com/app/board/uXjVO_67swU=/
