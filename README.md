@@ -1,6 +1,6 @@
 - 👋 Hi, I’m @rjanapa
-- 👀 I’m interested in <b>Scalable System Design, Technical Product Management</b>
-- 🌱 I’m currently learning <b>Scalable System Design, Technical Product Management</b>
+- 👀 I’m interested in <b>Scalable System Design, Product Management</b>
+- 🌱 I’m currently learning <b>Scalable System Design, Product Management</b>
 - 💞️ I’m looking to collaborate on ...
 - 📫 How to reach me rjanapa@gmail.com
 
@@ -49,7 +49,7 @@ Table of Contents</br>
 
 [Twitter](https://github.com/rjanapa/rjanapa/blob/main/Twitter.md)
 
-<b>Technical Product Management </b></br>
+<b>Product Management </b></br>
 
 <b>Meeting Manager</b></br>
 
