@@ -68,8 +68,8 @@ create(Long URL)<br>
 
 <b>Algorithm</b><br>
 
-● Compute a unique hash (e.g., MD5 or SHA256, etc.) of the given URL. <br>
-● Encode the hash for display. Convert unique id to 6 or 7 character long string<br>
+● <b>Compute a unique hash</b> e.g., MD5 or SHA256, etc. of the given URL. <br>
+● <b>Encode the hash</b> for display. Convert unique id to 6 or 7 character long string<br>
 
 64 characters(0..9,a..z,A..Z)(+,-), 6 positions = 64^6 = (2^6)^6 = 2^36 = (2^10)(2^10)(2^10)(2^6) =  68,719,476,736 =~ 68 billion keys<br>
 64 characters(0..9,a..z,A..Z)(+,-), 7 positions = 64 x 64 x 64 x 64 x 64 x 64 x 64 = 64^7 = (2^6)^7 = 2^42 = (2^10)(2^10)(2^10)(2^10)(2^2) = 1000 * 1000 * 1000 * 1000 * 2^2 = 4 trillion keys<br>
