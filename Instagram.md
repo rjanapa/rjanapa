@@ -97,11 +97,14 @@ Some users will have a lot of photos compared to others, thus making a non-unifo
 Storing all photos of a user on one shard can cause issues like unavailability of all of the user’s data if that shard is down or higher latency if it is serving high load etc.<br>
 
 <b>b. Partitioning based on PhotoID </b><br>
-If one can generate unique PhotoIDs first and then find a shard number through “PhotoID % 10”, the above problems will be solved and there is no need to append ShardID with PhotoID in this case, as PhotoID will itself be unique throughout the system.
 
-How can we generate PhotoIDs? Here, we cannot have an auto-incrementing sequence in each shard to define PhotoID because we need to know PhotoID first to find the shard where it will be stored. One solution could be that we dedicate a separate database instance to generate auto-incrementing IDs. If our PhotoID can fit into 64 bits, we can define a table containing only a 64 bit ID field. So whenever we would like to add a photo in our system, we can insert a new row in this table and take that ID to be our PhotoID of the new photo.
+If one can generate unique PhotoIDs first and then find a shard number through “PhotoID % 10”, the above problems will be solved.
 
-Wouldn’t this key generating DB be a single point of failure? Yes, it would be. A workaround for that could be to define two such databases, one generating even-numbered IDs and the other odd-numbered.
+How can we generate PhotoIDs? 
+Here, we cannot have an auto-incrementing sequence in each shard to define PhotoID because we need to know PhotoID first to find the shard where it will be stored. One solution could be that we dedicate a separate database instance to generate auto-incrementing IDs. 
+
+Wouldn’t this key generating DB be a single point of failure? 
+Yes, it would be. A workaround for that could be to define two such databases, one generating even-numbered IDs and the other odd-numbered.
 
 We can put a load balancer in front of both of these databases to round-robin between them and to deal with downtime. Both these servers could be out of sync, with one generating more keys than the other, but this will not cause any issue in our system. We can extend this design by defining separate ID tables for Users, Photo-Comments, or other objects present in our system.
 
