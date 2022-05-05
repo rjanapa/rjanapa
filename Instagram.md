@@ -89,17 +89,11 @@ For both the tables, Use a wide-column datastore like Cassandra. For the ‘User
 
 <b>a. Partitioning based on UserID </b><br>
 
-Assume shard based on the ‘UserID’ so that keep all photos of a user on the same shard. If one DB shard is 1TB, one will need 5 shards to store 5TB of data. Assume, for better performance and scalability, keep 10 shards.
+Shard based on the ‘UserID’ so that keep all photos of a user on the same shard.   
 
-So find the shard number by UserID % 10 and then store the data there. To uniquely identify any photo in the system, append the shard number to each PhotoID.
-
-How can one generate PhotoIDs? Each DB shard can have its own auto-increment sequence for PhotoIDs, and since one will append ShardID with each PhotoID, it will make it unique throughout the system.
-
-What are the different issues with this approach?
-
+Different issues with this approach:
 Several people follow hot users e.g. celebrities, and a lot of other people see any photo they upload.
 Some users will have a lot of photos compared to others, thus making a non-uniform distribution of storage.
-What if one cannot store all pictures of a user on one shard? If one distribute photos of a user onto multiple shards, will it cause higher latencies?
 Storing all photos of a user on one shard can cause issues like unavailability of all of the user’s data if that shard is down or higher latency if it is serving high load etc.
 
 <b>b. Partitioning based on PhotoID </b><br>
