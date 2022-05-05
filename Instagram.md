@@ -44,7 +44,7 @@ Search Image Microservice -> Download Image Microservice
 
 Photo uploads can be slow as they have to go to the disk, whereas reads will be faster, especially if they are being served from cache.
 
-Uploading users can consume all the available connections, as uploading is a slow process. This means that ‘reads’ cannot be served if the system gets busy with all the ‘write’ requests. Web servers have a connection limit before designing our system. Assume that a web server have a maximum of 500 connections at any time, then it can’t have more than 500 concurrent uploads or reads. To handle this bottleneck, split reads and writes into separate services and have dedicated servers for reads and writes to ensure uploads don’t hog the system.
+Split reads and writes into separate services and have dedicated servers for reads and writes to ensure uploads don’t hog the system.
 
 Separating photos’ read and write requests allow to scale and optimize each of these operations independently.
 
