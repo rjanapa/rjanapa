@@ -91,7 +91,7 @@ For both the tables, Use a wide-column datastore like Cassandra. For the ‘User
 
 Shard based on the ‘UserID’ so that keep all photos of a user on the same shard.   
 
-Different issues with this approach:
+Different issues with this approach:<br>
 Several people follow hot users e.g. celebrities, and a lot of other people see any photo they upload.<br>
 Some users will have a lot of photos compared to others, thus making a non-uniform distribution of storage.<br>
 Storing all photos of a user on one shard can cause issues like unavailability of all of the user’s data if that shard is down or higher latency if it is serving high load etc.<br>
