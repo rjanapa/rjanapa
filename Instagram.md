@@ -6,7 +6,7 @@ A user can follow other users. <br
                                    
 The ‘News Feed’ for each user will consist of top photos of all the people the user follows<br>
 
-<b>Step 1: Functional Requirements, Non-Functional Requirements, Extended Requirements, Design Constraints</b><br>
+<b>Step 1: 
 
 <b>Functional Requirements</b><br>
 
