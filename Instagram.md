@@ -49,9 +49,8 @@ Split reads and writes into separate services and have dedicated servers for rea
 Separating photos’ read and write requests allow to scale and optimize each of these operations independently.
 
 <b>Reliability and Redundancy</b><br>
-Losing files is not an option for our service. Therefore, store multiple copies of each file so that if one storage server dies, one can retrieve the photo from the other copy present on a different storage server.<br>
 
-This same principle also applies to other components of the system. If one wants to have high availability of the system, one need to have multiple replicas of services running in the system so that even if a few services die down, the system remains available and running. Redundancy removes the single point of failure in the system.<br>
+If one wants to have high availability of the system, one need to have multiple replicas of services running in the system so that even if a few services die down, the system remains available and running. Redundancy removes the single point of failure in the system.<br>
 
 If only one instance of a service is required to run at any point, one can run a redundant secondary copy of the service that is not serving any traffic, but it can take control after the failover when the primary has a problem.
 
@@ -89,6 +88,7 @@ For both the tables, Use a wide-column datastore like Cassandra. For the ‘User
 <b>Data Sharding</b><br>
 
 <b>a. Partitioning based on UserID </b><br>
+
 Assume shard based on the ‘UserID’ so that keep all photos of a user on the same shard. If one DB shard is 1TB, one will need 5 shards to store 5TB of data. Assume, for better performance and scalability, keep 10 shards.
 
 So find the shard number by UserID % 10 and then store the data there. To uniquely identify any photo in the system, append the shard number to each PhotoID.
