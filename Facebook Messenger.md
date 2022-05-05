@@ -1,4 +1,4 @@
-<b>System Design Facebook Messenger</b>
+<b>Facebook Messenger</b>
 
 Instant messaging service like Facebook Messenger allow users to send text messages to each other through web and mobile interfaces.
 
