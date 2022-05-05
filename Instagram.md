@@ -106,9 +106,6 @@ Here, we cannot have an auto-incrementing sequence in each shard to define Photo
 Wouldn’t this key generating DB be a single point of failure? <br>
 Yes, it would be. A workaround for that could be to define two such databases, one generating even-numbered IDs and the other odd-numbered.
 
-How can we plan for the future growth of our system? <br>
-We can have a large number of logical partitions to accommodate future data growth, such that in the beginning, multiple logical partitions reside on a single physical database server. Since each database server can have multiple database instances running on it, we can have separate databases for each logical partition on any server. So whenever we feel that a particular database server has a lot of data, we can migrate some logical partitions from it to another server. We can maintain a config file (or a separate database) that can map our logical partitions to database servers; this will enable us to move partitions around easily. Whenever we want to move a partition, we only have to update the config file to announce the change.
-
 <b>Ranking and News Feed Generation</b><br>
 To create the News Feed for any given user, we need to fetch the latest, most popular, and relevant photos of the people the user follows.
 
