@@ -74,7 +74,7 @@ Index on (PhotoID, CreationDate) since need to fetch recent photos first.<br>
 
 <img src="https://github.com/rjanapa/rjanapa/blob/main/Instagram-DB-Tables.png" width="500" length="500">
 
-A straightforward approach for storing the above schema would be to use an RDBMS like MySQL since we require joins. But RDBMS come with their challenges, especially when one needs to scale them. <br>
+One approach to store the above schema would be to use an RDBMS like MySQL since it require joins. But RDBMS come with their own challenges, especially when one needs to scale them. <br>
 
 Store photos in a distributed file storage like HDFS (Hadoop Distributed File System) or S3.<br>
 
