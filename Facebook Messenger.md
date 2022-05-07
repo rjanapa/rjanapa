@@ -5,29 +5,29 @@ Facebook Messenger allow users to send text messages to each other through web a
 Step 1: Functional Requirements, Non-Functional Requirements, Extended Requirements, Design Constraints
 
 <b>Functional Requirements:</b>
-
-Messenger should support one-on-one conversations between users.<br>
-Messenger should keep track of the online/offline statuses of its users.<br>
-Messenger should support the persistent storage of chat history.
+1. Messenger should support one-on-one conversations between users.<br>
+2. Messenger should keep track of the online/offline statuses of its users.<br>
+3. Messenger should support the persistent storage of chat history.
 
 <b>Non-functional Requirements:</b>
-
-Users should have a real-time chatting experience with minimum latency.<br>
-Our system should be highly consistent; users should see the same chat history on all their devices.<br>
+1. Users should have a real-time chatting experience with minimum latency.<br>
+2. Our system should be highly consistent; users should see the same chat history on all their devices.<br>
 
 <b>Extended Requirements:</b>
+1. Group Chats<br>
+2. Push notifications: Messenger should be able to notify users of new messages when they are offline.
 
-Group Chats<br>
-Push notifications: Messenger should be able to notify users of new messages when they are offline.
+Capacity Estimation and Constraints
 
-<b>Capacity Estimation and Constraints</b>
 Assume 500 million daily active users, and on average, each user sends 40 messages daily; this gives us 20 billion messages per day.
 
-<b>Storage Estimation:</b> Assume that, on average, a message is 100 bytes. So to store all the messages for one day, we would need 2TB of storage.
+Storage Estimation:
 
-<b>20 billion messages * 100 bytes => 2000 GB/day => 2 TB/day</b><br>
+Assume that, on average, a message is 100 bytes. So to store all the messages for one day, we would need 2TB of storage.
 
-<b>To store five years of chat history, we would need 3.6 petabytes of storage.</b><br>
+20 billion messages * 100 bytes => 2000 GB/day => 2 TB/day<br>
+
+To store five years of chat history, we would need 3.6 petabytes of storage.<br>
 
 2 TB * 365 days * 5 years ~= 4000 TB ~= 3.6 PB<br>
 
@@ -38,7 +38,9 @@ Assume 500 million daily active users, and on average, each user sends 40 messag
 
 Besides chat messages, we also need to store users’ information, messages’ metadata (ID, Timestamp, etc.). Not to mention, the above calculation doesn’t take data compression and replication into consideration.
 
-<b>Bandwidth Estimation:</b> If our service is getting 2TB of data every day, this will give us 25MB of incoming data for each second.
+Bandwidth Estimation:
+
+If our service is getting 2TB of data every day, this will give us 25MB of incoming data for each second.
 
 2 TB / 86400 sec ~= 25 MB/s<br>
 
@@ -79,9 +81,11 @@ To send messages, a user needs to connect to the server and post messages for th
 To get a message from the server, the user has two options:
 
 <b>Pull model:</b><br>
+
 Users can periodically ask the server if there are any new messages for them.<br>
 
 <b>Push model:</b><br>
+
 Users can keep a connection open with the server and can depend upon the server to notify them whenever there are new messages.
 In the first approach, the server needs to keep track of messages that are still waiting to be delivered, and as soon as the receiving user connects to the server to ask for any new message, the server can return all the pending messages. To minimize latency for the user, they have to check the server quite frequently, and most of the time, they will be getting an empty response if there are no pending messages. This will waste a lot of resources and does not look like an efficient solution.
 
@@ -98,9 +102,11 @@ Both of our requirements can be easily met with a wide-column database solution 
 <b>Data partitioning</b><br>
 
 <b>Partitioning based on UserID: </b><br>
-<b>Let’s assume we partition based on the hash of the UserID so that we can keep all messages of a user on the same database. If one DB shard is 4TB, we will have “3.6PB/4TB ~= 900” shards for five years. For simplicity, let’s assume we keep 1K shards. So we will find the shard number by “hash(UserID) % 1000” and then store/retrieve the data from there. This partitioning scheme will also be very quick to fetch chat history for any user.
+
+Let’s assume we partition based on the hash of the UserID so that we can keep all messages of a user on the same database. If one DB shard is 4TB, we will have “3.6PB/4TB ~= 900” shards for five years. For simplicity, let’s assume we keep 1K shards. So we will find the shard number by “hash(UserID) % 1000” and then store/retrieve the data from there. This partitioning scheme will also be very quick to fetch chat history for any user.
 
 Partitioning based on MessageID:</b><br>
+
 If we store different messages of a user on separate database shards, fetching a range of messages of a chat would be very slow, so we should not adopt this scheme.
 
 Step 4: Deep dive into each Microservice
