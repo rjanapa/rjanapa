@@ -60,7 +60,9 @@ At a high level, the system handle the following use cases:<br>
 
 <img src="https://github.com/rjanapa/rjanapa/blob/main/FB-messenger-diagram.png" width="500" length="500">
 
-Design Summary: Clients will open a connection to the chat server to send a message; the server will then pass it to the requested user. All the active users will keep a connection open with the server to receive messages. Whenever a new message arrives, the chat server will push it to the receiving user on the long poll request. Messages can be stored in HBase, which supports quick small updates and range-based searches. The servers can broadcast the online status of a user to other relevant users. Clients can pull status updates for users who are visible in the client’s viewport on a less frequent basis.
+<b>Design Summary:</b><br> 
+
+Clients will open a connection to the chat server to send a message; the server will then pass it to the requested user. All the active users will keep a connection open with the server to receive messages. Whenever a new message arrives, the chat server will push it to the receiving user on the long poll request. Messages can be stored in HBase, which supports quick small updates and range-based searches. The servers can broadcast the online status of a user to other relevant users. Clients can pull status updates for users who are visible in the client’s viewport on a less frequent basis.
 
 <b>Messages Handling</b><br>
 To send messages, a user needs to connect to the server and post messages for the other users. To get a message from the server, the user has two options:
