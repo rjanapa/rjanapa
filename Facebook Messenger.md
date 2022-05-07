@@ -16,11 +16,10 @@ Messenger should support the persistent storage of chat history.
 
 Users should have a real-time chatting experience with minimum latency.<br>
 Our system should be highly consistent; users should see the same chat history on all their devices.<br>
-Messenger’s high availability is desirable; we can tolerate lower availability in the interest of consistency.
 
 <b>Extended Requirements:</b>
 
-Group Chats: Messenger should support multiple people talking to each other in a group.<br>
+Group Chats<br>
 Push notifications: Messenger should be able to notify users of new messages when they are offline.
 
 <b>Capacity Estimation and Constraints</b>
