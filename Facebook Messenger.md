@@ -51,9 +51,12 @@ Step 3: Draw Logical Architecture: Block diagram for each Microservice, Data/Log
 <b>High Level Design</b><br>
 
 At a high level, the system handle the following use cases:<br>
-Receive incoming messages and deliver outgoing messages.<br>
-Store and retrieve messages from the database.<br>
-Keep a record of which user is online or has gone offline, and notify all the relevant users about these status changes.<br>
+
+1. Receive incoming messages and deliver outgoing messages.<br>
+
+2. Store and retrieve messages from the database.<br>
+
+3. Keep a record of which user is online or has gone offline, and notify all the relevant users about these status changes.<br>
 
 <img src="https://github.com/rjanapa/rjanapa/blob/main/FB-messenger-diagram.png" width="500" length="500">
 
