@@ -105,7 +105,7 @@ Both of our requirements can be easily met with a wide-column database solution 
 
 Let’s assume we partition based on the hash of the UserID so that we can keep all messages of a user on the same database. If one DB shard is 4TB, we will have “3.6PB/4TB ~= 900” shards for five years. For simplicity, let’s assume we keep 1K shards. So we will find the shard number by “hash(UserID) % 1000” and then store/retrieve the data from there. This partitioning scheme will also be very quick to fetch chat history for any user.
 
-Partitioning based on MessageID:</b><br>
+<b>Partitioning based on MessageID:</b><br>
 
 If we store different messages of a user on separate database shards, fetching a range of messages of a chat would be very slow, so we should not adopt this scheme.
 
