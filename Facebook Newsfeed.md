@@ -16,3 +16,13 @@ Facebook's Newsfeed contains posts, photos, videos, and status updates from all 
 1. The system should be able to generate any user’s newsfeed in real-time. Maximum latency seen by the end user would be 2s.<br>
 2. A post shouldn’t take more than 5s to make it to a user’s feed assuming a new newsfeed request comes in.<br>
 
+<b>System APIs:</b><br>
+
+getUserFeed(api_dev_key, user_id, since_id, count, max_id, exclude_replies)<br>
+
+Parameters:<br>
+api_dev_key (string): The API developer key of a registered can be used to, among other things, throttle users based on their allocated quota.<br>
+user_id (number): The ID of the user for whom the system will generate the newsfeed.<br>
+
+<b>High Level System Design</b><br>
+
