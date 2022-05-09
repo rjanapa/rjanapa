@@ -30,10 +30,26 @@ At a high level this system can be divided into two parts:
 
 <b>Feed generation:</b><br>
 
-Newsfeed is generated from the posts (or feed items) of users and entities (pages and groups) that a user follows. So, whenever the system receives a request to generate the feed for a user, the following steps will be performed:
+Newsfeed is generated from the posts (or feed items) of users and entities (pages and groups) that a user follows. 
 
-Retrieve IDs of all users and entities that the user follows.<br>
-Retrieve latest, most popular and relevant posts for those IDs. These are the potential posts that we can show in user’s newsfeed.<br>
-Rank these posts based on the relevance to user. This represents user’s current feed.<br>
-Store this feed in the cache and return top posts (say 20) to be rendered on user’s feed.<br>
-On the front-end, when user reaches the end of the current feed, fetch the next 20 posts from the server and so on.<br>
+Whenever the system receives a request to generate the feed for a user, the following steps are performed:
+
+1. Retrieve IDs of all users and entities that the user follows.<br>
+2. Retrieve latest, most popular and relevant posts for those IDs. These are the potential posts that we can show in user’s newsfeed.<br>
+3. Rank these posts based on the relevance to user. This represents user’s current feed.<br>
+4. Store this feed in the cache and return top posts (say 20) to be rendered on user’s feed.<br>
+5. On the front-end, when user reaches the end of the current feed, fetch the next 20 posts from the server and so on.<br>
+
+<b>Feed publishing: </b><br>
+
+Whenever user loads the newsfeed page, the system request and pull feed items from the server. When the user reaches the end of the current feed, system can pull more data from the server. For newer items either the server can notify the user and then system can pull, or the server can push, these new posts.  
+
+At a high level, following components are in Newsfeed service:
+
+<b>Web servers: </b> To maintain a connection with the user. This connection will be used to transfer data between the user and the server.<br>
+<b>Application server:</b> To execute the workflows of storing new posts in the database servers. We will also need some application servers to retrieve and to push the newsfeed to the end user.<br>
+<b>Metadata database and cache:</b> To store the metadata about Users, Pages, and Groups.<br>
+<b>Posts database and cache:</b> To store metadata about posts and their contents.<br>
+<b>Video and photo storage, and cache:</b> Blob storage, to store all the media included in the posts.<br>
+<b>Newsfeed generation service:</b> To gather and rank all the relevant posts for a user to generate newsfeed and store in the cache. This service will also receive live updates and will add these newer feed items to any user’s timeline.<br>
+<b>Feed notification service:</b> To notify the user that there are newer items available for their newsfeed.<br>
