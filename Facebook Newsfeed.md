@@ -26,3 +26,14 @@ user_id (number): The ID of the user for whom the system will generate the newsf
 
 <b>High Level System Design</b><br>
 
+At a high level this system can be divided into two parts:
+
+<b>Feed generation:</b><br>
+
+Newsfeed is generated from the posts (or feed items) of users and entities (pages and groups) that a user follows. So, whenever the system receives a request to generate the feed for a user, the following steps will be performed:
+
+Retrieve IDs of all users and entities that the user follows.<br>
+Retrieve latest, most popular and relevant posts for those IDs. These are the potential posts that we can show in user’s newsfeed.<br>
+Rank these posts based on the relevance to user. This represents user’s current feed.<br>
+Store this feed in the cache and return top posts (say 20) to be rendered on user’s feed.<br>
+On the front-end, when user reaches the end of the current feed, fetch the next 20 posts from the server and so on.<br>
