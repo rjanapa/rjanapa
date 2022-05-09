@@ -13,6 +13,6 @@ Facebook's Newsfeed contains posts, photos, videos, and status updates from all 
 
 <b>Non-functional requirements:</b><br>
 
-The system should be able to generate any user’s newsfeed in real-time. Maximum latency seen by the end user would be 2s.<br>
-A post shouldn’t take more than 5s to make it to a user’s feed assuming a new newsfeed request comes in.<br>
+1. The system should be able to generate any user’s newsfeed in real-time. Maximum latency seen by the end user would be 2s.<br>
+2. A post shouldn’t take more than 5s to make it to a user’s feed assuming a new newsfeed request comes in.<br>
 
