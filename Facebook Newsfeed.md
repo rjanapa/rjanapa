@@ -53,3 +53,6 @@ At a high level, following components are in Newsfeed service:
 <b>Video and photo storage, and cache:</b> Blob storage, to store all the media included in the posts.<br>
 <b>Newsfeed generation service:</b> To gather and rank all the relevant posts for a user to generate newsfeed and store in the cache. This service will also receive live updates and will add these newer feed items to any user’s timeline.<br>
 <b>Feed notification service:</b> To notify the user that there are newer items available for their newsfeed.<br>
+
+<img src="https://github.com/rjanapa/rjanapa/blob/main/FB-Newsfeed-HLD.png" width="500" length="500">
+
