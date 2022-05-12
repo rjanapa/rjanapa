@@ -49,7 +49,7 @@ Table of Contents</br>
 
 [Twitter](https://github.com/rjanapa/rjanapa/blob/main/Twitter.md)
 
-<b>Product Management </b></br>
+<b>Technical Product Management </b></br>
 
 <b>Meeting Manager</b></br>
 
@@ -115,4 +115,16 @@ https://miro.com/app/board/uXjVOAR2coQ=/
 https://miro.com/app/board/uXjVO_7bYw8=/
 
 <b>Business Model Canvas:</b></br>
+https://miro.com/app/board/uXjVO_67swU=/
+
+
+
+<b>Step 5</b></br>
+
+<b>Roadmap:</b></br>
+https://miro.com/app/board/uXjVO12AMUg=/
+
+<b>Prioritization:</b></br>
+MosCow Framework:
+https://miro.com/app/board/uXjVO17sWQY=/
 https://miro.com/app/board/uXjVO_67swU=/
