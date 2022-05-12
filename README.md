@@ -117,14 +117,11 @@ https://miro.com/app/board/uXjVO_7bYw8=/
 <b>Business Model Canvas:</b></br>
 https://miro.com/app/board/uXjVO_67swU=/
 
-
-
-<b>Step 5</b></br>
+<b>Step 6/b></br>
 
 <b>Roadmap:</b></br>
 https://miro.com/app/board/uXjVO12AMUg=/
 
-<b>Prioritization:</b></br>
-MosCow Framework:
+<b>Prioritization using MosCow Framework:</b></br>
 https://miro.com/app/board/uXjVO17sWQY=/
 https://miro.com/app/board/uXjVO_67swU=/
