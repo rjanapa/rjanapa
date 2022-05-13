@@ -125,3 +125,6 @@ https://miro.com/app/board/uXjVO12AMUg=/
 <b>Prioritization using MosCow Framework:</b></br>
 https://miro.com/app/board/uXjVO17sWQY=/
 https://miro.com/app/board/uXjVO_67swU=/
+
+Pricing Strategy
+https://miro.com/app/board/uXjVO1NgeYc=/
