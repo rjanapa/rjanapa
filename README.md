@@ -117,7 +117,7 @@ https://miro.com/app/board/uXjVO_7bYw8=/
 <b>Business Model Canvas:</b></br>
 https://miro.com/app/board/uXjVO_67swU=/
 
-<b>Step 6/b></br>
+<b>Step 6</b></br>
 
 <b>Roadmap:</b></br>
 https://miro.com/app/board/uXjVO12AMUg=/
