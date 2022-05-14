@@ -83,6 +83,7 @@ https://miro.com/app/board/uXjVOAmRzOg=/
 https://miro.com/app/board/uXjVOAljepQ=/
 
 <b>Step 3.1</b></br>
+
 <b>Mapping Value Proposition to Jobs To Be Done (JTBD):</b></br>
 https://miro.com/app/board/uXjVOAlcTAQ=/
 
@@ -93,6 +94,7 @@ https://miro.com/app/board/uXjVOAktQAI=/
 https://miro.com/app/board/uXjVOApAESQ=/
 
 <b>Step 3.2</b></br>
+
 <b>Your Product Story:</b></br>
 https://miro.com/app/board/uXjVOA7GEvw=/
 
@@ -136,8 +138,7 @@ https://miro.com/app/board/uXjVO1NgeYc=/
 <b>Product Management Books</b></br>
 
 <b>The design of everyday things by Don Norman</b></br>
-https://www.amazon.com/Design-of-Everyday-Things-audiobook/dp/B07L5Y9HND/ref=sr_1_1?gclid=Cj0KCQjwpv2TBhDoARIsALBnVnl0Kk159EIgkkT-_KC03TfulLB0MKL8hYXiZ1zoTSJAvn1xmWoJ2IwaAp2NEALw_wcB&hvadid=241620562024&hvdev=c&hvlocphy=9033265&hvnetw=g&hvqmt=e&hvrand=1527170392380678845&hvtargid=kwd-97386340&hydadcr=22569_10355199&keywords=the+design+of+everyday+things&qid=1652547935&sr=8-1
-
+https://www.amazon.com/Design-Everyday-Things-Revised-Expanded/dp/0465050654</br>
 <b>System Design:</b></br> https://www.amazon.com/System-Design-Interview-insiders-Second/dp/B08CMF2CQF/</br>
 <b>Algorithm Design Manual:</b></br> https://www.amazon.com/Algorithm-Design-Manual-Steven-Skiena/dp/1849967202</br>
 <b>Cracking the Coding Interview:</b></br> https://www.amazon.com/Cracking-Coding-Interview-Programming-Questions/dp/0984782850/ref=sr_1_7</br>
