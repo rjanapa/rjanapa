@@ -1,6 +1,6 @@
 - 👋 Hi, I’m @rjanapa
-- 👀 I’m interested in <b>Scalable System Design, Product Management</b>
-- 🌱 I’m currently learning <b>Scalable System Design, Product Management</b>
+- 👀 I’m interested in <b>Scalable System Design, Technical Product Management</b>
+- 🌱 I’m currently learning <b>Scalable System Design, Technical Product Management</b>
 - 💞️ I’m looking to collaborate on ...
 - 📫 How to reach me rjanapa@gmail.com
 
@@ -9,7 +9,7 @@ rjanapa/rjanapa is a ✨ special ✨ repository because its `README.md` (this fi
 You can click the Preview link to take a look at your changes.
 --->
 
-<b>System Design</b></br>
+<b>Scalable System Design</b></br>
 
 Step 1:  Functional Requirements, Non-Functional Requirements, Extended Requirements, Design Constraints
 
