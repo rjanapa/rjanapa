@@ -128,3 +128,8 @@ https://miro.com/app/board/uXjVO_67swU=/
 
 Pricing Strategy
 https://miro.com/app/board/uXjVO1NgeYc=/
+
+Product Management Books
+
+The design of everyday things by Don Norman
+https://www.amazon.com/Design-of-Everyday-Things-audiobook/dp/B07L5Y9HND/ref=sr_1_1?gclid=Cj0KCQjwpv2TBhDoARIsALBnVnl0Kk159EIgkkT-_KC03TfulLB0MKL8hYXiZ1zoTSJAvn1xmWoJ2IwaAp2NEALw_wcB&hvadid=241620562024&hvdev=c&hvlocphy=9033265&hvnetw=g&hvqmt=e&hvrand=1527170392380678845&hvtargid=kwd-97386340&hydadcr=22569_10355199&keywords=the+design+of+everyday+things&qid=1652547935&sr=8-1
