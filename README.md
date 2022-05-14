@@ -59,6 +59,10 @@ The tool will have analytics feature to report on # of meetings held in an organ
 
 <b>Meeting Manager is an office productivity tool that is one stop solution that can be used by employees of an organization to effectively manage office meetings with well-defined outcomes and next steps.</b></br>
 
+<b>Google Slides for Product Portfolio</b></br>
+
+https://docs.google.com/presentation/d/1BGDzDNk_2DiF3TLp2LpGQUBE9egDfv5yzTXpb4eMlUk/edit?usp=sharing
+
 <b>Step 1</b></br>
 
 <b>Jobs to be done:</b></br>
@@ -126,7 +130,7 @@ https://miro.com/app/board/uXjVO12AMUg=/
 https://miro.com/app/board/uXjVO17sWQY=/
 https://miro.com/app/board/uXjVO_67swU=/
 
-Pricing Strategy
+<b>Pricing Strategy</b></br>
 https://miro.com/app/board/uXjVO1NgeYc=/
 
 <b>Product Management Books</b></br>
