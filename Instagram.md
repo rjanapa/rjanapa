@@ -2,7 +2,7 @@
 
 Instagram is a social networking service that enables its users to upload and share their photos and videos with other users. <br>
 
-A user can follow other users. <br
+A user can follow other users. <br>
                                    
 The ‘News Feed’ for each user will consist of top photos of all the people the user follows<br>
 
