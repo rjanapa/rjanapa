@@ -130,6 +130,7 @@ Cores and nodes
 In this section we will explain what is meant by the terms core and node, and explain why we would want to use multiple cores at once.
 
 <b>What is a core?</b><br>
+
 The term core is used to refer to the Central Processing Unit (CPU) of computing devices.  
 
 Many modern microprocessors include more than one CPUs on the same physical device, these are referred to as multicore. The individual CPUs on the devices are the CPU-cores.  
