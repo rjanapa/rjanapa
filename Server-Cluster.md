@@ -125,3 +125,27 @@ how it will affect their company’s reputation and customer experience. Server 
 for 2020, if it depends on reliable IT services. A clustered environment will boost performance, and ensure infrastructure availability, scalability, and reliability.
 
 reference: https://www.liquidweb.com/blog/what-is-server-cluster/
+
+Cores and nodes
+In this section we will explain what is meant by the terms core and node, and explain why we would want to use multiple cores at once.
+
+<b>What is a core?</b><br>
+The term core is used to refer to the Central Processing Unit (CPU) of computing devices.  
+
+Many modern microprocessors include more than one CPUs on the same physical device, these are referred to as multicore. The individual CPUs on the devices are the CPU-cores.  
+
+<b>What is a node?</b><br>
+
+Clusters comprise of a number of servers connected to each other, each of these servers is referred to as a Node. Each node has multiple CPU cores.
+
+Many clusters consist of multiple types of node, these are often used for different types of activity. In many systems there are nodes that are used exclusively for logging into the system and others for computing; these are known as login and compute nodes.
+
+For example, the UCL supercomputer Legion has four node types, these are:
+
+Login nodes<br>
+Transfer nodes<br>
+Compute nodes<br>
+Infrastructure nodes<br>
+
+reference: http://rits.github-pages.ucl.ac.uk/intro-hpchtc/morea/lesson2/reading.html
+
