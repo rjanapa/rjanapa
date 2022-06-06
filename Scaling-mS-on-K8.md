@@ -26,7 +26,7 @@ We still only have a single VM in our cluster, but we have increased our VM’s 
 
 <img src="https://github.com/rjanapa/rjanapa/blob/main/TF-vertical-scaling-mS-k8.png" width="500" length="500">
 
-Listing 1: Vertically scaling the cluster with Terraform (an extract).
+Listing 1. Vertically scaling the cluster with Terraform (an extract).
 
 <b>Horizontally Scaling the Cluster</b><br>
 
@@ -34,13 +34,15 @@ In addition to vertically scaling our cluster, we can also scale it horizontally
 
 By adding more VMs to our cluster, we spread the load of our application across more computers. Figure 3 illustrates how we can take our cluster from three VMs up to six. The size of each VM remains the same, but we gain more computing power by having more VMs.
 
-<img src="https://github.com/rjanapa/rjanapa/blob/main/TF-horizontal-scaling-ms-k8.png" width="500" length="500">
+<img src="https://github.com/rjanapa/rjanapa/blob/main/horizontal-scaling-mS-k8.png" width="500" length="500">
 
 Listing 2 shows an extract of Terraform code to add more VMs to our node pool. Back in listing 1, we had node_count set to 1, but here we have changed it to 6. Note that we reverted the vm_size field to the smaller size of Standard_B2ms. In this example, we increase the number of VMs, but not their size; although there is nothing stopping us from increasing both the number and the size of our VMs.
 
 Generally, though, we might prefer horizontal scaling because it is less expensive than vertical scaling. That’s because using many smaller VMs is cheaper than using fewer but bigger and higher-priced VMs.
 
+<img src="https://github.com/rjanapa/rjanapa/blob/main/TF-horizontal-scaling-mS-k8.png" width="500" length="500">
 
+Listing 2. Horizontal scaling the cluster with Terraform (an extract).
 
 reference: https://thenewstack.io/scaling-microservices-on-kubernetes/
 
