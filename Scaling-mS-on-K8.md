@@ -66,6 +66,22 @@ Again, we can use code to make this change. We can do this by setting the replic
 
 <img src="https://github.com/rjanapa/rjanapa/blob/main/TF-horizontal-scaling-a-ms-k8.png" width="500" length="500">
 
+Listing 3. Horizontally scaling a microservice with Terraform (an extract).
+
+Not only can we scale individual microservices for performance, we can also horizontally scale our microservices for redundancy, creating a more fault-tolerant application. By having multiple instances, there are others available to pick up the load whenever any single instance fails. This allows the failed instance of a microservice to restart and begin working again
+
+<b>Elastic Scaling for the Cluster</b><br>
+
+Moving into more advanced territory, we can now think about elastic scaling. This is a technique where we automatically and dynamically scale our cluster to meet varying levels of demand.
+
+Whenever a demand is low, Kubernetes can automatically deallocate resources that aren’t needed. During high-demand periods, new resources are allocated to meet the increased workload. This generates substantial cost savings because, at any given moment, we only pay for the resources necessary to handle our application’s workload at that time.
+
+We can use elastic scaling at the cluster level to automatically grow our clusters that are nearing their resource limits. Yet again, when using Terraform, this is just a code change. Listing 4 shows how we can enable the Kubernetes autoscaler and set the minimum and maximum size of our node pool.
+
+<img src="https://github.com/rjanapa/rjanapa/blob/main/TF-elastic-scaling-ms-k8.png" width="500" length="500">
+
+Listing 4. Enabling elastic scaling for the cluster with Terraform (an extract)
+
 reference: https://thenewstack.io/scaling-microservices-on-kubernetes/
 
 
