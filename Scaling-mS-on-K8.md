@@ -4,6 +4,8 @@ Measure the performance of microservices to find the ones that are performing po
 
 <img src="https://github.com/rjanapa/rjanapa/blob/main/Scalibility-mS-k8.png" width="500" length="500">
 
+Figure 1: Viewing CPU and memory usage for microservices in the Kubernetes dashboard
+
 <b>Simple techniques for scaling microservices using Kubernetes:</b><br>
 
 1. Vertically scaling the entire cluster<br>
@@ -19,6 +21,8 @@ As we grow our application, we might come to a point where our cluster generally
 At this point, we must increase the total amount of resources available to our cluster. When scaling microservices on a Kubernetes cluster, we can just as easily make use of either vertical or horizontal scaling.
 
 <img src="https://github.com/rjanapa/rjanapa/blob/main/vertical-scaling-ms-k8.png" width="500" length="500">
+
+Figure 2: Vertically scaling your cluster by increasing the size of the virtual machines (VMs).
 
 Listing below is an extract from Terraform code that provisions a cluster on Azure; we change the vm_size field from Standard_B2ms to Standard_B4ms. This upgrades the size of each VM in our Kubernetes node pool. Instead of two CPUs, we now have four (one for each VM). As part of this change, memory and hard-drive for the VM also increase.
 
@@ -36,6 +40,8 @@ By adding more VMs to our cluster, we spread the load of our application across 
 
 <img src="https://github.com/rjanapa/rjanapa/blob/main/horizontal-scaling-ms-k8.png" width="500" length="500">
 
+Figure 3: Horizontally scaling your cluster by increasing the number of VMs.
+
 Listing 2 shows an extract of Terraform code to add more VMs to our node pool. Back in listing 1, we had node_count set to 1, but here we have changed it to 6. Note that we reverted the vm_size field to the smaller size of Standard_B2ms. In this example, we increase the number of VMs, but not their size; although there is nothing stopping us from increasing both the number and the size of our VMs.
 
 Generally, though, we might prefer horizontal scaling because it is less expensive than vertical scaling. That’s because using many smaller VMs is cheaper than using fewer but bigger and higher-priced VMs.
@@ -48,11 +54,17 @@ Listing 2. Horizontal scaling the cluster with Terraform (an extract).
 
 Assuming our cluster is scaled to an adequate size to host all the microservices with good performance, what do we do when individual microservices become overloaded? (This can be monitored in the Kubernetes dashboard.)
 
-Whenever a microservice becomes a performance bottleneck, we can horizontally scale it to distribute its load over multiple instances. This is shown in below figure.
+Whenever a microservice becomes a performance bottleneck, we can horizontally scale it to distribute its load over multiple instances. This is shown in below figure 4.
 
 <img src="https://github.com/rjanapa/rjanapa/blob/main/horizontal-scaling-a-ms-k8.png" width="500" length="500">
 
+Figure 4: Horizontally scaling a microservice by replicating it.
 
+We are effectively giving more compute, memory and storage to this particular microservice so that it can handle a bigger workload.
+
+Again, we can use code to make this change. We can do this by setting the replicas field in the specification for our Kubernetes deployment or pod as shown in listing 3.
+
+<img src="https://github.com/rjanapa/rjanapa/blob/main/TF-horizontal-scaling-a-ms-k8.png" width="500" length="500">
 
 reference: https://thenewstack.io/scaling-microservices-on-kubernetes/
 
