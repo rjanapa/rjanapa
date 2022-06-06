@@ -78,9 +78,17 @@ Whenever a demand is low, Kubernetes can automatically deallocate resources that
 
 We can use elastic scaling at the cluster level to automatically grow our clusters that are nearing their resource limits. Yet again, when using Terraform, this is just a code change. Listing 4 shows how we can enable the Kubernetes autoscaler and set the minimum and maximum size of our node pool.
 
-<img src="https://github.com/rjanapa/rjanapa/blob/main/TF-elastic-scaling-ms-k8.png" width="500" length="500">
+<img src="https://github.com/rjanapa/rjanapa/blob/main/TF-elastic-scaling-mS-k8.png" width="500" length="500">
 
 Listing 4. Enabling elastic scaling for the cluster with Terraform (an extract)
+
+<b>Elastic Scaling for an Individual Microservice</b><br>
+
+We can also enable elastic scaling at the level of an individual microservice.
+
+Listing 5 is a sample of Terraform code that gives microservices a “burstable” capability. The number of replicas for the microservice is expanded and contracted dynamically to meet the varying workload for the microservice (bursts of activity).
+
+<img src="https://github.com/rjanapa/rjanapa/blob/main/TF-elastic-scaling-a-mS-k8.png" width="500" length="500">
 
 reference: https://thenewstack.io/scaling-microservices-on-kubernetes/
 
