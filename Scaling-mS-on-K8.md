@@ -24,7 +24,7 @@ Listing below is an extract from Terraform code that provisions a cluster on Azu
 
 We still only have a single VM in our cluster, but we have increased our VM’s size. In this example, scaling our cluster is as simple as a code change. This is the power of infrastructure-as-code, the technique where we store our infrastructure configuration as code and make changes to our infrastructure by committing code changes that trigger our continuous delivery (CD) pipeline
 
-<img src="https://github.com/rjanapa/rjanapa/blob/main/TF-vertical-scaling-ms-k8.png" width="500" length="500">
+<img src="https://github.com/rjanapa/rjanapa/blob/main/TF-vertical-scaling-mS-k8.png" width="500" length="500">
 
 reference: https://thenewstack.io/scaling-microservices-on-kubernetes/
 
