@@ -44,6 +44,16 @@ Generally, though, we might prefer horizontal scaling because it is less expensi
 
 Listing 2. Horizontal scaling the cluster with Terraform (an extract).
 
+<b>Horizontally Scaling an Individual Microservice</b><br>
+
+Assuming our cluster is scaled to an adequate size to host all the microservices with good performance, what do we do when individual microservices become overloaded? (This can be monitored in the Kubernetes dashboard.)
+
+Whenever a microservice becomes a performance bottleneck, we can horizontally scale it to distribute its load over multiple instances. This is shown in below figure.
+
+<img src="https://github.com/rjanapa/rjanapa/blob/main/horizontal-scaling-a-ms-k8.png" width="500" length="500">
+
+
+
 reference: https://thenewstack.io/scaling-microservices-on-kubernetes/
 
 
