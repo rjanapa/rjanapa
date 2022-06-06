@@ -32,6 +32,8 @@ Table of Contents</br>
 
 [SAP HANA Azure](https://github.com/rjanapa/rjanapa/blob/main/SAP_HANA-Azure.md)
 
+[Scaling Microservices on Kubernetes](https://github.com/rjanapa/rjanapa/blob/main/Scaling-mS-on-K8.md)
+
 [Session Management](https://github.com/rjanapa/rjanapa/blob/main/SessionManagement.md)
 
 [Server Cluster](https://github.com/rjanapa/rjanapa/blob/main/Server-Cluster.md)
