@@ -88,7 +88,7 @@ We can also enable elastic scaling at the level of an individual microservice.
 
 Listing 5 is a sample of Terraform code that gives microservices a “burstable” capability. The number of replicas for the microservice is expanded and contracted dynamically to meet the varying workload for the microservice (bursts of activity).
 
-<img src="https://github.com/rjanapa/rjanapa/blob/main/TF-elastic-scaling-a-mS-k8.png" width="500" length="500">
+<img src="https://github.com/rjanapa/rjanapa/blob/main/TF-elastic-scaling-a-ms-k8.png" width="500" length="500">
 
 reference: https://thenewstack.io/scaling-microservices-on-kubernetes/
 
