@@ -124,5 +124,32 @@ If you need to have more control over the database engine, then consider install
 
 This refers to technologies that can be used to minimize IT disruptions by ensuring applications and infrastructure is made fault tolerant.
 
+Let's say that your application is hosted on a single virtual machine.
 
+What happens if the virtual machine goes down for any reason, your application would not be available?
 
+To make your application more redundant and more tolerant to failures, why not host your application on a collection of servers
+
+Here even if one machine were to go down, you would still have the other one available. This makes your application more tolerant to infrastructure level failures.
+
+<img src="https://github.com/rjanapa/rjanapa/blob/main/HighlyAvailableVM.png" width="500" length="500">
+
+You can also increase the availability for your virtual machines by distributing them across Availability Zones or Availability Sets.
+
+<b>Disaster Recovery</b><br>
+
+This refers to the concept of minimizing IT disruptions by recovering them to another data center that could be located hundreds to miles away from the original data center hosting your application.
+
+The following architecture diagram is an example of implementing disaster recovery.
+
+Here your application is running on virtual machines in the West US region. Here the users are accessing your application.
+
+At the same time, you might have the application hosted in another region (East US). The application might be in a shutdown state. This is only meant to be running if the primary region goes down for any reason.
+
+Not let’s say there is a disaster in the West US region and all the data centers go down.
+
+To minimize any disruption to your users, the requests to the application could now be redirected to the application in the East US region. So now you would start the application here and make sure all requests are routed to the secondary region.
+
+<img src="https://github.com/rjanapa/rjanapa/blob/main/DR.png" width="500" length="500">
+
+<img src="https://github.com/rjanapa/rjanapa/blob/main/DR_Regions.png" width="500" length="500">
