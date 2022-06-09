@@ -46,7 +46,7 @@ A Point-to-Site VPN connection is used to establish a secure connection between 
 
 <b>To implement a Point to Site VPN connection, you need to create a VPN Gateway in Azure.</b><br>
 
-
+<img src="https://github.com/rjanapa/rjanapa/blob/main/Point2SiteConnection.png" width="500" length="500">
 
 <b>Availability Sets</b><br>
 
