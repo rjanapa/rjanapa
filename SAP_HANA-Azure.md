@@ -40,6 +40,14 @@ Azure supports connecting two virtual networks located in the same region or net
 
 Once you enable virtual network peering between two virtual networks, the virtual machines can then communicate via their private IP addresses across the peering connection.
 
+<b>Point-to-Site VPN Connection</b><br>
+
+A Point-to-Site VPN connection is used to establish a secure connection between multiple client machines and an Azure virtual network via the Internet.
+
+<b>To implement a Point to Site VPN connection, you need to create a VPN Gateway in Azure.</b><br>
+
+
+
 <b>Availability Sets</b><br>
 
 When you host your virtual machines in Azure, you sometimes need to cater to the following
