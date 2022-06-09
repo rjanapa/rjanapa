@@ -4,6 +4,26 @@ This reference architecture shows running SAP HANA in a highly available, scale-
 
 <img src="https://github.com/rjanapa/rjanapa/blob/main/SAP-HANA-Azure-Arch.png" width="500" length="500">
 
+<b>Azure Virtual Network</b><br>
+
+The Azure Virtual Network service is used to define an isolated network in Azure. <br>
+
+The virtual network can be used to host resources such as Azure virtual machines.<br>
+
+The Azure virtual network gets assigned an address space which you specify when you create an Azure virtual network<br>
+
+You can then add subnets to your Azure virtual network. This helps divide your network into more logical segments.
+
+You could have one subnet named Subnet A in the virtual network to host your Web servers and another subnet to host the Database servers.
+
+<b>When you create a virtual machine in a virtual network, the virtual machine gets a Private IP address from the address space of the subnet is it launched in.</b><br>
+
+<b>Network Security Groups (NSG)</b><br>
+
+These are used to filter network traffic to and from Azure resources in an Azure virtual network.
+
+A network security group is attached to the network interface attached to the virtual machine.
+
 <b>Availability Sets</b><br>
 
 When you host your virtual machines in Azure, you sometimes need to cater to the following
