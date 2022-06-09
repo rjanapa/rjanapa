@@ -103,3 +103,19 @@ The different replication techniques available
 3.	<b>Geo-redundant storage (GRS)</b> - Here data is replicated synchronously three times in the primary region, then replicated asynchronously to the secondary region.<br>
 
 4.	<b>Read access Geo-redundant storage (RA-GRS)</b> - Here data is replicated synchronously three times in the primary region, then replicated asynchronously to the secondary region. Here the data in the secondary region is also available for read-only purposes.<br>
+
+<b>Azure SQL Database (Platform as a service)</b><br>
+
+This is a service that allows you to create a managed Microsoft SQL Server database on the cloud. 
+
+The advantages of using this service
+
+1.	You don't have to manage the underlying infrastructure. This is managed by Azure.
+
+2.	You have a variety of purchasing options
+
+3.	You have automated backups. This reduces the burden of managing backups.
+
+4.	It gives you a service level agreement of 99.99%
+
+If you need to have more control over the database engine, then consider installing the SQL Server engine on an Azure virtual machine.
