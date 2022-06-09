@@ -119,3 +119,10 @@ The advantages of using this service
 4.	It gives you a service level agreement of 99.99%
 
 If you need to have more control over the database engine, then consider installing the SQL Server engine on an Azure virtual machine.
+
+<b>High Availability</b><br>
+
+This refers to technologies that can be used to minimize IT disruptions by ensuring applications and infrastructure is made fault tolerant.
+
+
+
