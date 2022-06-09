@@ -64,6 +64,8 @@ The Site-to-Site VPN connection uses an IPSec tunnel to encrypt the traffic.
 
 The VPN gateway resource you create in Azure is used to route encrypted traffic between your on-premises data center and your Azure virtual network.
 
+<img src="https://github.com/rjanapa/rjanapa/blob/main/Site2SiteConnection.png" width="500" length="500">
+
 <b>Availability Sets</b><br>
 
 When you host your virtual machines in Azure, you sometimes need to cater to the following
@@ -87,3 +89,17 @@ You can increase the availability of your application by making use of availabil
 4. Hence the physical separation of the Availability Zones helps protect applications against data center failures
 
 <b>Using Availability Zones, you can be guaranteed an availability of 99.99% for your virtual machines. You need to ensure that you have 2 or more virtual machines running across multiple availability zones</b>
+
+<b>Azure Storage Accounts – Replication</b><br>
+
+There are different replication techniques available to make your data highly available.
+
+The different replication techniques available
+
+1.	<b>Locally-redundant storage (LRS)</b> - Here data is replicated synchronously three times within a physical location in the primary region.
+
+2.	<b>Zone-redundant storage (ZRS)</b> - Here data is replicated synchronously across three Azure availability zones in the primary region. This is good when you want to have data present even in the event of a data center failure.<br>
+
+3.	<b>Geo-redundant storage (GRS)</b> - Here data is replicated synchronously three times in the primary region, then replicated asynchronously to the secondary region.<br>
+
+4.	<b>Read access Geo-redundant storage (RA-GRS)</b> - Here data is replicated synchronously three times in the primary region, then replicated asynchronously to the secondary region. Here the data in the secondary region is also available for read-only purposes.<br>
