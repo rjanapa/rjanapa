@@ -24,6 +24,22 @@ These are used to filter network traffic to and from Azure resources in an Azure
 
 A network security group is attached to the network interface attached to the virtual machine.
 
+A network security group consists of Inbound rules that are used to control the traffic inbound into a virtual machine
+
+By default, all traffic into a virtual machine is DENIED.
+
+You must explicitly add rules to allow traffic into a virtual machine
+
+There are also outbound rules to control the traffic flowing out of the virtual machine. By default, all traffic outbound onto the Internet is allowed.
+
+<b>Virtual Network Peering</b><br>
+
+Virtual Network Peering is used to connect two Azure virtual networks together via the backbone network.
+
+Azure supports connecting two virtual networks located in the same region or networks located across regions.
+
+Once you enable virtual network peering between two virtual networks, the virtual machines can then communicate via their private IP addresses across the peering connection.
+
 <b>Availability Sets</b><br>
 
 When you host your virtual machines in Azure, you sometimes need to cater to the following
