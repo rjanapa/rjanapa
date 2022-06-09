@@ -16,7 +16,7 @@ You can then add subnets to your Azure virtual network. This helps divide your n
 
 You could have one subnet named Subnet A in the virtual network to host your Web servers and another subnet to host the Database servers.
 
-<b>When you create a virtual machine in a virtual network, the virtual machine gets a Private IP address from the address space of the subnet is it launched in.</b><br>
+When you create a virtual machine in a virtual network, the virtual machine gets a Private IP address from the address space of the subnet is it launched in.
 
 <b>Network Security Groups (NSG)</b><br>
 
@@ -47,6 +47,22 @@ A Point-to-Site VPN connection is used to establish a secure connection between 
 To implement a Point to Site VPN connection, you need to create a VPN Gateway in Azure.
 
 <img src="https://github.com/rjanapa/rjanapa/blob/main/Point2SiteConnection.png" width="500" length="500">
+
+<b>Site-to-Site VPN Connection</b><br>
+
+A Site-to-Site VPN connection is used to establish a secure connection between an on-premises network and an Azure network via the Internet.
+
+On the on-premises side, you need to have a VPN device that can route traffic via the Internet onto the VPN gateway in Azure.
+
+The VPN device can be a hardware device like a Cisco router or a software device (e.g., Windows Server 2016 running Routing and Remote services). 
+
+The VPN device needs to have a publicly routable IP address.
+
+The subnets in your on-premises network must not overlap with the subnets in your Azure virtual network.
+
+The Site-to-Site VPN connection uses an IPSec tunnel to encrypt the traffic.
+
+The VPN gateway resource you create in Azure is used to route encrypted traffic between your on-premises data center and your Azure virtual network.
 
 <b>Availability Sets</b><br>
 
