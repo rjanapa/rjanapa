@@ -206,7 +206,73 @@ The Edge servers are located across the world, so it gives all users a seamless 
 
 <img src="https://github.com/rjanapa/rjanapa/blob/main/AzureCDN.png" width="500" length="500">
 
+<b>Application Insights</b><br>
 
+Points on this service
+
+Application Performance Management service for web developers.
+
+You can use this tool to monitor your applications.
+
+It can help developers detect anomalies in the application.
+
+It can help diagnose issues.
+
+It can also help understand how users use your application.
+
+It also helps you improve performance and usability of your application.
+
+<b>How does it work</b><br>
+
+You install a small instrumentation package within your application.
+
+You can see the statistics of your application locally in Visual Studio as you run your application.
+
+You can also use the Application Insights resource in Azure to monitor your application.
+
+<b>What are the different aspects monitored by Application Insights?</b><br>
+
+Request rates, the response times and failure rates – This is done at the page level.
+
+Exception recorded by your application.
+
+Page views and their load performance as reported from the user’s browser.
+
+User and session counts.
+
+Performance counters of the underlying Windows or Linux Machines.
+
+Diagnostic trace logs from your application.
+
+Any custom events or metrics that the developer writes themselves in the code.
+
+<b>Azure Security Center</b><br>
+
+This is an infrastructure security management system.
+
+You can use this tool to improve the security of your Azure based resources and on-premises resources as well.
+
+Azure Security Center has in-built support for services such as Azure virtual machines, Function Apps, Azure SQL Server databases.
+
+You can also allow Azure Security Center to give recommendations on what to do for on-premises Windows and Linux servers.
+
+On these servers, you need to ensure you install the Microsoft Monitoring agent.
+
+This service also helps detect and prevent threats at an Infrastructure layer
+
+<b>Azure Firewall</b><br>
+
+This is a managed, cloud-based network security service that can be used to protect your network resources.
+
+It has features such as Threat intelligence – This can filter incoming requests and alert or deny traffic from/to malicious IP addresses and domains.
+
+The firewall itself has built-in high availability.
+
+It can scale automatically based on network traffic flows.
+
+Here you can ensure that all traffic from machines in an Azure virtual network flows via the Azure Firewall service.
+
+<img src="https://github.com/rjanapa/rjanapa/blob/main/AzureFirewall.png" width="500" length="500">
 
 
 
