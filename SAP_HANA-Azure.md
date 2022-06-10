@@ -194,5 +194,20 @@ And then we have the Geographic routing method wherein users would be directed t
 
 <img src="https://github.com/rjanapa/rjanapa/blob/main/AzureTrafficManagerGeoRouting.png" width="500" length="500">
 
+<b>Azure Content Delivery Network</b><br>
+
+This is an ideal service to use for your web applications. If you need content to be distributed to users across the world for your web sites, then it’s ideal to use the Azure Content Delivery Network Service
+
+Here the users are directed on various Edge servers by the Content Delivery Network service.
+
+The Edge servers will get the content from your web site and cache frequently accessed content.
+
+The Edge servers are located across the world, so it gives all users a seamless experience when it comes to accessing your web site.
+
+<img src="https://github.com/rjanapa/rjanapa/blob/main/AzureCDN.png" width="500" length="500">
+
+
+
+
 
 
