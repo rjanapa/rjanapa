@@ -153,3 +153,19 @@ To minimize any disruption to your users, the requests to the application could 
 <img src="https://github.com/rjanapa/rjanapa/blob/main/DR.png" width="500" length="500">
 
 <img src="https://github.com/rjanapa/rjanapa/blob/main/DR_Regions.png" width="500" length="500">
+
+<b>Azure Load Balancer</b><br>
+
+The Azure Load balancer is used to distribute incoming network traffic to a backend group of servers.
+
+This service helps increase the availability of your entire application architecture
+
+Here the Load Balancer would take the incoming requests from the users and direct the requests to virtual machines running in an Azure virtual network.
+
+If you have a web application running on the backend virtual machines, the requests would be distributed across the virtual machines by the Azure Load Balancer.
+
+<img src="https://github.com/rjanapa/rjanapa/blob/main/AzureLoadBalancer.png" width="500" length="500">
+
+
+
+
