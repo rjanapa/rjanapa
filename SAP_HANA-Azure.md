@@ -166,6 +166,33 @@ If you have a web application running on the backend virtual machines, the reque
 
 <img src="https://github.com/rjanapa/rjanapa/blob/main/AzureLoadBalancer.png" width="500" length="500">
 
+<b>Azure Traffic Manager</b><br>
+
+The Azure Traffic Manager service is a DNS-based traffic load balancer that distributes traffic across services that are distributed across different Azure regions.
+
+The Traffic Manager service is used to direct client requests to the most appropriate service endpoint that is based on a traffic-routing method and the health of the endpoints.
+
+Here we are assuming that a company has similar web applications, both are running using the Azure Web App service. One web application is running in the East US Region and the other is running in the West US Region.
+
+1. Here we create a Traffic Manager profile and create two endpoints. Each endpoint points to each Azure Web app respectively. We assign a priority of 1 to the service endpoint attached to the Azure Web App running in the East US region and a priority of 2 to the other service endpoint.
+
+2. Here users would make requests to the Traffic Manager service.
+
+3. The requests could initially be directed to an Azure Web App located in the East US region, since there is a priority of 1 to the service endpoint attached to this endpoint.
+
+4. Now let's say there is an issue with the web application running in the East US region, Azure Traffic Manager would then understand that there is an issue with the web application running in this region.
+
+It would then start redirecting user requests to the second endpoint which has the Priority of 2.
+
+Hence over here you are adding a higher availability to your architecture by ensuring that user requests are always adhered to by redirecting requests if the primary service fails for any reason.
+
+<img src="https://github.com/rjanapa/rjanapa/blob/main/AzureTrafficManagerPriority1.png" width="500" length="500">
+
+<img src="https://github.com/rjanapa/rjanapa/blob/main/AzureTrafficManagerPriority2.png" width="500" length="500">
+
+And then we have the Geographic routing method wherein users would be directed to an endpoint based on their geographic location
+
+<img src="https://github.com/rjanapa/rjanapa/blob/main/AzureTrafficManagerGeoRouting.png" width="500" length="500">
 
 
 
