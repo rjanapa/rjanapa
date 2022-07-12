@@ -25,6 +25,7 @@ api_dev_key (string): The API developer key of a registered can be used to, amon
 user_id (number): The ID of the user for whom the system will generate the newsfeed.<br>
 
 <b>Database Design:</b><br>
+
 There are three primary objects: User, Entity (e.g. page, group, etc.), and FeedItem (or Post). Here are some observations about the relationships between these entities:
 
 A User can follow other entities and can become friends with other users.<br>
