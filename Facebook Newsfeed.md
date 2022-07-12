@@ -24,6 +24,14 @@ Parameters:<br>
 api_dev_key (string): The API developer key of a registered can be used to, among other things, throttle users based on their allocated quota.<br>
 user_id (number): The ID of the user for whom the system will generate the newsfeed.<br>
 
+<b>Database Design:</b><br>
+There are three primary objects: User, Entity (e.g. page, group, etc.), and FeedItem (or Post). Here are some observations about the relationships between these entities:
+
+A User can follow other entities and can become friends with other users.<br>
+Both users and entities can post FeedItems which can contain text, images, or videos.<br>
+Each FeedItem will have a UserID which will point to the User who created it. For simplicity, let’s assume that only users can create feed items, although, on Facebook Pages can post feed item too.<br>
+Each FeedItem can optionally have an EntityID pointing to the page or the group where that post was created.<br>
+
 <b>High Level System Design</b><br>
 
 At a high level this system can be divided into two parts:
