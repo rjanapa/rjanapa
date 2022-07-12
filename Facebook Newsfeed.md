@@ -33,6 +33,8 @@ Both users and entities can post FeedItems which can contain text, images, or vi
 Each FeedItem will have a UserID which will point to the User who created it. For simplicity, let’s assume that only users can create feed items, although, on Facebook Pages can post feed item too.<br>
 Each FeedItem can optionally have an EntityID pointing to the page or the group where that post was created.<br>
 
+<img src="https://github.com/rjanapa/rjanapa/blob/main/FacebookNewsFeedDBDesign.png" width="500" length="500">
+
 <b>High Level System Design</b><br>
 
 At a high level this system can be divided into two parts:
