@@ -58,11 +58,17 @@ Whenever user loads the newsfeed page, the system request and pull feed items fr
 At a high level, following components are in Newsfeed service:
 
 <b>Web servers: </b> To maintain a connection with the user. This connection will be used to transfer data between the user and the server.<br>
+
 <b>Application server:</b> To execute the workflows of storing new posts in the database servers. We will also need some application servers to retrieve and to push the newsfeed to the end user.<br>
+
 <b>Metadata database and cache:</b> To store the metadata about Users, Pages, and Groups.<br>
+
 <b>Posts database and cache:</b> To store metadata about posts and their contents.<br>
+
 <b>Video and photo storage, and cache:</b> Blob storage, to store all the media included in the posts.<br>
+
 <b>Newsfeed generation service:</b> To gather and rank all the relevant posts for a user to generate newsfeed and store in the cache. This service will also receive live updates and will add these newer feed items to any user’s timeline.<br>
+
 <b>Feed notification service:</b> To notify the user that there are newer items available for their newsfeed.<br>
 
 <img src="https://github.com/rjanapa/rjanapa/blob/main/FB-Newsfeed-HLD.png" width="500" length="500">
@@ -83,18 +89,11 @@ UNION<br>
 ORDER BY CreationDate DESC <br>
 LIMIT 100<br>
 
-Issues with this design for the feed generation service:<br>
-
-1. Crazy slow for users with a lot of friends/follows as we have to perform sorting/merging/ranking of a huge number of posts.<br>
-2. We generate the timeline when a user loads their page. This would be quite slow and have a high latency.<br>
-3. For live updates, each status update will result in feed updates for all followers. This could result in high backlogs in our Newsfeed Generation Service.<br>
-4. For live updates, the server pushing (or notifying about) newer posts to users could lead to very heavy loads, especially for people or pages that have a lot of followers. <br>
- 
-To improve the efficiency, we can pre-generate the timeline and store it in a memory.<br>
+To improve the efficiency, pre-generate the timeline and store it in a memory.<br>
 
 <b>Offline generation for newsfeed: </b><br>
 
-We can have dedicated servers that are continuously generating users’ newsfeed and storing them in memory. So, whenever a user requests for the new posts for their feed, we can simply serve it from the pre-generated, stored location. Using this scheme, user’s newsfeed is not compiled on load, but rather on a regular basis and returned to users whenever they request for it.<br>
+Dedicated servers can continuously generating users’ newsfeed and storing them in memory. So, whenever a user requests for the new posts for their feed, we can simply serve it from the pre-generated, stored location. Using this scheme, user’s newsfeed is not compiled on load, but rather on a regular basis and returned to users whenever they request for it.<br>
 
 Whenever these servers need to generate the feed for a user, they will first query to see what was the last time the feed was generated for that user. Then, new feed data would be generated from that time onwards. We can store this data in a hash table where the “key” would be UserID and “value” would be a STRUCT like this:<br>
 
@@ -103,11 +102,7 @@ Struct {<br>
     DateTime lastGenerated;<br>
 }<br>
 
-<b>Should we generate (and keep in memory) newsfeeds for all users? </b><br>
-
-There will be a lot of users that don’t log-in frequently. Here are a few things we can do to handle this; <br>
-1. Straightforward approach could be, to use an LRU based cache that can remove users from memory that haven’t accessed their newsfeed for a long time 
-2. A smarter solution can figure out the login pattern of users to pre-generate their newsfeed, e.g., at what time of the day a user is active and which days of the week does a user access their newsfeed? etc.
+Use an LRU based cache that can remove users from memory that haven’t accessed their newsfeed for a long time 
 
 <b>b. Feed publishing</b><br>
 
