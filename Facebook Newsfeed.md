@@ -51,10 +51,6 @@ Whenever the system receives a request to generate the feed for a user, the foll
 4. Store this feed in the cache and return top posts (say 20) to be rendered on user’s feed.<br>
 5. On the front-end, when user reaches the end of the current feed, fetch the next 20 posts from the server and so on.<br>
 
-<b>Feed publishing: </b><br>
-
-Whenever user loads the newsfeed page, the system request and pull feed items from the server. When the user reaches the end of the current feed, system can pull more data from the server. For newer items either the server can notify the user and then system can pull, or the server can push, these new posts.  
-
 <b>Components in Newsfeed service: </b><br>
 
 <b>Web servers: </b> To maintain a connection with the user. This connection will be used to transfer data between the user and the server.<br>
