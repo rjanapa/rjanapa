@@ -10,5 +10,5 @@ I<b>T Strategy to Project Portfolio</b><br>
 
 <b>Strategy Question for any Transformation</b><br>
 
-<b>Reference:</b><br> (https://www.futurecioclub.com/products/master-strategy-language-for-your-it-leadership-journey)
+<b>Reference:</b><br> https://www.futurecioclub.com/products/master-strategy-language-for-your-it-leadership-journey
 
