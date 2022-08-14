@@ -2,6 +2,10 @@
 
 <b>Strategy - Definition</b><br>
 
+The definition of the Strategy and Strategy development<br>
+
+Understand the difference between Strategy vs Tactical vs Operational<br>
+
 <b>Importance of Strategy</b><br>
 
 <b>Strategy cascade from Buiness to IT</b><br>
