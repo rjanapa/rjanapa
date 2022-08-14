@@ -13,6 +13,6 @@ You can click the Preview link to take a look at your changes.
 
 [Scalable System Design](https://github.com/rjanapa/rjanapa/blob/main/ScalableSystemDesign.md)
 
-[My Product Portfolio](https://github.com/rjanapa/rjanapa/blob/main/MyProductPortfolio.md)
+[Technical Product Management](https://github.com/rjanapa/rjanapa/blob/main/MyProductPortfolio.md)
 
 [Product Management Books](https://github.com/rjanapa/rjanapa/blob/main/Product%20Management%20Books.md)
