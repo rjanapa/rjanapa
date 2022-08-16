@@ -9,7 +9,7 @@ rjanapa/rjanapa is a ✨ special ✨ repository because its `README.md` (this fi
 You can click the Preview link to take a look at your changes.
 --->
 
-[Strategy for IT Leaders](https://github.com/rjanapa/rjanapa/blob/main/Strategy%20for%20IT%20Leader.md)
+[Strategy for IT Leaders](https://github.com/rjanapa/rjanapa/blob/main/Strategy%20for%20IT%20Leader.md) In Progress
 
 [Scalable System Design](https://github.com/rjanapa/rjanapa/blob/main/ScalableSystemDesign.md)
 
