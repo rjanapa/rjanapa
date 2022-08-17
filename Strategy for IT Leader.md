@@ -8,6 +8,8 @@ The definition of the Strategy and Strategy development<br>
 
 Understand the difference between Strategy vs Tactical vs Operational<br>
 
+<img src="https://github.com/rjanapa/rjanapa/blob/main/StrategyTacticalOperational.png" width="500" length="500"> <br>
+
 <b>Importance of Strategy</b><br>
 
 <b>Strategy cascade from Buiness to IT</b><br>
