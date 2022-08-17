@@ -4,7 +4,7 @@
 
 The definition of the Strategy and Strategy development<br>
 
-<img src="https://github.com/rjanapa/rjanapa/blob/main/ElevatorUseCase.png" width="500" length="500"> <br>
+<img src="https://github.com/rjanapa/rjanapa/blob/main/Strategy.png" width="500" length="500"> <br>
 
 Understand the difference between Strategy vs Tactical vs Operational<br>
 
