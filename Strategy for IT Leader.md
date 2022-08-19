@@ -6,7 +6,11 @@
 
 <b>Importance of Strategy</b><br>
 
+VUCA (Volatility, Uncertainty, Complexity, Ambiguity) world we live in
+
 <img src="https://github.com/rjanapa/rjanapa/blob/main/Business%20Challenges.png" width="500" length="500">
+
+Challenges influence organizations to develop strategic initiatives
 
 <b>Strategy cascade from Buiness to IT</b><br>
 
