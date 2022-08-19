@@ -6,6 +6,8 @@
 
 <b>Importance of Strategy</b><br>
 
+
+
 <b>Strategy cascade from Buiness to IT</b><br>
 
 I<b>T Strategy to Project Portfolio</b><br>
