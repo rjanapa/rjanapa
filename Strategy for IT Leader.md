@@ -12,6 +12,8 @@ VUCA (Volatility, Uncertainty, Complexity, Ambiguity) world we live in
 
 Challenges influence organizations to develop strategic initiatives
 
+<img src="https://github.com/rjanapa/rjanapa/blob/main/StrategyDevelopment.png" width="500" length="500">
+
 <b>Strategy cascade from Buiness to IT</b><br>
 
 I<b>T Strategy to Project Portfolio</b><br>
