@@ -42,4 +42,4 @@ Can disks such as I: and X: be added to Windows SQL Servers by latest 5.0 Stratu
  
 ARB for S/W that need manual installation for MDP, VP approvals received and attached to RAID for ARB request      
 
-<img src="https://github.com/rjanapa/rjanapa/blob/main/MDP-2022-08-30" width="500" length="500">
+<img src="https://github.com/rjanapa/rjanapa/blob/main/MDP-2022-08-30.png" width="500" length="500">
